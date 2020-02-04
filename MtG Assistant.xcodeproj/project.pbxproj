@@ -9,23 +9,25 @@
 /* Begin PBXBuildFile section */
 		58DBA18A23E61C02002C3041 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DBA18923E61C02002C3041 /* AppDelegate.swift */; };
 		58DBA18C23E61C02002C3041 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DBA18B23E61C02002C3041 /* SceneDelegate.swift */; };
-		58DBA18E23E61C02002C3041 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DBA18D23E61C02002C3041 /* FirstViewController.swift */; };
-		58DBA19023E61C02002C3041 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DBA18F23E61C02002C3041 /* SecondViewController.swift */; };
+		58DBA18E23E61C02002C3041 /* PlayersHealthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DBA18D23E61C02002C3041 /* PlayersHealthViewController.swift */; };
+		58DBA19023E61C02002C3041 /* CombatFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DBA18F23E61C02002C3041 /* CombatFieldViewController.swift */; };
 		58DBA19323E61C02002C3041 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58DBA19123E61C02002C3041 /* Main.storyboard */; };
 		58DBA19823E61C05002C3041 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58DBA19623E61C05002C3041 /* LaunchScreen.storyboard */; };
 		58DBA19F23E63509002C3041 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58DBA19423E61C05002C3041 /* Assets.xcassets */; };
+		58F2C37623E9B6BB00D75EEB /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F2C37523E9B6BB00D75EEB /* StatisticsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		58DBA18623E61C02002C3041 /* MtG Assistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MtG Assistant.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		58DBA18923E61C02002C3041 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58DBA18B23E61C02002C3041 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		58DBA18D23E61C02002C3041 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		58DBA18F23E61C02002C3041 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		58DBA18D23E61C02002C3041 /* PlayersHealthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersHealthViewController.swift; sourceTree = "<group>"; };
+		58DBA18F23E61C02002C3041 /* CombatFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombatFieldViewController.swift; sourceTree = "<group>"; };
 		58DBA19223E61C02002C3041 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		58DBA19423E61C05002C3041 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58DBA19723E61C05002C3041 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		58DBA19923E61C05002C3041 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58F2C37523E9B6BB00D75EEB /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +62,9 @@
 			children = (
 				58DBA18923E61C02002C3041 /* AppDelegate.swift */,
 				58DBA18B23E61C02002C3041 /* SceneDelegate.swift */,
-				58DBA18D23E61C02002C3041 /* FirstViewController.swift */,
-				58DBA18F23E61C02002C3041 /* SecondViewController.swift */,
+				58DBA18D23E61C02002C3041 /* PlayersHealthViewController.swift */,
+				58DBA18F23E61C02002C3041 /* CombatFieldViewController.swift */,
+				58F2C37523E9B6BB00D75EEB /* StatisticsViewController.swift */,
 				58DBA19123E61C02002C3041 /* Main.storyboard */,
 				58DBA19423E61C05002C3041 /* Assets.xcassets */,
 				58DBA19623E61C05002C3041 /* LaunchScreen.storyboard */,
@@ -141,8 +144,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58DBA19023E61C02002C3041 /* SecondViewController.swift in Sources */,
-				58DBA18E23E61C02002C3041 /* FirstViewController.swift in Sources */,
+				58DBA19023E61C02002C3041 /* CombatFieldViewController.swift in Sources */,
+				58F2C37623E9B6BB00D75EEB /* StatisticsViewController.swift in Sources */,
+				58DBA18E23E61C02002C3041 /* PlayersHealthViewController.swift in Sources */,
 				58DBA18A23E61C02002C3041 /* AppDelegate.swift in Sources */,
 				58DBA18C23E61C02002C3041 /* SceneDelegate.swift in Sources */,
 			);
