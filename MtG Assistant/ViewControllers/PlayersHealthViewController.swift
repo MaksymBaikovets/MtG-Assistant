@@ -19,15 +19,21 @@ class PlayersHealthViewController: UIViewController {
     }
     
     // MARK: Main.storyboard Outlets
-    @IBOutlet weak var firstStatBackground: UIImageView!
-    @IBOutlet weak var firstPlayerStat: UILabel!
-    @IBOutlet weak var firstPlayerTable: UIImageView!
-    @IBOutlet weak var firstPlayerGradient: UIImageView!
     
-    @IBOutlet weak var secondStatBackground: UIImageView!
+    @IBOutlet weak var firstPlayerStat: UILabel!
     @IBOutlet weak var secondPlayerStat: UILabel!
+    
+    @IBOutlet weak var firstPlayerTable: UIImageView!
     @IBOutlet weak var secondPlayerTable: UIImageView!
+
+    @IBOutlet weak var firstPlayerGradient: UIImageView!
     @IBOutlet weak var secondPlayerGradient: UIImageView!
+    
+//    @IBOutlet weak var firstPlayerStat: UILabel!
+//    @IBOutlet weak var firstPlayerTable: UIImageView!
+    
+//    @IBOutlet weak var secondPlayerStat: UILabel!
+//    @IBOutlet weak var secondPlayerTable: UIImageView!
     
     // MARK: Tables Settings
     @IBAction func firstPlayerSetting(_ sender: UIButton) {
@@ -92,6 +98,7 @@ class PlayersHealthViewController: UIViewController {
     }
     
     // MARK: Changing Backgrounds for tables:
+    
     @IBAction func firstPlayerTableChange(_ sender: UIButton) {
         GlobalVariables.index = sender.tag
         if GlobalVariables.index == 3 {
@@ -165,8 +172,11 @@ class PlayersHealthViewController: UIViewController {
     // MARK: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        firstStatBackground.layer.cornerRadius = firstStatBackground.frame.size.width / 2.0
-        secondStatBackground.layer.cornerRadius = secondStatBackground.frame.size.width / 2.0
+        firstPlayerStat.layer.masksToBounds = true
+        firstPlayerStat.layer.cornerRadius = firstPlayerStat.frame.size.width / 2.0
+        
+        secondPlayerStat.layer.masksToBounds = true
+        secondPlayerStat.layer.cornerRadius = secondPlayerStat.frame.size.width / 2.0
 
         // Mirroring things for the First Player
         self.firstPlayerStat.transform = CGAffineTransform(scaleX: -1, y: -1);
@@ -177,6 +187,7 @@ class PlayersHealthViewController: UIViewController {
             GlobalVariables.devotionToColorOfFirstPlayer = "green"
         secondPlayerTable.image = Backgrounds().redTableBackground()
             GlobalVariables.devotionToColorOfSecondPlayer = "red"
+
 
     }
 

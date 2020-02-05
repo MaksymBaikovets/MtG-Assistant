@@ -7,27 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5888BFF223EB70DE005367D9 /* NewStatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5888BFF123EB70DE005367D9 /* NewStatisticsViewController.swift */; };
 		58DBA18A23E61C02002C3041 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DBA18923E61C02002C3041 /* AppDelegate.swift */; };
 		58DBA18C23E61C02002C3041 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DBA18B23E61C02002C3041 /* SceneDelegate.swift */; };
 		58DBA18E23E61C02002C3041 /* PlayersHealthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DBA18D23E61C02002C3041 /* PlayersHealthViewController.swift */; };
-		58DBA19023E61C02002C3041 /* CombatFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DBA18F23E61C02002C3041 /* CombatFieldViewController.swift */; };
 		58DBA19323E61C02002C3041 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58DBA19123E61C02002C3041 /* Main.storyboard */; };
 		58DBA19823E61C05002C3041 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58DBA19623E61C05002C3041 /* LaunchScreen.storyboard */; };
 		58DBA19F23E63509002C3041 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58DBA19423E61C05002C3041 /* Assets.xcassets */; };
 		58F2C37623E9B6BB00D75EEB /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F2C37523E9B6BB00D75EEB /* StatisticsViewController.swift */; };
+		58F2C37E23E9DE8000D75EEB /* SF-Pro-Display-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 58F2C37923E9DE8000D75EEB /* SF-Pro-Display-Light.otf */; };
+		58F2C37F23E9DE8000D75EEB /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 58F2C37A23E9DE8000D75EEB /* SF-Pro-Display-Regular.otf */; };
+		58F2C38023E9DE8000D75EEB /* SF-Pro-Display-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 58F2C37B23E9DE8000D75EEB /* SF-Pro-Display-Thin.otf */; };
+		58F2C38123E9DE8000D75EEB /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 58F2C37C23E9DE8000D75EEB /* SF-Pro-Display-Medium.otf */; };
+		58F2C38223E9DE8000D75EEB /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 58F2C37D23E9DE8000D75EEB /* SF-Pro-Display-Bold.otf */; };
+		58F2C38423EA0A9400D75EEB /* StatisticsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F2C38323EA0A9400D75EEB /* StatisticsDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5888BFF123EB70DE005367D9 /* NewStatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewStatisticsViewController.swift; sourceTree = "<group>"; };
 		58DBA18623E61C02002C3041 /* MtG Assistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MtG Assistant.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		58DBA18923E61C02002C3041 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58DBA18B23E61C02002C3041 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		58DBA18D23E61C02002C3041 /* PlayersHealthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersHealthViewController.swift; sourceTree = "<group>"; };
-		58DBA18F23E61C02002C3041 /* CombatFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombatFieldViewController.swift; sourceTree = "<group>"; };
 		58DBA19223E61C02002C3041 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		58DBA19423E61C05002C3041 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58DBA19723E61C05002C3041 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		58DBA19923E61C05002C3041 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58F2C37523E9B6BB00D75EEB /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
+		58F2C37923E9DE8000D75EEB /* SF-Pro-Display-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Light.otf"; sourceTree = "<group>"; };
+		58F2C37A23E9DE8000D75EEB /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
+		58F2C37B23E9DE8000D75EEB /* SF-Pro-Display-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Thin.otf"; sourceTree = "<group>"; };
+		58F2C37C23E9DE8000D75EEB /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; };
+		58F2C37D23E9DE8000D75EEB /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
+		58F2C38323EA0A9400D75EEB /* StatisticsDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,15 +74,37 @@
 			children = (
 				58DBA18923E61C02002C3041 /* AppDelegate.swift */,
 				58DBA18B23E61C02002C3041 /* SceneDelegate.swift */,
-				58DBA18D23E61C02002C3041 /* PlayersHealthViewController.swift */,
-				58DBA18F23E61C02002C3041 /* CombatFieldViewController.swift */,
-				58F2C37523E9B6BB00D75EEB /* StatisticsViewController.swift */,
+				58F2C37823E9DE4D00D75EEB /* ViewControllers */,
 				58DBA19123E61C02002C3041 /* Main.storyboard */,
-				58DBA19423E61C05002C3041 /* Assets.xcassets */,
 				58DBA19623E61C05002C3041 /* LaunchScreen.storyboard */,
 				58DBA19923E61C05002C3041 /* Info.plist */,
+				58DBA19423E61C05002C3041 /* Assets.xcassets */,
+				58F2C37723E9DE2A00D75EEB /* Resources */,
 			);
 			path = "MtG Assistant";
+			sourceTree = "<group>";
+		};
+		58F2C37723E9DE2A00D75EEB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				58F2C37D23E9DE8000D75EEB /* SF-Pro-Display-Bold.otf */,
+				58F2C37923E9DE8000D75EEB /* SF-Pro-Display-Light.otf */,
+				58F2C37C23E9DE8000D75EEB /* SF-Pro-Display-Medium.otf */,
+				58F2C37A23E9DE8000D75EEB /* SF-Pro-Display-Regular.otf */,
+				58F2C37B23E9DE8000D75EEB /* SF-Pro-Display-Thin.otf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		58F2C37823E9DE4D00D75EEB /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				58DBA18D23E61C02002C3041 /* PlayersHealthViewController.swift */,
+				58F2C37523E9B6BB00D75EEB /* StatisticsViewController.swift */,
+				58F2C38323EA0A9400D75EEB /* StatisticsDetailsViewController.swift */,
+				5888BFF123EB70DE005367D9 /* NewStatisticsViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,7 +167,12 @@
 			files = (
 				58DBA19823E61C05002C3041 /* LaunchScreen.storyboard in Resources */,
 				58DBA19F23E63509002C3041 /* Assets.xcassets in Resources */,
+				58F2C38023E9DE8000D75EEB /* SF-Pro-Display-Thin.otf in Resources */,
+				58F2C37E23E9DE8000D75EEB /* SF-Pro-Display-Light.otf in Resources */,
+				58F2C37F23E9DE8000D75EEB /* SF-Pro-Display-Regular.otf in Resources */,
 				58DBA19323E61C02002C3041 /* Main.storyboard in Resources */,
+				58F2C38223E9DE8000D75EEB /* SF-Pro-Display-Bold.otf in Resources */,
+				58F2C38123E9DE8000D75EEB /* SF-Pro-Display-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,8 +183,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58DBA19023E61C02002C3041 /* CombatFieldViewController.swift in Sources */,
+				58F2C38423EA0A9400D75EEB /* StatisticsDetailsViewController.swift in Sources */,
 				58F2C37623E9B6BB00D75EEB /* StatisticsViewController.swift in Sources */,
+				5888BFF223EB70DE005367D9 /* NewStatisticsViewController.swift in Sources */,
 				58DBA18E23E61C02002C3041 /* PlayersHealthViewController.swift in Sources */,
 				58DBA18A23E61C02002C3041 /* AppDelegate.swift in Sources */,
 				58DBA18C23E61C02002C3041 /* SceneDelegate.swift in Sources */,
@@ -295,6 +335,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T63UTL8XB2;
 				INFOPLIST_FILE = "MtG Assistant/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -313,6 +354,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T63UTL8XB2;
 				INFOPLIST_FILE = "MtG Assistant/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
