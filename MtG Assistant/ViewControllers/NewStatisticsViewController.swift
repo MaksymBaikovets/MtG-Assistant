@@ -9,25 +9,39 @@
 import UIKit
 
 class NewStatisticsViewController: UITableViewController {
-    @IBAction func cancelButton(_: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
-    }
+    // MARK: New Statistics Scene: Outlets
 
-    @IBAction func doneButton(_: UIBarButtonItem) {}
+    @IBOutlet var firstPlayerInput: UITextField!
+    @IBOutlet var secondPlayerInput: UITextField!
+
+    @IBOutlet var firstPlayerDeck: UITextField!
+    @IBOutlet var secondPlayerDeck: UITextField!
+
+    @IBOutlet var gameResultInput: UITextField!
+    @IBOutlet var gameDateInput: UITextField!
+
+    var statistics: StatisticsHeadline?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
-    /*
-     // MARK: - Navigation
+    // MARK: - Navigation
 
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         // Get the new view controller using segue.destination.
-         // Pass the selected object to the new view controller.
-     }
-     */
+    override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
+        if segue.identifier == "SaveStatistics" {
+            guard let firstPlayerName = firstPlayerInput.text else { return }
+            guard let secondPlayerName = secondPlayerInput.text else { return }
+
+            guard let firstDeck = firstPlayerDeck.text else { return }
+            guard let secondDeck = secondPlayerDeck.text else { return }
+
+            guard let result = gameResultInput.text else { return }
+            guard let date = gameDateInput.text else { return }
+
+            let competitors = firstPlayerName + " : " + secondPlayerName
+            statistics = StatisticsHeadline(competitors: competitors, date: date, result: result,
+                                            firstPlayerDeck: firstDeck, secondPlayerDeck: secondDeck)
+        }
+    }
 }

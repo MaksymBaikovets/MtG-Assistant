@@ -14,11 +14,12 @@ class PlayersHealthViewController: UIViewController {
     struct GlobalVariables {
         static var devotionToColorOfFirstPlayer = ""
         static var devotionToColorOfSecondPlayer = ""
+
         static var showAlert = false
         static var index: Int = 0
     }
 
-    // MARK: Main.storyboard Outlets
+    // MARK: Player Health Scene: Outlets
 
     @IBOutlet var firstPlayerStat: UILabel!
     @IBOutlet var secondPlayerStat: UILabel!
@@ -57,26 +58,31 @@ class PlayersHealthViewController: UIViewController {
             self.backgroundChange(player: player, devotion: changedDevotion)
             GlobalVariables.showAlert = false
         })
+
         let redAction = UIAlertAction(title: "Red (Mountain)", style: .default, handler: { (_: UIAlertAction!) in
             changedDevotion = "red"
             self.backgroundChange(player: player, devotion: changedDevotion)
             GlobalVariables.showAlert = false
         })
+
         let blackAction = UIAlertAction(title: "Black (Swamp)", style: .default, handler: { (_: UIAlertAction!) in
             changedDevotion = "black"
             self.backgroundChange(player: player, devotion: changedDevotion)
             GlobalVariables.showAlert = false
         })
+
         let greenAction = UIAlertAction(title: "Green (Forest)", style: .default, handler: { (_: UIAlertAction!) in
             changedDevotion = "green"
             self.backgroundChange(player: player, devotion: changedDevotion)
             GlobalVariables.showAlert = false
         })
+
         let blueAction = UIAlertAction(title: "Blue (Island)", style: .default, handler: { (_: UIAlertAction!) in
             changedDevotion = "blue"
             self.backgroundChange(player: player, devotion: changedDevotion)
             GlobalVariables.showAlert = false
         })
+
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
 
         optionMenu.addAction(whiteAction)

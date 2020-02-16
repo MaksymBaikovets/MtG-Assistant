@@ -17,6 +17,7 @@
 		58DBA19F23E63509002C3041 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58DBA19423E61C05002C3041 /* Assets.xcassets */; };
 		58DDC7EE23F9792E0000D6E7 /* StatisticsHeadlines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DDC7ED23F9792E0000D6E7 /* StatisticsHeadlines.swift */; };
 		58DDC7F023F97D090000D6E7 /* BackgroundsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DDC7EF23F97D090000D6E7 /* BackgroundsDataSource.swift */; };
+		58DDC7F223F97FD80000D6E7 /* StatisticsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DDC7F123F97FD80000D6E7 /* StatisticsCell.swift */; };
 		58F2C37623E9B6BB00D75EEB /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F2C37523E9B6BB00D75EEB /* StatisticsViewController.swift */; };
 		58F2C37E23E9DE8000D75EEB /* SF-Pro-Display-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 58F2C37923E9DE8000D75EEB /* SF-Pro-Display-Light.otf */; };
 		58F2C37F23E9DE8000D75EEB /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 58F2C37A23E9DE8000D75EEB /* SF-Pro-Display-Regular.otf */; };
@@ -39,6 +40,7 @@
 		58DBA19923E61C05002C3041 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58DDC7ED23F9792E0000D6E7 /* StatisticsHeadlines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsHeadlines.swift; sourceTree = "<group>"; };
 		58DDC7EF23F97D090000D6E7 /* BackgroundsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundsDataSource.swift; sourceTree = "<group>"; };
+		58DDC7F123F97FD80000D6E7 /* StatisticsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsCell.swift; sourceTree = "<group>"; };
 		58F2C37523E9B6BB00D75EEB /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		58F2C37923E9DE8000D75EEB /* SF-Pro-Display-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Light.otf"; sourceTree = "<group>"; };
 		58F2C37A23E9DE8000D75EEB /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 			children = (
 				58DDC7EC23F979130000D6E7 /* Models */,
 				58216FC923F598F600FA945A /* Data Sources */,
+				58DDC7F323F97FDF0000D6E7 /* Views */,
 				58F2C37823E9DE4D00D75EEB /* ViewControllers */,
 				58216FCA23F5991300FA945A /* Storyboards */,
 				58DBA18923E61C02002C3041 /* AppDelegate.swift */,
@@ -117,6 +120,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		58DDC7F323F97FDF0000D6E7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				58DDC7F123F97FD80000D6E7 /* StatisticsCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		58F2C37723E9DE2A00D75EEB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,8 +145,8 @@
 			children = (
 				58DBA18D23E61C02002C3041 /* PlayersHealthViewController.swift */,
 				58F2C37523E9B6BB00D75EEB /* StatisticsViewController.swift */,
-				58F2C38323EA0A9400D75EEB /* StatisticsDetailsViewController.swift */,
 				5888BFF123EB70DE005367D9 /* NewStatisticsViewController.swift */,
+				58F2C38323EA0A9400D75EEB /* StatisticsDetailsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -220,6 +231,7 @@
 				58F2C37623E9B6BB00D75EEB /* StatisticsViewController.swift in Sources */,
 				5888BFF223EB70DE005367D9 /* NewStatisticsViewController.swift in Sources */,
 				58DDC7EE23F9792E0000D6E7 /* StatisticsHeadlines.swift in Sources */,
+				58DDC7F223F97FD80000D6E7 /* StatisticsCell.swift in Sources */,
 				58DDC7F023F97D090000D6E7 /* BackgroundsDataSource.swift in Sources */,
 				58DBA18E23E61C02002C3041 /* PlayersHealthViewController.swift in Sources */,
 				58DBA18A23E61C02002C3041 /* AppDelegate.swift in Sources */,
