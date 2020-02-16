@@ -13,32 +13,32 @@ class StatisticsDataSource: NSObject {
 
     var headlines: [StatisticsHeadline]
 
-    static func generatePlayersData() -> [StatisticsHeadline] {
+    static func generateStatisticsData() -> [StatisticsHeadline] {
         return [
-            StatisticsHeadline(id: 1, title: "Maksym vs Ann", text: "03.02.2020", result: ""),
-            StatisticsHeadline(id: 2, title: "Ann vs Roman", text: "26.01.2020", result: ""),
-            StatisticsHeadline(id: 3, title: "Roman vs Maksym", text: "24.01.2020", result: ""),
+            StatisticsHeadline(id: 1, competitors: "Maksym : Ann", date: "03.02.2020", result: "20 : -7"),
+            StatisticsHeadline(id: 2, competitors: "Ann : Roman", date: "26.01.2020", result: "3 : -1"),
+            StatisticsHeadline(id: 3, competitors: "Roman : Maksym", date: "24.01.2020", result: "-4 : 5"),
         ]
     }
 
     // MARK: - Initializers
 
     override init() {
-        headlines = StatisticsDataSource.generatePlayersData()
+        headlines = StatisticsDataSource.generateStatisticsData()
     }
 
     // MARK: - Datasource Methods
 
-    func numberOfPlayers() -> Int {
+    func numberOfGames() -> Int {
         headlines.count
     }
 
-    func append(player: StatisticsHeadline, to tableView: UITableView) {
-        headlines.append(player)
+    func append(haedline: StatisticsHeadline, to tableView: UITableView) {
+        headlines.append(haedline)
         tableView.insertRows(at: [IndexPath(row: headlines.count - 1, section: 0)], with: .automatic)
     }
 
-    func player(at indexPath: IndexPath) -> StatisticsHeadline {
+    func game(at indexPath: IndexPath) -> StatisticsHeadline {
         headlines[indexPath.row]
     }
 }
