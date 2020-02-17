@@ -18,6 +18,7 @@
 		58DDC7EE23F9792E0000D6E7 /* StatisticsHeadlines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DDC7ED23F9792E0000D6E7 /* StatisticsHeadlines.swift */; };
 		58DDC7F023F97D090000D6E7 /* BackgroundsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DDC7EF23F97D090000D6E7 /* BackgroundsDataSource.swift */; };
 		58DDC7F223F97FD80000D6E7 /* StatisticsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DDC7F123F97FD80000D6E7 /* StatisticsCell.swift */; };
+		58DDC7F823FA92570000D6E7 /* UITextFieldPaddings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DDC7F723FA92570000D6E7 /* UITextFieldPaddings.swift */; };
 		58F2C37623E9B6BB00D75EEB /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F2C37523E9B6BB00D75EEB /* StatisticsViewController.swift */; };
 		58F2C37E23E9DE8000D75EEB /* SF-Pro-Display-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 58F2C37923E9DE8000D75EEB /* SF-Pro-Display-Light.otf */; };
 		58F2C37F23E9DE8000D75EEB /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 58F2C37A23E9DE8000D75EEB /* SF-Pro-Display-Regular.otf */; };
@@ -41,6 +42,7 @@
 		58DDC7ED23F9792E0000D6E7 /* StatisticsHeadlines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsHeadlines.swift; sourceTree = "<group>"; };
 		58DDC7EF23F97D090000D6E7 /* BackgroundsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundsDataSource.swift; sourceTree = "<group>"; };
 		58DDC7F123F97FD80000D6E7 /* StatisticsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsCell.swift; sourceTree = "<group>"; };
+		58DDC7F723FA92570000D6E7 /* UITextFieldPaddings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldPaddings.swift; sourceTree = "<group>"; };
 		58F2C37523E9B6BB00D75EEB /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		58F2C37923E9DE8000D75EEB /* SF-Pro-Display-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Light.otf"; sourceTree = "<group>"; };
 		58F2C37A23E9DE8000D75EEB /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 		58DBA18823E61C02002C3041 /* MtG Assistant */ = {
 			isa = PBXGroup;
 			children = (
+				58DDC7F623FA923D0000D6E7 /* Helpers */,
 				58DDC7EC23F979130000D6E7 /* Models */,
 				58216FC923F598F600FA945A /* Data Sources */,
 				58DDC7F323F97FDF0000D6E7 /* Views */,
@@ -126,6 +129,14 @@
 				58DDC7F123F97FD80000D6E7 /* StatisticsCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		58DDC7F623FA923D0000D6E7 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				58DDC7F723FA92570000D6E7 /* UITextFieldPaddings.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		58F2C37723E9DE2A00D75EEB /* Resources */ = {
@@ -235,6 +246,7 @@
 				58DDC7F023F97D090000D6E7 /* BackgroundsDataSource.swift in Sources */,
 				58DBA18E23E61C02002C3041 /* PlayersHealthViewController.swift in Sources */,
 				58DBA18A23E61C02002C3041 /* AppDelegate.swift in Sources */,
+				58DDC7F823FA92570000D6E7 /* UITextFieldPaddings.swift in Sources */,
 				58DBA18C23E61C02002C3041 /* SceneDelegate.swift in Sources */,
 				58216FCC23F5993900FA945A /* StatisticsDataSource.swift in Sources */,
 			);

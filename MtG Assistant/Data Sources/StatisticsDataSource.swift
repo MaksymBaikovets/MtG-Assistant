@@ -15,9 +15,9 @@ class StatisticsDataSource: NSObject {
 
     static func generateStatisticsData() -> [StatisticsHeadline] {
         return [
-            StatisticsHeadline(id: 1, competitors: "Maksym : Ann", date: "03.02.2020", result: "20 : -7"),
-            StatisticsHeadline(id: 2, competitors: "Ann : Roman", date: "26.01.2020", result: "3 : -1"),
-            StatisticsHeadline(id: 3, competitors: "Roman : Maksym", date: "24.01.2020", result: "-4 : 5"),
+            StatisticsHeadline(competitors: "Maksym : Ann", date: "03.02.2020", result: "20 : -7", firstPlayerDeck: "Some Unusual Deck", secondPlayerDeck: "Peace of Mastery"),
+            StatisticsHeadline(competitors: "Ann : Roman", date: "26.01.2020", result: "3 : -1"),
+            StatisticsHeadline(competitors: "Roman : Maksym", date: "24.01.2020", result: "-4 : 5"),
         ]
     }
 

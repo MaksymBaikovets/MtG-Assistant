@@ -32,6 +32,7 @@ class PlayersHealthViewController: UIViewController {
 
     // MARK: Tables Settings
 
+    @IBOutlet weak var firstPlayerSettingView: UIView!
     @IBAction func firstPlayerSetting(_ sender: UIButton) {
         GlobalVariables.index = sender.tag
         if GlobalVariables.index == 1 {
@@ -99,6 +100,7 @@ class PlayersHealthViewController: UIViewController {
 
     // MARK: Changing Backgrounds for tables:
 
+    @IBOutlet weak var firstPlayerTableChangeView: UIView!
     @IBAction func firstPlayerTableChange(_ sender: UIButton) {
         GlobalVariables.index = sender.tag
         if GlobalVariables.index == 3 {
@@ -159,6 +161,7 @@ class PlayersHealthViewController: UIViewController {
 
     // MARK: Init Health Counters
 
+    @IBOutlet weak var firstPlayerCounterView: UIView!
     @IBAction func firstPlayerCounter(_ sender: UIStepper) {
         firstPlayerStat.text = Int(sender.value).description
     }
@@ -181,10 +184,24 @@ class PlayersHealthViewController: UIViewController {
         firstPlayerStat.transform = CGAffineTransform(scaleX: -1, y: -1)
         firstPlayerTable.transform = CGAffineTransform(scaleX: -1, y: -1)
         firstPlayerGradient.transform = CGAffineTransform(scaleX: -1, y: -1)
-
+        firstPlayerSettingView.transform = CGAffineTransform(scaleX: -1, y: -1)
+        firstPlayerTableChangeView.transform = CGAffineTransform(scaleX: -1, y: -1)
+        firstPlayerCounterView.transform = CGAffineTransform(scaleX: -1, y: -1)
+        
+        
         firstPlayerTable.image = Backgrounds().greenTableBackground()
         GlobalVariables.devotionToColorOfFirstPlayer = "green"
         secondPlayerTable.image = Backgrounds().redTableBackground()
         GlobalVariables.devotionToColorOfSecondPlayer = "red"
+    }
+}
+
+extension UIView {
+    func rotate(degrees: CGFloat) {
+        rotate(radians: CGFloat.pi * degrees / 180.0)
+    }
+
+    func rotate(radians: CGFloat) {
+        self.transform = CGAffineTransform(rotationAngle: radians)
     }
 }
