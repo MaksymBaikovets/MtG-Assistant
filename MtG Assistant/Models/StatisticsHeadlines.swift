@@ -9,7 +9,6 @@
 import Foundation
 
 struct StatisticsHeadline {
-    var id: Int?
     var competitors: String?
     var date: String?
     var result: String?

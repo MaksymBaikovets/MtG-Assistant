@@ -10,7 +10,8 @@ import UIKit
 
 class StatisticsViewController: UITableViewController {
     var statisticsDataSource = StatisticsDataSource()
-
+    var selectedItem: StatisticsHeadline?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
@@ -24,6 +25,20 @@ class StatisticsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Change the selected background view of the cell.
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        selectedItem = statisticsDataSource.game(at: indexPath)
+        return indexPath
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destinationVC = segue.destination as? StatisticsDetailsViewController else {
+            return
+        }
+    
+        destinationVC.data = selectedItem
+      
     }
 
 //    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
