@@ -10,7 +10,9 @@ import UIKit
 
 class NewStatisticsViewController: UITableViewController, UITextFieldDelegate {
     
+    // -------------------------------------------------------------------
     // MARK: New Statistics Scene: Outlets
+    // -------------------------------------------------------------------
 
     @IBOutlet var firstPlayerInput: UITextField!
     @IBOutlet var secondPlayerInput: UITextField!
@@ -28,8 +30,10 @@ class NewStatisticsViewController: UITableViewController, UITextFieldDelegate {
         
         firstPlayerInput.becomeFirstResponder()
     }
-
-    // MARK: - Navigation
+    
+    // -------------------------------------------------------------------
+    // MARK: - Keyboard Navigation (NOT USED)
+    // -------------------------------------------------------------------
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         let nextTag = textField.tag + 1
@@ -43,8 +47,10 @@ class NewStatisticsViewController: UITableViewController, UITextFieldDelegate {
         return true
     }
     
-//    MARK: Errors handling (NOT IMPLEMENTED)
-    
+    // -------------------------------------------------------------------
+    //  MARK: Errors handling (NOT IMPLEMENTED)
+    // -------------------------------------------------------------------
+
 //    var validForm: Bool = false
 //    @IBAction func doneButtonPress(_ sender: UIBarButtonItem) {
 //        guard let firstPlayerName = firstPlayerInput.text else {
@@ -54,7 +60,10 @@ class NewStatisticsViewController: UITableViewController, UITextFieldDelegate {
 //        }
 //    }
     
-//  MARK: - Segues
+    // -------------------------------------------------------------------
+    //  MARK: - Segues
+    // -------------------------------------------------------------------
+
     override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
         if segue.identifier == "SaveStatistics" {
             guard let firstPlayerName = firstPlayerInput.text else { return }
@@ -67,11 +76,9 @@ class NewStatisticsViewController: UITableViewController, UITextFieldDelegate {
             guard let date = gameDateInput.text else { return }
             
 
-           let competitors = firstPlayerName + " : " + secondPlayerName
-           statistics = StatisticsHeadline(competitors: competitors, date: date, result: result,
+            let competitors = firstPlayerName + " : " + secondPlayerName
+            statistics = StatisticsHeadline(competitors: competitors, date: date, result: result,
                                            firstPlayerDeck: firstDeck, secondPlayerDeck: secondDeck)
-
-            
         }
     }
 }

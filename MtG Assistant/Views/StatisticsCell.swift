@@ -9,13 +9,18 @@
 import UIKit
 
 class StatisticsCell: UITableViewCell {
+    
+    // -------------------------------------------------------------------
     // MARK: - IBOutlets
+    // -------------------------------------------------------------------
 
     @IBOutlet var competitorsLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var resultLabel: UILabel!
 
+    // -------------------------------------------------------------------
     // MARK: - Properties
+    // -------------------------------------------------------------------
 
     var statistics: StatisticsHeadline? {
         didSet {
