@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58092AAF23FBECD200517C8C /* MtG_Assistant.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 58092AAD23FBECD200517C8C /* MtG_Assistant.xcdatamodeld */; };
+		58092AB723FD5E5500517C8C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58092AB623FD5E5500517C8C /* SettingsViewController.swift */; };
+		58092ABA23FD67D200517C8C /* UIColorFromRGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58092AB923FD67D200517C8C /* UIColorFromRGB.swift */; };
+		58092ABD23FD6BBA00517C8C /* AppearanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58092ABC23FD6BBA00517C8C /* AppearanceViewController.swift */; };
+		58092ABF23FD6BC800517C8C /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58092ABE23FD6BC800517C8C /* ContactsViewController.swift */; };
+		58092AC123FD6BDE00517C8C /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58092AC023FD6BDE00517C8C /* LanguageViewController.swift */; };
+		58092AC323FD6C0100517C8C /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58092AC223FD6C0100517C8C /* UserProfileViewController.swift */; };
+		58092AC723FD945B00517C8C /* CoreDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58092AC623FD945B00517C8C /* CoreDataSource.swift */; };
 		58216FCC23F5993900FA945A /* StatisticsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58216FCB23F5993900FA945A /* StatisticsDataSource.swift */; };
 		5888BFF223EB70DE005367D9 /* NewStatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5888BFF123EB70DE005367D9 /* NewStatisticsViewController.swift */; };
 		58DBA18A23E61C02002C3041 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DBA18923E61C02002C3041 /* AppDelegate.swift */; };
@@ -29,6 +37,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		58092AAE23FBECD200517C8C /* MtG_Assistant.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MtG_Assistant.xcdatamodel; sourceTree = "<group>"; };
+		58092AB623FD5E5500517C8C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		58092AB923FD67D200517C8C /* UIColorFromRGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorFromRGB.swift; sourceTree = "<group>"; };
+		58092ABC23FD6BBA00517C8C /* AppearanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceViewController.swift; sourceTree = "<group>"; };
+		58092ABE23FD6BC800517C8C /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		58092AC023FD6BDE00517C8C /* LanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewController.swift; sourceTree = "<group>"; };
+		58092AC223FD6C0100517C8C /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		58092AC623FD945B00517C8C /* CoreDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataSource.swift; sourceTree = "<group>"; };
 		58216FCB23F5993900FA945A /* StatisticsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsDataSource.swift; sourceTree = "<group>"; };
 		5888BFF123EB70DE005367D9 /* NewStatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewStatisticsViewController.swift; sourceTree = "<group>"; };
 		58DBA18623E61C02002C3041 /* MtG Assistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MtG Assistant.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,11 +79,68 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		58092AB023FC225100517C8C /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				58F2C37D23E9DE8000D75EEB /* SF-Pro-Display-Bold.otf */,
+				58F2C37923E9DE8000D75EEB /* SF-Pro-Display-Light.otf */,
+				58F2C37C23E9DE8000D75EEB /* SF-Pro-Display-Medium.otf */,
+				58F2C37A23E9DE8000D75EEB /* SF-Pro-Display-Regular.otf */,
+				58F2C37B23E9DE8000D75EEB /* SF-Pro-Display-Thin.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		58092AB123FC226B00517C8C /* Documents */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Documents;
+			sourceTree = "<group>";
+		};
+		58092AB223FC229C00517C8C /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		58092AB323FC22A000517C8C /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				58DBA19423E61C05002C3041 /* Assets.xcassets */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		58092AB823FD5E5900517C8C /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				58F2C37523E9B6BB00D75EEB /* StatisticsViewController.swift */,
+				5888BFF123EB70DE005367D9 /* NewStatisticsViewController.swift */,
+				58F2C38323EA0A9400D75EEB /* StatisticsDetailsViewController.swift */,
+			);
+			path = Statistics;
+			sourceTree = "<group>";
+		};
+		58092ABB23FD6A1500517C8C /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				58092AB623FD5E5500517C8C /* SettingsViewController.swift */,
+				58092AC223FD6C0100517C8C /* UserProfileViewController.swift */,
+				58092ABC23FD6BBA00517C8C /* AppearanceViewController.swift */,
+				58092AC023FD6BDE00517C8C /* LanguageViewController.swift */,
+				58092ABE23FD6BC800517C8C /* ContactsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		58216FC923F598F600FA945A /* Data Sources */ = {
 			isa = PBXGroup;
 			children = (
 				58216FCB23F5993900FA945A /* StatisticsDataSource.swift */,
 				58DDC7EF23F97D090000D6E7 /* BackgroundsDataSource.swift */,
+				58092AC623FD945B00517C8C /* CoreDataSource.swift */,
 			);
 			path = "Data Sources";
 			sourceTree = "<group>";
@@ -106,11 +179,11 @@
 				58DDC7F323F97FDF0000D6E7 /* Views */,
 				58F2C37823E9DE4D00D75EEB /* ViewControllers */,
 				58216FCA23F5991300FA945A /* Storyboards */,
+				58F2C37723E9DE2A00D75EEB /* Resources */,
 				58DBA18923E61C02002C3041 /* AppDelegate.swift */,
 				58DBA18B23E61C02002C3041 /* SceneDelegate.swift */,
+				58092AAD23FBECD200517C8C /* MtG_Assistant.xcdatamodeld */,
 				58DBA19923E61C05002C3041 /* Info.plist */,
-				58DBA19423E61C05002C3041 /* Assets.xcassets */,
-				58F2C37723E9DE2A00D75EEB /* Resources */,
 			);
 			path = "MtG Assistant";
 			sourceTree = "<group>";
@@ -135,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				58DDC7F723FA92570000D6E7 /* UITextFieldPaddings.swift */,
+				58092AB923FD67D200517C8C /* UIColorFromRGB.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -142,11 +216,10 @@
 		58F2C37723E9DE2A00D75EEB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				58F2C37D23E9DE8000D75EEB /* SF-Pro-Display-Bold.otf */,
-				58F2C37923E9DE8000D75EEB /* SF-Pro-Display-Light.otf */,
-				58F2C37C23E9DE8000D75EEB /* SF-Pro-Display-Medium.otf */,
-				58F2C37A23E9DE8000D75EEB /* SF-Pro-Display-Regular.otf */,
-				58F2C37B23E9DE8000D75EEB /* SF-Pro-Display-Thin.otf */,
+				58092AB323FC22A000517C8C /* Images */,
+				58092AB223FC229C00517C8C /* Localization */,
+				58092AB123FC226B00517C8C /* Documents */,
+				58092AB023FC225100517C8C /* Fonts */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -154,10 +227,9 @@
 		58F2C37823E9DE4D00D75EEB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				58092ABB23FD6A1500517C8C /* Settings */,
+				58092AB823FD5E5900517C8C /* Statistics */,
 				58DBA18D23E61C02002C3041 /* PlayersHealthViewController.swift */,
-				58F2C37523E9B6BB00D75EEB /* StatisticsViewController.swift */,
-				5888BFF123EB70DE005367D9 /* NewStatisticsViewController.swift */,
-				58F2C38323EA0A9400D75EEB /* StatisticsDetailsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -240,13 +312,21 @@
 			files = (
 				58F2C38423EA0A9400D75EEB /* StatisticsDetailsViewController.swift in Sources */,
 				58F2C37623E9B6BB00D75EEB /* StatisticsViewController.swift in Sources */,
+				58092AC723FD945B00517C8C /* CoreDataSource.swift in Sources */,
 				5888BFF223EB70DE005367D9 /* NewStatisticsViewController.swift in Sources */,
+				58092AC123FD6BDE00517C8C /* LanguageViewController.swift in Sources */,
+				58092AAF23FBECD200517C8C /* MtG_Assistant.xcdatamodeld in Sources */,
 				58DDC7EE23F9792E0000D6E7 /* StatisticsHeadlines.swift in Sources */,
+				58092ABF23FD6BC800517C8C /* ContactsViewController.swift in Sources */,
+				58092AC323FD6C0100517C8C /* UserProfileViewController.swift in Sources */,
+				58092ABA23FD67D200517C8C /* UIColorFromRGB.swift in Sources */,
 				58DDC7F223F97FD80000D6E7 /* StatisticsCell.swift in Sources */,
+				58092ABD23FD6BBA00517C8C /* AppearanceViewController.swift in Sources */,
 				58DDC7F023F97D090000D6E7 /* BackgroundsDataSource.swift in Sources */,
 				58DBA18E23E61C02002C3041 /* PlayersHealthViewController.swift in Sources */,
 				58DBA18A23E61C02002C3041 /* AppDelegate.swift in Sources */,
 				58DDC7F823FA92570000D6E7 /* UITextFieldPaddings.swift in Sources */,
+				58092AB723FD5E5500517C8C /* SettingsViewController.swift in Sources */,
 				58DBA18C23E61C02002C3041 /* SceneDelegate.swift in Sources */,
 				58216FCC23F5993900FA945A /* StatisticsDataSource.swift in Sources */,
 			);
@@ -392,6 +472,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "MtG Assistant/MtG Assistant.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T63UTL8XB2;
 				INFOPLIST_FILE = "MtG Assistant/Info.plist";
@@ -402,6 +484,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "dev.mbaikovets.MtG-Assistant";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -411,6 +494,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "MtG Assistant/MtG Assistant.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T63UTL8XB2;
 				INFOPLIST_FILE = "MtG Assistant/Info.plist";
@@ -421,6 +506,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "dev.mbaikovets.MtG-Assistant";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -448,6 +534,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		58092AAD23FBECD200517C8C /* MtG_Assistant.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				58092AAE23FBECD200517C8C /* MtG_Assistant.xcdatamodel */,
+			);
+			currentVersion = 58092AAE23FBECD200517C8C /* MtG_Assistant.xcdatamodel */;
+			path = MtG_Assistant.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 58DBA17E23E61C02002C3041 /* Project object */;
 }

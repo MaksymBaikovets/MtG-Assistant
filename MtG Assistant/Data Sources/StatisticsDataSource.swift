@@ -9,25 +9,32 @@
 import UIKit
 
 class StatisticsDataSource: NSObject {
+    
+    // -------------------------------------------------------------------
     // MARK: - Properties
+    // -------------------------------------------------------------------
 
     var headlines: [StatisticsHeadline]
 
     static func generateStatisticsData() -> [StatisticsHeadline] {
         return [
-            StatisticsHeadline(competitors: "Maksym : Ann", date: "03.02.2020", result: "20 : -7", firstPlayerDeck: "Some Unusual Deck", secondPlayerDeck: "Peace of Mastery"),
-            StatisticsHeadline(competitors: "Ann : Roman", date: "26.01.2020", result: "3 : -1"),
-            StatisticsHeadline(competitors: "Roman : Maksym", date: "24.01.2020", result: "-4 : 5"),
+            StatisticsHeadline(competitors: "Maksym / Ann", date: "03.02.2020", result: "20 / -7", firstPlayerDeck: "Some Unusual Deck", secondPlayerDeck: "Peace of Mastery"),
+            StatisticsHeadline(competitors: "Ann / Roman", date: "26.01.2020", result: "3 / -1", firstPlayerDeck: "Some Unusual Deck", secondPlayerDeck: "Peace of Mastery"),
+            StatisticsHeadline(competitors: "Roman / Maksym", date: "24.01.2020", result: "-4 / 5", firstPlayerDeck: "Some Unusual Deck", secondPlayerDeck: "Peace of Mastery")
         ]
     }
 
+    // -------------------------------------------------------------------
     // MARK: - Initializers
+    // -------------------------------------------------------------------
 
     override init() {
         headlines = StatisticsDataSource.generateStatisticsData()
     }
 
+    // -------------------------------------------------------------------
     // MARK: - Datasource Methods
+    // -------------------------------------------------------------------
 
     func numberOfGames() -> Int {
         headlines.count
@@ -37,8 +44,15 @@ class StatisticsDataSource: NSObject {
         headlines.append(haedline)
         tableView.insertRows(at: [IndexPath(row: headlines.count - 1, section: 0)], with: .automatic)
     }
+    
+    func delete(to tableView: UITableView, at indexPath: IndexPath) {
+        headlines.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .automatic)
+    }
 
     func game(at indexPath: IndexPath) -> StatisticsHeadline {
         headlines[indexPath.row]
     }
+
 }
+

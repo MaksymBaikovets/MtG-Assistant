@@ -9,7 +9,6 @@
 import UIKit
 
 class StatisticsDetailsViewController: UIViewController {
-//    @IBOutlet var detailsStatisticsTitle: UINavigationBar!
     
     @IBOutlet weak var competitorsLabel: UILabel!
     @IBOutlet weak var resultLabel: UILabel!
@@ -23,8 +22,6 @@ class StatisticsDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
         commonInit()
     }
 
@@ -38,14 +35,5 @@ class StatisticsDetailsViewController: UIViewController {
         secondDeckLabel.text = data.secondPlayerDeck
 
     }
-    
-    /*
-     // MARK: Navigation
 
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         // Get the new view controller using segue.destination.
-         // Pass the selected object to the new view controller.
-     }
-     */
 }

@@ -9,7 +9,10 @@
 import UIKit
 
 class PlayersHealthViewController: UIViewController {
+    
+    // -------------------------------------------------------------------
     // MARK: Global variables:
+    // -------------------------------------------------------------------
 
     struct GlobalVariables {
         static var devotionToColorOfFirstPlayer = ""
@@ -18,21 +21,82 @@ class PlayersHealthViewController: UIViewController {
         static var showAlert = false
         static var index: Int = 0
     }
-
+    
+    let notification = UINotificationFeedbackGenerator()
+    let buttonsFeedback = UISelectionFeedbackGenerator()
+    
+    // -------------------------------------------------------------------
     // MARK: Player Health Scene: Outlets
+    // -------------------------------------------------------------------
 
     @IBOutlet var firstPlayerStat: UILabel!
-    @IBOutlet var secondPlayerStat: UILabel!
-
     @IBOutlet var firstPlayerTable: UIImageView!
-    @IBOutlet var secondPlayerTable: UIImageView!
-
     @IBOutlet var firstPlayerGradient: UIImageView!
-    @IBOutlet var secondPlayerGradient: UIImageView!
-
-    // MARK: Tables Settings
-
+    @IBOutlet weak var firstPlayerCounterView: UIView!
     @IBOutlet weak var firstPlayerSettingView: UIView!
+    @IBOutlet weak var firstPlayerTableChangeView: UIView!
+    @IBOutlet weak var firstPlayerCounterValue: UIStepper!
+    
+    @IBOutlet var secondPlayerStat: UILabel!
+    @IBOutlet var secondPlayerTable: UIImageView!
+    @IBOutlet var secondPlayerGradient: UIImageView!
+    @IBOutlet weak var secondPlayerCounterValue: UIStepper!
+    
+    // -------------------------------------------------------------------
+    // MARK: viewDidLoad
+    // -------------------------------------------------------------------
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        firstPlayerStat.layer.masksToBounds = true
+        firstPlayerStat.layer.cornerRadius = firstPlayerStat.frame.size.width / 2.0
+
+        secondPlayerStat.layer.masksToBounds = true
+        secondPlayerStat.layer.cornerRadius = secondPlayerStat.frame.size.width / 2.0
+    
+
+        // Mirroring things for the First Player
+        firstPlayerStat.transform = CGAffineTransform(scaleX: -1, y: -1)
+        firstPlayerTable.transform = CGAffineTransform(scaleX: -1, y: -1)
+        firstPlayerGradient.transform = CGAffineTransform(scaleX: -1, y: -1)
+        firstPlayerSettingView.transform = CGAffineTransform(scaleX: -1, y: -1)
+        firstPlayerTableChangeView.transform = CGAffineTransform(scaleX: -1, y: -1)
+        firstPlayerCounterView.transform = CGAffineTransform(scaleX: -1, y: -1)
+        
+        // Set initaial backgrounds
+        firstPlayerTable.image = Backgrounds().greenTableBackground()
+        GlobalVariables.devotionToColorOfFirstPlayer = "green"
+        secondPlayerTable.image = Backgrounds().redTableBackground()
+        GlobalVariables.devotionToColorOfSecondPlayer = "red"
+        
+    // -------------------------------------------------------------------
+    // MARK: Gesture Recognizers
+    // -------------------------------------------------------------------
+        
+        for views in [firstPlayerStat, secondPlayerStat] {
+            
+            guard let gestureTarget = views else {
+                return
+            }
+            
+            let singleTapGesture = UITapGestureRecognizer(target: self, action: #selector(PlayersHealthViewController.handleSingleTap(_:)))
+            singleTapGesture.numberOfTapsRequired = 1
+            
+            let doubleTapGesture = UITapGestureRecognizer(target: self, action: #selector(PlayersHealthViewController.handleDoubleTap(_:)))
+            doubleTapGesture.numberOfTapsRequired = 2
+            
+            gestureTarget.addGestureRecognizer(singleTapGesture)
+            gestureTarget.addGestureRecognizer(doubleTapGesture)
+            
+            singleTapGesture.require(toFail: doubleTapGesture)
+        }
+            
+    } // end of viewDidLoad()
+
+    // -------------------------------------------------------------------
+    // MARK: Tables Settings (change table color)
+    // -------------------------------------------------------------------
+
     @IBAction func firstPlayerSetting(_ sender: UIButton) {
         GlobalVariables.index = sender.tag
         if GlobalVariables.index == 1 {
@@ -98,9 +162,10 @@ class PlayersHealthViewController: UIViewController {
         }
     }
 
-    // MARK: Changing Backgrounds for tables:
+    // -------------------------------------------------------------------
+    // MARK: Changing Backgrounds (choose random from color backgrounds)
+    // -------------------------------------------------------------------
 
-    @IBOutlet weak var firstPlayerTableChangeView: UIView!
     @IBAction func firstPlayerTableChange(_ sender: UIButton) {
         GlobalVariables.index = sender.tag
         if GlobalVariables.index == 3 {
@@ -159,49 +224,47 @@ class PlayersHealthViewController: UIViewController {
         return newBackground
     }
 
-    // MARK: Init Health Counters
+    // -------------------------------------------------------------------
+    // MARK: Health Counters Initial Values
+    // -------------------------------------------------------------------
 
-    @IBOutlet weak var firstPlayerCounterView: UIView!
     @IBAction func firstPlayerCounter(_ sender: UIStepper) {
         firstPlayerStat.text = Int(sender.value).description
+        buttonsFeedback.selectionChanged()
     }
-
+    
     @IBAction func secondPlayerCounter(_ sender: UIStepper) {
         secondPlayerStat.text = Int(sender.value).description
+        buttonsFeedback.selectionChanged()
     }
-
-    // MARK: viewDidLoad
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        firstPlayerStat.layer.masksToBounds = true
-        firstPlayerStat.layer.cornerRadius = firstPlayerStat.frame.size.width / 2.0
-
-        secondPlayerStat.layer.masksToBounds = true
-        secondPlayerStat.layer.cornerRadius = secondPlayerStat.frame.size.width / 2.0
-
-        // Mirroring things for the First Player
-        firstPlayerStat.transform = CGAffineTransform(scaleX: -1, y: -1)
-        firstPlayerTable.transform = CGAffineTransform(scaleX: -1, y: -1)
-        firstPlayerGradient.transform = CGAffineTransform(scaleX: -1, y: -1)
-        firstPlayerSettingView.transform = CGAffineTransform(scaleX: -1, y: -1)
-        firstPlayerTableChangeView.transform = CGAffineTransform(scaleX: -1, y: -1)
-        firstPlayerCounterView.transform = CGAffineTransform(scaleX: -1, y: -1)
-        
-        
-        firstPlayerTable.image = Backgrounds().greenTableBackground()
-        GlobalVariables.devotionToColorOfFirstPlayer = "green"
-        secondPlayerTable.image = Backgrounds().redTableBackground()
-        GlobalVariables.devotionToColorOfSecondPlayer = "red"
-    }
+    
 }
 
-extension UIView {
-    func rotate(degrees: CGFloat) {
-        rotate(radians: CGFloat.pi * degrees / 180.0)
-    }
 
-    func rotate(radians: CGFloat) {
-        self.transform = CGAffineTransform(rotationAngle: radians)
+// -------------------------------------------------------------------
+// MARK: Gestures Actions
+// -------------------------------------------------------------------
+
+extension PlayersHealthViewController: UIGestureRecognizerDelegate {
+    
+    @objc func handleSingleTap(_ gesture: UITapGestureRecognizer){
+        firstPlayerStat.text = "30"
+        secondPlayerStat.text = "30"
+        
+        self.firstPlayerCounterValue.value = 30
+        self.secondPlayerCounterValue.value = 30
+        
+        notification.notificationOccurred(.warning)
     }
+    
+    @objc func handleDoubleTap(_ gesture: UITapGestureRecognizer){
+        firstPlayerStat.text = "20"
+        secondPlayerStat.text = "20"
+        
+        self.firstPlayerCounterValue.value = 20
+        self.secondPlayerCounterValue.value = 20
+        
+        notification.notificationOccurred(.success)
+    }
+    
 }

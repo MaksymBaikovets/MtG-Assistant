@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct StatisticsHeadline {
+struct StatisticsHeadline: Codable {
     var competitors: String?
     var date: String?
     var result: String?

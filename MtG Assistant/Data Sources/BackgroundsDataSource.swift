@@ -8,7 +8,9 @@
 
 import UIKit
 
+// -------------------------------------------------------------------
 // MARK: Backgrounds arrays:
+// -------------------------------------------------------------------
 
 class Backgrounds {
     func whiteTableBackground() -> UIImage {
