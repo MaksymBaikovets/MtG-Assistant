@@ -1,0 +1,180 @@
+
+/* Class = "UIBarButtonItem"; title = "Share"; ObjectID = "2ZH-O9-jGd"; */
+"2ZH-O9-jGd.title" = "Share";
+
+/* Class = "UILabel"; text = "Contact Developer"; ObjectID = "3bA-gY-8Zb"; */
+"3bA-gY-8Zb.text" = "Contact Developer";
+
+/* Class = "UITabBarItem"; title = "Settings"; ObjectID = "3vM-Kc-AuC"; */
+"3vM-Kc-AuC.title" = "Settings";
+
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "5r4-jR-Mxr"; */
+"5r4-jR-Mxr.title" = "Settings";
+
+/* Class = "UILabel"; accessibilityLabel = "CompetitorsLabel"; ObjectID = "7CI-3Z-sce"; */
+"7CI-3Z-sce.accessibilityLabel" = "CompetitorsLabel";
+
+/* Class = "UILabel"; text = "Game Results:"; ObjectID = "7CI-3Z-sce"; */
+"7CI-3Z-sce.text" = "Game Results:";
+
+/* Class = "UINavigationItem"; title = "Edit Profile"; ObjectID = "8cR-Wm-j36"; */
+"8cR-Wm-j36.title" = "Edit Profile";
+
+/* Class = "UITextField"; placeholder = "First Player Deck"; ObjectID = "AG7-wg-rd4"; */
+"AG7-wg-rd4.placeholder" = "First Player Deck";
+
+/* Class = "UILabel"; accessibilityLabel = "Competitors"; ObjectID = "BNh-XD-FiM"; */
+"BNh-XD-FiM.accessibilityLabel" = "Competitors";
+
+/* Class = "UILabel"; text = "Maksym / Ann"; ObjectID = "BNh-XD-FiM"; */
+"BNh-XD-FiM.text" = "Maksym / Ann";
+
+/* Class = "UILabel"; text = "About"; ObjectID = "CdE-qU-GB7"; */
+"CdE-qU-GB7.text" = "About";
+
+/* Class = "UILabel"; text = "20"; ObjectID = "DFM-D3-kYw"; */
+"DFM-D3-kYw.text" = "20";
+
+/* Class = "UILabel"; accessibilityLabel = "CompetitorsLabel"; ObjectID = "EA7-4f-bp7"; */
+"EA7-4f-bp7.accessibilityLabel" = "CompetitorsLabel";
+
+/* Class = "UILabel"; text = "Competitors"; ObjectID = "EA7-4f-bp7"; */
+"EA7-4f-bp7.text" = "Competitors";
+
+/* Class = "UILabel"; accessibilityLabel = "SecondPlayerDeckLabel"; ObjectID = "EhG-RG-sT9"; */
+"EhG-RG-sT9.accessibilityLabel" = "SecondPlayerDeckLabel";
+
+/* Class = "UILabel"; text = "Second Deck"; ObjectID = "EhG-RG-sT9"; */
+"EhG-RG-sT9.text" = "Second Deck";
+
+/* Class = "UILabel"; text = "Sync Statistics across your devices"; ObjectID = "Gl3-ED-huU"; */
+"Gl3-ED-huU.text" = "Sync Statistics across your devices";
+
+/* Class = "UILabel"; text = "First Player Deck"; ObjectID = "HFC-6p-Rfd"; */
+"HFC-6p-Rfd.text" = "First Player Deck";
+
+/* Class = "UILabel"; text = "Current"; ObjectID = "JPx-FL-eCl"; */
+"JPx-FL-eCl.text" = "Current";
+
+/* Class = "UINavigationItem"; title = "Appearance"; ObjectID = "Jif-Xh-7CZ"; */
+"Jif-Xh-7CZ.title" = "Appearance";
+
+/* Class = "UILabel"; text = "Language"; ObjectID = "MNT-wc-QbD"; */
+"MNT-wc-QbD.text" = "Language";
+
+/* Class = "UITableViewSection"; headerTitle = "PLAYERS DECKS"; ObjectID = "Mvt-Nb-HHs"; */
+"Mvt-Nb-HHs.headerTitle" = "PLAYERS DECKS";
+
+/* Class = "UITableViewCell"; accessibilityLabel = "About"; ObjectID = "Mx8-ym-tCs"; */
+"Mx8-ym-tCs.accessibilityLabel" = "About";
+
+/* Class = "UIBarButtonItem"; title = "Cancel"; ObjectID = "O4Z-dF-OsN"; */
+"O4Z-dF-OsN.title" = "Cancel";
+
+/* Class = "UITextField"; placeholder = "Second Player"; ObjectID = "Qdn-Sk-6wi"; */
+"Qdn-Sk-6wi.placeholder" = "Second Player";
+
+/* Class = "UILabel"; accessibilityLabel = "ResultLabel"; ObjectID = "Qsn-F8-UTN"; */
+"Qsn-F8-UTN.accessibilityLabel" = "ResultLabel";
+
+/* Class = "UILabel"; text = "Result"; ObjectID = "Qsn-F8-UTN"; */
+"Qsn-F8-UTN.text" = "Result";
+
+/* Class = "UINavigationItem"; title = "Language"; ObjectID = "SiZ-iV-Ijg"; */
+"SiZ-iV-Ijg.title" = "Language";
+
+/* Class = "UILabel"; text = "20"; ObjectID = "VHK-go-JMj"; */
+"VHK-go-JMj.text" = "20";
+
+/* Class = "UINavigationItem"; title = "Add New Game"; ObjectID = "VjT-c3-6nO"; */
+"VjT-c3-6nO.title" = "Add New Game";
+
+/* Class = "UIBarButtonItem"; title = "Save"; ObjectID = "WXD-O8-p5n"; */
+"WXD-O8-p5n.title" = "Save";
+
+/* Class = "UITableViewSection"; headerTitle = "PLAYERS NAMES"; ObjectID = "YMX-f1-6WJ"; */
+"YMX-f1-6WJ.headerTitle" = "PLAYERS NAMES";
+
+/* Class = "UITabBarItem"; title = "Player Health"; ObjectID = "cPa-gy-q4n"; */
+"cPa-gy-q4n.title" = "Player Health";
+
+/* Class = "UILabel"; text = "Log In with iCloud"; ObjectID = "d9Q-aX-oo4"; */
+"d9Q-aX-oo4.text" = "Log In with iCloud";
+
+/* Class = "UINavigationItem"; title = "Games Statistics"; ObjectID = "eZ0-Ds-SGR"; */
+"eZ0-Ds-SGR.title" = "Games Statistics";
+
+/* Class = "UITextField"; placeholder = "Result (P1 health : P2 health)"; ObjectID = "ee5-m6-B1Q"; */
+"ee5-m6-B1Q.placeholder" = "Result (P1 health : P2 health)";
+
+/* Class = "UITextField"; placeholder = "Date Of Game (DD.MM.YYYY)"; ObjectID = "f44-vQ-bDw"; */
+"f44-vQ-bDw.placeholder" = "Date Of Game (DD.MM.YYYY)";
+
+/* Class = "UIBarButtonItem"; title = "Edit"; ObjectID = "fVE-gK-KYm"; */
+"fVE-gK-KYm.title" = "Edit";
+
+/* Class = "UITableViewSection"; headerTitle = "GAME INFO"; ObjectID = "gTi-As-qZ6"; */
+"gTi-As-qZ6.headerTitle" = "GAME INFO";
+
+/* Class = "UIBarButtonItem"; title = "Save"; ObjectID = "ijz-Ro-fkB"; */
+"ijz-Ro-fkB.title" = "Save";
+
+/* Class = "UITextField"; placeholder = "Second Player Deck"; ObjectID = "jBV-eB-ZhV"; */
+"jBV-eB-ZhV.placeholder" = "Second Player Deck";
+
+/* Class = "UINavigationItem"; title = "Contacts"; ObjectID = "ju4-Kv-6OC"; */
+"ju4-Kv-6OC.title" = "Contacts";
+
+/* Class = "UILabel"; text = "Appearance"; ObjectID = "kwR-z9-TUG"; */
+"kwR-z9-TUG.text" = "Appearance";
+
+/* Class = "UILabel"; accessibilityLabel = "GameDateLabel"; ObjectID = "mAd-L2-XF7"; */
+"mAd-L2-XF7.accessibilityLabel" = "GameDateLabel";
+
+/* Class = "UILabel"; text = "Game Date"; ObjectID = "mAd-L2-XF7"; */
+"mAd-L2-XF7.text" = "Game Date";
+
+/* Class = "UIBarButtonItem"; title = "Edit"; ObjectID = "mMN-5M-Zfh"; */
+"mMN-5M-Zfh.title" = "Edit";
+
+/* Class = "UITabBarItem"; title = "Statistics"; ObjectID = "owy-JO-JAH"; */
+"owy-JO-JAH.title" = "Statistics";
+
+/* Class = "UIBarButtonItem"; title = "Cancel"; ObjectID = "pUp-Cd-04p"; */
+"pUp-Cd-04p.title" = "Cancel";
+
+/* Class = "UILabel"; text = "Second Player Deck"; ObjectID = "qsW-5P-VDS"; */
+"qsW-5P-VDS.text" = "Second Player Deck";
+
+/* Class = "UILabel"; accessibilityLabel = "Result"; ObjectID = "rc6-uO-uQN"; */
+"rc6-uO-uQN.accessibilityLabel" = "Result";
+
+/* Class = "UILabel"; text = "20 / -7"; ObjectID = "rc6-uO-uQN"; */
+"rc6-uO-uQN.text" = "20 / -7";
+
+/* Class = "UILabel"; accessibilityLabel = "Date"; ObjectID = "swu-ht-SCe"; */
+"swu-ht-SCe.accessibilityLabel" = "Date";
+
+/* Class = "UILabel"; text = "03.02.2020"; ObjectID = "swu-ht-SCe"; */
+"swu-ht-SCe.text" = "03.02.2020";
+
+/* Class = "UINavigationController"; title = "Statistics Navigation Controller"; ObjectID = "t0F-cd-YQ2"; */
+"t0F-cd-YQ2.title" = "Statistics Navigation Controller";
+
+/* Class = "UINavigationItem"; title = "Edit Game"; ObjectID = "tal-qN-G4V"; */
+"tal-qN-G4V.title" = "Edit Game";
+
+/* Class = "UILabel"; accessibilityLabel = "FirstPlayerDeckLabel"; ObjectID = "uG6-fZ-gjD"; */
+"uG6-fZ-gjD.accessibilityLabel" = "FirstPlayerDeckLabel";
+
+/* Class = "UILabel"; text = "First Deck"; ObjectID = "uG6-fZ-gjD"; */
+"uG6-fZ-gjD.text" = "First Deck";
+
+/* Class = "UINavigationItem"; title = "Magic The Gathering"; ObjectID = "ugy-03-YPM"; */
+"ugy-03-YPM.title" = "Magic The Gathering";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "uhB-ii-fwQ"; */
+"uhB-ii-fwQ.title" = "Item";
+
+/* Class = "UITextField"; placeholder = "First Player"; ObjectID = "zYo-k3-1rp"; */
+"zYo-k3-1rp.placeholder" = "First Player";

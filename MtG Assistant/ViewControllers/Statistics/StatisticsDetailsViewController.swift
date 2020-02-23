@@ -26,11 +26,12 @@ class StatisticsDetailsViewController: UIViewController {
         // text to share
         guard let mtgUrl = NSURL(string: "https://magic.wizards.com") else { return }
         
-        let text = """
-        Check out results of \(data.competitors ?? "") playing MtG at \(data.date ?? ""):
+        let text =
+        """
+        Check out results of \(data.competitors) playing MtG at \(data.date):
         
-        Decks used: "\(data.firstPlayerDeck ?? "")" and "\(data.secondPlayerDeck ?? "")" accordingly.
-        Result was: \(data.result ?? "") !
+        Decks used: "\(data.firstPlayerDeck)" and "\(data.secondPlayerDeck)" accordingly.
+        Result was: \(data.result) !
         
         Join us playing Magic The Gathering today: \(mtgUrl)
         """

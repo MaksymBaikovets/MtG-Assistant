@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import SafariServices
 
 class SettingsViewController: UITableViewController {
+
+    @IBOutlet weak var aboutCell: UITableViewCell!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,8 +23,37 @@ class SettingsViewController: UITableViewController {
         }
     }
     
+    override  func awakeFromNib() {
+        super.awakeFromNib()
+        self.title = NSLocalizedString("Settings", comment: "")
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        guard let rowTag = tableView.cellForRow(at: indexPath)?.tag else {
+            return
+        }
+        
+        if rowTag == 5 {
+            let message =
+            """
+            Developer: Maksym Baikovets
+            Kyiv, Ukraine
+
+            App designed for personal use with mind of feature release to AppStore.
+            """
+            let alert = UIAlertController(title: NSLocalizedString("About", comment: ""), message: message, preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Wizards Website", comment: ""), style: .default, handler: { (_: UIAlertAction!) in
+                let url = SFSafariViewController(url: URL(string: "https://magic.wizards.com")!)
+                self.present(url, animated: true, completion: nil)
+            }))
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Done", comment: ""), style: .default, handler: nil))
+            
+            self.present(alert, animated: true, completion: nil)
+        }
+        
     }
     
     // -------------------------------------------------------------------
@@ -66,51 +98,6 @@ class SettingsViewController: UITableViewController {
             tableView.backgroundColor = RGBColor().UIColorFromRGB(rgbValue: 0xF3F3F3)
         }
     }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
     // -------------------------------------------------------------------
     // MARK: - Navigation

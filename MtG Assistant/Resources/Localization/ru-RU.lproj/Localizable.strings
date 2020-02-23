@@ -1,0 +1,44 @@
+/* 
+  Localizable.strings
+  MtG Assistant
+
+  Created by Maksym Baikovets on 23.02.2020.
+  Copyright © 2020 Maksym Baikovets. All rights reserved.
+*/
+
+// MARK: Tabs Titles
+"Players Health" = "Счетчик Здоровья";
+"Statistics" = "Статистика";
+"Settings" = "Настройки";
+
+// MARK: General Strings
+"Cancel" = "Отмена";
+"OK" = "OK";
+"Save" = "Сохранить";
+"Edit" = "Изменить";
+"Done" = "Готово";
+
+// MARK: Players Health strings
+"Table Color" = "Цвет стола";
+"Choose table color for the player" = "Выберите цвет стола для игрока";
+"White (Plain)" = "Белый (Plain)";
+"Red (Mountain)" = "Красный (Mountain)";
+"Black (Swamp)" = "Черный (Swamp)";
+"Green (Forest)" = "Зеленый (Forest)";
+"Blue (Island)" = "Голубой (Island)";
+
+// MARK: Statistics strings
+"Add New Game" = "Добавить Запись";
+"Edit Game" = "Изменить Запись";
+"First Player Deck" = "Колода первого игрока";
+"Second Player Deck" = "Колода второго игрока";
+"Game Result" = "Результат игры";
+
+
+// MARK: Settings strings
+"Edit Profile" = "Изменить профиль";
+"Appearance" = "Оформление";
+"Language" = "Язык";
+"Contact Developer" = "Свзяться с разработчиком";
+"About" = "О приложении";
+"Wizards Website" = "Веб-сайт Wizards";

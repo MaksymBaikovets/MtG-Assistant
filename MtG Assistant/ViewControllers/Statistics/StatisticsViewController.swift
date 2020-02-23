@@ -18,6 +18,11 @@ class StatisticsViewController: UITableViewController {
         tableView.tableFooterView = UIView()
     }
 
+    override  func awakeFromNib() {
+        super.awakeFromNib()
+        self.title = NSLocalizedString("Statistics", comment: "")
+    }
+    
     // -------------------------------------------------------------------
     // MARK: - Table view data source
     // -------------------------------------------------------------------

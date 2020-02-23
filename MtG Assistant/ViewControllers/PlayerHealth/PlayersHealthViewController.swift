@@ -45,7 +45,7 @@ class PlayersHealthViewController: UIViewController {
     // -------------------------------------------------------------------
     // MARK: viewDidLoad
     // -------------------------------------------------------------------
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         firstPlayerStat.layer.masksToBounds = true
@@ -92,7 +92,12 @@ class PlayersHealthViewController: UIViewController {
         }
             
     } // end of viewDidLoad()
-
+    
+    override  func awakeFromNib() {
+        super.awakeFromNib()
+        self.title = NSLocalizedString("Players Health", comment: "")
+    }
+    
     // -------------------------------------------------------------------
     // MARK: Tables Settings (change table color)
     // -------------------------------------------------------------------
@@ -116,39 +121,39 @@ class PlayersHealthViewController: UIViewController {
     func chooseTableColor(player: String) {
         var changedDevotion: String = ""
 
-        let optionMenu = UIAlertController(title: "Table Color", message: "Choose the one for the player", preferredStyle: .alert)
+        let optionMenu = UIAlertController(title: NSLocalizedString("Table Color", comment: ""), message: NSLocalizedString("Choose table color for the player", comment: ""), preferredStyle: .alert)
 
-        let whiteAction = UIAlertAction(title: "White (Plain)", style: .default, handler: { (_: UIAlertAction!) in
+        let whiteAction = UIAlertAction(title: NSLocalizedString("White (Plain)", comment: ""), style: .default, handler: { (_: UIAlertAction!) in
             changedDevotion = "white"
             self.backgroundChange(player: player, devotion: changedDevotion)
             GlobalVariables.showAlert = false
         })
 
-        let redAction = UIAlertAction(title: "Red (Mountain)", style: .default, handler: { (_: UIAlertAction!) in
+        let redAction = UIAlertAction(title: NSLocalizedString("Red (Mountain)", comment: ""), style: .default, handler: { (_: UIAlertAction!) in
             changedDevotion = "red"
             self.backgroundChange(player: player, devotion: changedDevotion)
             GlobalVariables.showAlert = false
         })
 
-        let blackAction = UIAlertAction(title: "Black (Swamp)", style: .default, handler: { (_: UIAlertAction!) in
+        let blackAction = UIAlertAction(title: NSLocalizedString("Black (Swamp)", comment: ""), style: .default, handler: { (_: UIAlertAction!) in
             changedDevotion = "black"
             self.backgroundChange(player: player, devotion: changedDevotion)
             GlobalVariables.showAlert = false
         })
 
-        let greenAction = UIAlertAction(title: "Green (Forest)", style: .default, handler: { (_: UIAlertAction!) in
+        let greenAction = UIAlertAction(title: NSLocalizedString("Green (Forest)", comment: ""), style: .default, handler: { (_: UIAlertAction!) in
             changedDevotion = "green"
             self.backgroundChange(player: player, devotion: changedDevotion)
             GlobalVariables.showAlert = false
         })
 
-        let blueAction = UIAlertAction(title: "Blue (Island)", style: .default, handler: { (_: UIAlertAction!) in
+        let blueAction = UIAlertAction(title: NSLocalizedString("Blue (Island)", comment: ""), style: .default, handler: { (_: UIAlertAction!) in
             changedDevotion = "blue"
             self.backgroundChange(player: player, devotion: changedDevotion)
             GlobalVariables.showAlert = false
         })
 
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel)
 
         optionMenu.addAction(whiteAction)
         optionMenu.addAction(redAction)
@@ -241,7 +246,6 @@ class PlayersHealthViewController: UIViewController {
     }
     
 }
-
 
 // -------------------------------------------------------------------
 // MARK: Gestures Actions
