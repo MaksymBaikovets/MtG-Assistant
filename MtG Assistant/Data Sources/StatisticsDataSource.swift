@@ -91,12 +91,12 @@ class StatisticsDataSource: NSObject {
     func coreDataToStatisticsHeadline() {
         
         for row in coreHeadlines {
-            let coreCompetitors = row.value(forKey: "competitors") as? String
-            let coreResult = row.value(forKey: "result") as? String
-            let coreDate = row.value(forKey: "date") as? String
+            let coreCompetitors = row.value(forKey: "competitors") as? String ?? ""
+            let coreResult = row.value(forKey: "result") as? String ?? ""
+            let coreDate = row.value(forKey: "date") as? String ?? ""
             
-            let coreFirstDeck = row.value(forKey: "firstPlayerDeck") as? String
-            let coreSecondDeck = row.value(forKey: "secondPlayerDeck") as? String
+            let coreFirstDeck = row.value(forKey: "firstPlayerDeck") as? String ?? ""
+            let coreSecondDeck = row.value(forKey: "secondPlayerDeck") as? String ?? ""
 
             let result = StatisticsHeadline(competitors: coreCompetitors, date: coreDate, result: coreResult,
                                firstPlayerDeck: coreFirstDeck, secondPlayerDeck: coreSecondDeck)
