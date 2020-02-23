@@ -438,13 +438,13 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SWs-mr-Th2">
-                                                <rect key="frame" x="275" y="199.5" width="25" height="25"/>
+                                                <rect key="frame" x="260" y="184.5" width="40" height="40"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVj-ui-PyH">
-                                                        <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="25" id="HaM-Yk-Xbs"/>
-                                                            <constraint firstAttribute="width" constant="25" id="aqn-8e-Nhp"/>
+                                                            <constraint firstAttribute="height" constant="40" id="HaM-Yk-Xbs"/>
+                                                            <constraint firstAttribute="width" constant="40" id="aqn-8e-Nhp"/>
                                                         </constraints>
                                                         <color key="tintColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <state key="normal" image="shuffle" catalog="system"/>
@@ -456,20 +456,20 @@
                                                 <constraints>
                                                     <constraint firstItem="cVj-ui-PyH" firstAttribute="top" secondItem="SWs-mr-Th2" secondAttribute="top" id="1aI-rW-hZb"/>
                                                     <constraint firstItem="cVj-ui-PyH" firstAttribute="leading" secondItem="SWs-mr-Th2" secondAttribute="leading" id="AGu-z2-taa"/>
-                                                    <constraint firstAttribute="height" constant="25" id="HEA-LH-2RT"/>
+                                                    <constraint firstAttribute="height" constant="40" id="HEA-LH-2RT"/>
                                                     <constraint firstAttribute="bottom" secondItem="cVj-ui-PyH" secondAttribute="bottom" id="Qxz-Nw-jbI"/>
-                                                    <constraint firstAttribute="width" constant="25" id="aMY-ua-ZqE"/>
+                                                    <constraint firstAttribute="width" constant="40" id="aMY-ua-ZqE"/>
                                                     <constraint firstAttribute="trailing" secondItem="cVj-ui-PyH" secondAttribute="trailing" id="zPb-5p-b3u"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="htA-rT-kMI">
-                                                <rect key="frame" x="20" y="199.5" width="25" height="25"/>
+                                                <rect key="frame" x="20" y="184.5" width="40" height="40"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TUA-08-kO9">
-                                                        <rect key="frame" x="0.0" y="0.0" width="25" height="25"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="25" id="089-t9-7aa"/>
-                                                            <constraint firstAttribute="height" constant="25" id="u1c-cq-Mcr"/>
+                                                            <constraint firstAttribute="width" constant="40" id="089-t9-7aa"/>
+                                                            <constraint firstAttribute="height" constant="40" id="u1c-cq-Mcr"/>
                                                         </constraints>
                                                         <color key="tintColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         <state key="normal" image="square.and.pencil" catalog="system"/>
@@ -479,10 +479,10 @@
                                                     </button>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="25" id="74K-s4-wSr"/>
+                                                    <constraint firstAttribute="width" constant="40" id="74K-s4-wSr"/>
                                                     <constraint firstAttribute="bottom" secondItem="TUA-08-kO9" secondAttribute="bottom" id="Anj-QZ-wLI"/>
                                                     <constraint firstItem="TUA-08-kO9" firstAttribute="top" secondItem="htA-rT-kMI" secondAttribute="top" id="EWq-d7-CiA"/>
-                                                    <constraint firstAttribute="height" constant="25" id="Sm7-O5-5cT"/>
+                                                    <constraint firstAttribute="height" constant="40" id="Sm7-O5-5cT"/>
                                                     <constraint firstItem="TUA-08-kO9" firstAttribute="leading" secondItem="htA-rT-kMI" secondAttribute="leading" id="m4R-4w-lxT"/>
                                                     <constraint firstAttribute="trailing" secondItem="TUA-08-kO9" secondAttribute="trailing" id="wtZ-Xj-pQk"/>
                                                 </constraints>
@@ -536,10 +536,10 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                                             </imageView>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Sw-Dg-B3w">
-                                                <rect key="frame" x="275" y="20" width="25" height="25"/>
+                                                <rect key="frame" x="260" y="20" width="40" height="40"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="25" id="HUU-CH-NU6"/>
-                                                    <constraint firstAttribute="width" constant="25" id="vUf-7e-7J8"/>
+                                                    <constraint firstAttribute="height" constant="40" id="HUU-CH-NU6"/>
+                                                    <constraint firstAttribute="width" constant="40" id="vUf-7e-7J8"/>
                                                 </constraints>
                                                 <color key="tintColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" image="square.and.pencil" catalog="system"/>
@@ -566,10 +566,10 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MmV-T4-htD">
-                                                <rect key="frame" x="20" y="20" width="25" height="25"/>
+                                                <rect key="frame" x="20" y="20" width="40" height="40"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="25" id="Ahf-VF-D2Z"/>
-                                                    <constraint firstAttribute="width" constant="25" id="rBz-48-Zke"/>
+                                                    <constraint firstAttribute="height" constant="40" id="Ahf-VF-D2Z"/>
+                                                    <constraint firstAttribute="width" constant="40" id="rBz-48-Zke"/>
                                                 </constraints>
                                                 <color key="tintColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" image="shuffle" catalog="system"/>
@@ -893,7 +893,7 @@
                                 <segue destination="4h6-EU-oPe" kind="unwind" unwindAction="cancelSavingStatistics:" id="dIg-i9-6aq"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="WXD-O8-p5n">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="WXD-O8-p5n">
                             <connections>
                                 <segue destination="4h6-EU-oPe" kind="unwind" identifier="SaveStatistics" unwindAction="saveStatistics:" id="AjU-oB-NB1"/>
                             </connections>
@@ -1025,7 +1025,20 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aL6-m2-eGQ"/>
                     </view>
-                    <navigationItem key="navigationItem" id="oXq-ai-GLA"/>
+                    <navigationItem key="navigationItem" id="oXq-ai-GLA">
+                        <rightBarButtonItems>
+                            <barButtonItem title="Share" image="square.and.arrow.up" catalog="system" id="2ZH-O9-jGd">
+                                <connections>
+                                    <action selector="shareStatistic:" destination="Ry4-MB-jsZ" id="3gN-dh-KBa"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Edit" image="pencil" catalog="system" id="fVE-gK-KYm">
+                                <connections>
+                                    <segue destination="frm-cb-suG" kind="show" id="GM9-ee-07O"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <connections>
                         <outlet property="competitorsLabel" destination="EA7-4f-bp7" id="V6m-i9-9Pf"/>
                         <outlet property="firstDeckLabel" destination="uG6-fZ-gjD" id="T4t-yC-vQf"/>
@@ -1037,6 +1050,55 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nhe-Xy-kZj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3362" y="1637"/>
+        </scene>
+        <!--Edit Game-->
+        <scene sceneID="HZp-5h-iIH">
+            <objects>
+                <tableViewController id="O1k-lU-MAc" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="mU2-OK-F9F">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="YQg-Eu-93S">
+                                <rect key="frame" x="0.0" y="28" width="320" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YQg-Eu-93S" id="Tos-TE-vln">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="O1k-lU-MAc" id="Yfg-xx-j6H"/>
+                            <outlet property="delegate" destination="O1k-lU-MAc" id="hXc-KS-ZAR"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Edit Game" id="tal-qN-G4V">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="pUp-Cd-04p"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="ijz-Ro-fkB"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SVw-Uy-fPX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5411" y="1636"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="kAg-Qx-Had">
+            <objects>
+                <navigationController id="frm-cb-suG" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="CTe-pP-ocR"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Yaa-WU-MGV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="O1k-lU-MAc" kind="relationship" relationship="rootViewController" id="EuF-68-EbW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gwS-Mx-lsW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4397" y="1636"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -1145,11 +1207,13 @@
         <image name="gradient" width="414" height="50"/>
         <image name="healthIcon" width="28.5" height="28.5"/>
         <image name="info" catalog="system" width="46" height="64"/>
+        <image name="pencil" catalog="system" width="64" height="56"/>
         <image name="person.2" catalog="system" width="64" height="40"/>
         <image name="person.circle" catalog="system" width="64" height="60"/>
         <image name="plus" catalog="system" width="64" height="56"/>
         <image name="settingsIcon" width="28.5" height="28.5"/>
         <image name="shuffle" catalog="system" width="64" height="46"/>
+        <image name="square.and.arrow.up" catalog="system" width="56" height="64"/>
         <image name="square.and.pencil" catalog="system" width="64" height="58"/>
         <image name="square.stack.3d.up.fill" catalog="system" width="64" height="62"/>
         <image name="statisticsIcon" width="19" height="19"/>

@@ -82,7 +82,7 @@ class NewStatisticsViewController: UITableViewController, UITextFieldDelegate {
             guard let result = gameResultInput.text else { return }
             guard let date = gameDateInput.text else { return }
             
-            let competitors = firstPlayerName + " : " + secondPlayerName
+            let competitors = firstPlayerName + " / " + secondPlayerName
             
             self.save(competitors: competitors, firstDeck: firstDeck, secondDeck: secondDeck,
                       result: result, date: date)
