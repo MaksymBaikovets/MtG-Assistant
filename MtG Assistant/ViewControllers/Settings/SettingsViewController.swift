@@ -16,7 +16,7 @@ class SettingsViewController: UITableViewController {
         if self.traitCollection.userInterfaceStyle == .dark {
             tableView.backgroundColor = RGBColor().UIColorFromRGB(rgbValue: 0x000000)
         } else {
-            tableView.backgroundColor = RGBColor().UIColorFromRGB(rgbValue: 0xF1F1F1)
+            tableView.backgroundColor = RGBColor().UIColorFromRGB(rgbValue: 0xF3F3F3)
         }
     }
     
@@ -63,7 +63,7 @@ class SettingsViewController: UITableViewController {
         if self.traitCollection.userInterfaceStyle == .dark {
             tableView.backgroundColor = RGBColor().UIColorFromRGB(rgbValue: 0x000000)
         } else {
-            tableView.backgroundColor = RGBColor().UIColorFromRGB(rgbValue: 0xF1F1F1)
+            tableView.backgroundColor = RGBColor().UIColorFromRGB(rgbValue: 0xF3F3F3)
         }
     }
 

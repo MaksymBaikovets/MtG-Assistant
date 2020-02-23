@@ -7,36 +7,123 @@
 //
 
 import UIKit
+import CoreData
 
 class StatisticsDataSource: NSObject {
     
     // -------------------------------------------------------------------
-    // MARK: - Properties
+    // MARK: Properties
     // -------------------------------------------------------------------
 
     var headlines: [StatisticsHeadline]
+    var coreHeadlines: [NSManagedObject] = []
 
     static func generateStatisticsData() -> [StatisticsHeadline] {
-        return [
-            StatisticsHeadline(competitors: "Maksym / Ann", date: "03.02.2020", result: "20 / -7", firstPlayerDeck: "Some Unusual Deck", secondPlayerDeck: "Peace of Mastery"),
-            StatisticsHeadline(competitors: "Ann / Roman", date: "26.01.2020", result: "3 / -1", firstPlayerDeck: "Some Unusual Deck", secondPlayerDeck: "Peace of Mastery"),
-            StatisticsHeadline(competitors: "Roman / Maksym", date: "24.01.2020", result: "-4 / 5", firstPlayerDeck: "Some Unusual Deck", secondPlayerDeck: "Peace of Mastery")
-        ]
+        return []
+            
+            // TODO: Change struct to core data using
+            
+            //        cell.textLabel?.text =
+            //            coreSingleHeadline.value(forKeyPath: "competitors") as? String
+            
+            //            StatisticsHeadline(competitors: "Maksym / Ann", date: "03.02.2020", result: "20 / -7", firstPlayerDeck: "Some Unusual Deck", secondPlayerDeck: "Peace of Mastery"),
+            //            StatisticsHeadline(competitors: "Ann / Roman", date: "26.01.2020", result: "3 / -1", firstPlayerDeck: "Some Unusual Deck", secondPlayerDeck: "Peace of Mastery"),
+            //            StatisticsHeadline(competitors: "Roman / Maksym", date: "24.01.2020", result: "-4 / 5", firstPlayerDeck: "Some Unusual Deck", secondPlayerDeck: "Peace of Mastery")
+//        ]
     }
 
     // -------------------------------------------------------------------
-    // MARK: - Initializers
+    // MARK: Core Data Methods
+    // -------------------------------------------------------------------
+    
+    func coreDataFetch() {
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {
+                return
+        }
+      
+        let managedContext =
+            appDelegate.persistentContainer.viewContext
+      
+        let fetchRequest =
+            NSFetchRequest<NSManagedObject>(entityName: "Headline")
+      
+        do {
+            coreHeadlines = try managedContext.fetch(fetchRequest)
+//            print("Fetched Rows: \(coreHeadlines.count)\n")
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+    }
+    
+    func coreDataRemoveRow(at indexPath: IndexPath) {
+              
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {
+                return
+        }
+      
+        let managedContext =
+            appDelegate.persistentContainer.viewContext
+      
+        let fetchRequest =
+            NSFetchRequest<NSManagedObject>(entityName: "Headline")
+           
+        
+        do {
+            coreHeadlines = try managedContext.fetch(fetchRequest)
+            
+            let rowToRemove = coreHeadlines[indexPath.row]
+            managedContext.delete(rowToRemove)
+
+            do {
+                try managedContext.save()
+            } catch let error as NSError {
+                print("Could not save after delete. \(error), \(error.userInfo)")
+            }
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+        
+    }
+    
+    // FIXME: Kostyli kostyl`nie
+    func coreDataToStatisticsHeadline() {
+        
+        for row in coreHeadlines {
+            let coreCompetitors = row.value(forKey: "competitors") as? String
+            let coreResult = row.value(forKey: "result") as? String
+            let coreDate = row.value(forKey: "date") as? String
+            
+            let coreFirstDeck = row.value(forKey: "firstPlayerDeck") as? String
+            let coreSecondDeck = row.value(forKey: "secondPlayerDeck") as? String
+
+            let result = StatisticsHeadline(competitors: coreCompetitors, date: coreDate, result: coreResult,
+                               firstPlayerDeck: coreFirstDeck, secondPlayerDeck: coreSecondDeck)
+            headlines.append(result)
+        }
+    }
+    
+
+    // -------------------------------------------------------------------
+    // MARK: Initializers
     // -------------------------------------------------------------------
 
     override init() {
         headlines = StatisticsDataSource.generateStatisticsData()
+        super.init()
+        
+        coreDataFetch()
+        coreDataToStatisticsHeadline()
     }
 
     // -------------------------------------------------------------------
-    // MARK: - Datasource Methods
+    // MARK: Datasource Methods
     // -------------------------------------------------------------------
 
     func numberOfGames() -> Int {
+        //        FIXME: Kostyli kostyl`nie
+        //        return coreHeadlines.count
         headlines.count
     }
 
@@ -46,11 +133,25 @@ class StatisticsDataSource: NSObject {
     }
     
     func delete(to tableView: UITableView, at indexPath: IndexPath) {
+        coreDataFetch()
+        print("Rows before deletion: \(coreHeadlines.count)")
+        
+        coreDataRemoveRow(at: indexPath)
+        coreDataFetch()
+        print("Rows after deletion: \(coreHeadlines.count)")
+        
         headlines.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .automatic)
     }
 
     func game(at indexPath: IndexPath) -> StatisticsHeadline {
+        //        FIXME: Kostyli kostyl`nie
+        //        let coreSingleHeadline = coreHeadlines[indexPath.row]
+        //        let cell = tableView.dequeueReusableCell(withIdentifier: "StatisticsCell",
+        //                                                 for: indexPath) as! StatisticsCell
+        //        cell.textLabel?.text =
+        //            coreSingleHeadline.value(forKeyPath: "competitors") as? String
+
         headlines[indexPath.row]
     }
 
