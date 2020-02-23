@@ -9,9 +9,10 @@
 import Foundation
 
 struct StatisticsHeadline: Codable {
-    var competitors: String?
-    var date: String?
-    var result: String?
-    var firstPlayerDeck: String?
-    var secondPlayerDeck: String?
+//    var id: UUID
+    var competitors: String
+    var date: String
+    var result: String
+    var firstPlayerDeck: String
+    var secondPlayerDeck: String
 }

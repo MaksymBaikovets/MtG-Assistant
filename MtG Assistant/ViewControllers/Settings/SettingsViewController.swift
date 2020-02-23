@@ -67,14 +67,6 @@ class SettingsViewController: UITableViewController {
         }
     }
 
-    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
-        if self.traitCollection.userInterfaceStyle == .dark {
-            tableView.backgroundColor = RGBColor().UIColorFromRGB(rgbValue: 0x000000)
-        } else {
-            tableView.backgroundColor = RGBColor().UIColorFromRGB(rgbValue: 0xF1F1F1)
-        }
-    }
-
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)

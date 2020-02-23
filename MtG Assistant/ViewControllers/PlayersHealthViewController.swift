@@ -191,7 +191,9 @@ class PlayersHealthViewController: UIViewController {
             }
 
             firstPlayerTable.image = selectBackground(current: img, playerDevotion: GlobalVariables.devotionToColorOfFirstPlayer)
-        } else if player == "secondPlayer" {
+        }
+        
+        else if player == "secondPlayer" {
             guard let img = secondPlayerTable.image else { return }
 
             if devotion != "" {

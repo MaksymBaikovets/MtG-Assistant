@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19D76" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Competitors" representedClassName="Competitors" syncable="YES" codeGenerationType="class">
+        <attribute name="competitorName" attributeType="String"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+    </entity>
+    <entity name="Decks" representedClassName="Decks" syncable="YES" codeGenerationType="class">
+        <attribute name="deckName" attributeType="String"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+    </entity>
     <entity name="Headline" representedClassName="Headline" syncable="YES" codeGenerationType="class">
-        <attribute name="competitors" optional="YES" attributeType="String"/>
-        <attribute name="date" optional="YES" attributeType="String"/>
-        <attribute name="firstPlayerDeck" optional="YES" attributeType="String"/>
-        <attribute name="result" optional="YES" attributeType="String"/>
-        <attribute name="secondPlayerDeck" optional="YES" attributeType="String"/>
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="firstCompetitorId" attributeType="String"/>
+        <attribute name="firstPlayerDeckId" attributeType="String"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="result" attributeType="String"/>
+        <attribute name="secondCompetitorId" attributeType="String"/>
+        <attribute name="secondPlayerDeckId" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Headline" positionX="-63" positionY="-18" width="128" height="118"/>
+        <element name="Headline" positionX="-63" positionY="-18" width="128" height="148"/>
+        <element name="Competitors" positionX="-63" positionY="27" width="128" height="73"/>
+        <element name="Decks" positionX="-54" positionY="45" width="128" height="73"/>
     </elements>
 </model>
