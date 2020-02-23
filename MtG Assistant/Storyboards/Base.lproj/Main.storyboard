@@ -646,7 +646,7 @@
         <scene sceneID="wwJ-88-pZK">
             <objects>
                 <tableViewController id="Hza-5T-v9V" customClass="StatisticsViewController" customModule="MtG_Assistant" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="40" sectionFooterHeight="28" contentViewInsetsToSafeArea="NO" id="Aay-Mf-otv">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="40" sectionFooterHeight="28" contentViewInsetsToSafeArea="NO" id="Aay-Mf-otv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -659,13 +659,13 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="57b-4b-Sls">
-                                            <rect key="frame" x="15" y="0.0" width="263" height="50"/>
+                                            <rect key="frame" x="20" y="0.0" width="258" height="50"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="awx-91-9kg">
-                                                    <rect key="frame" x="0.0" y="0.0" width="203" height="50"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="198" height="50"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maksym / Ann" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BNh-XD-FiM">
-                                                            <rect key="frame" x="0.0" y="0.0" width="203" height="35"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="198" height="35"/>
                                                             <accessibility key="accessibilityConfiguration" label="Competitors"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="35" id="WUI-we-LHf"/>
@@ -676,7 +676,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="03.02.2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="swu-ht-SCe">
-                                                            <rect key="frame" x="0.0" y="35" width="203" height="15"/>
+                                                            <rect key="frame" x="0.0" y="35" width="198" height="15"/>
                                                             <accessibility key="accessibilityConfiguration" label="Date"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -685,7 +685,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20 / -7" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rc6-uO-uQN">
-                                                    <rect key="frame" x="203" y="0.0" width="60" height="50"/>
+                                                    <rect key="frame" x="198" y="0.0" width="60" height="50"/>
                                                     <accessibility key="accessibilityConfiguration" label="Result"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="750" constant="60" id="467-Cm-DAz"/>
@@ -703,7 +703,7 @@
                                         </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="57b-4b-Sls" firstAttribute="leading" secondItem="gE8-ka-C2D" secondAttribute="leading" constant="15" id="2y7-nC-QuS"/>
+                                        <constraint firstItem="57b-4b-Sls" firstAttribute="leading" secondItem="gE8-ka-C2D" secondAttribute="leading" constant="20" id="2y7-nC-QuS"/>
                                         <constraint firstItem="57b-4b-Sls" firstAttribute="top" secondItem="gE8-ka-C2D" secondAttribute="top" id="LFb-JY-Ir9"/>
                                         <constraint firstAttribute="bottom" secondItem="57b-4b-Sls" secondAttribute="bottom" constant="5" id="V7x-7G-gxS"/>
                                         <constraint firstAttribute="trailing" secondItem="57b-4b-Sls" secondAttribute="trailing" constant="15" id="jHO-KR-s7z"/>

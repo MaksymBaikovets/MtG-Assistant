@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import CoreData
 
 class NewStatisticsViewController: UITableViewController, UITextFieldDelegate {
+    
+    var coreHeadlines: [NSManagedObject] = []
     
     // -------------------------------------------------------------------
     // MARK: New Statistics Scene: Outlets
@@ -24,7 +27,11 @@ class NewStatisticsViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet var gameDateInput: UITextField!
 
     var statistics: StatisticsHeadline?
-
+    
+    // -------------------------------------------------------------------
+    // MARK: viewDidLoad
+    // -------------------------------------------------------------------
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -61,7 +68,7 @@ class NewStatisticsViewController: UITableViewController, UITextFieldDelegate {
 //    }
     
     // -------------------------------------------------------------------
-    //  MARK: - Segues
+    //  MARK: Segues
     // -------------------------------------------------------------------
 
     override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
@@ -75,10 +82,51 @@ class NewStatisticsViewController: UITableViewController, UITextFieldDelegate {
             guard let result = gameResultInput.text else { return }
             guard let date = gameDateInput.text else { return }
             
-
             let competitors = firstPlayerName + " : " + secondPlayerName
+            
+            self.save(competitors: competitors, firstDeck: firstDeck, secondDeck: secondDeck,
+                      result: result, date: date)
+            
             statistics = StatisticsHeadline(competitors: competitors, date: date, result: result,
                                            firstPlayerDeck: firstDeck, secondPlayerDeck: secondDeck)
+
         }
     }
+    
+    // MARK: - Save to Core Data
+    func save(competitors: String, firstDeck: String, secondDeck: String,
+              result: String, date: String) {
+      
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {
+                return
+        }
+      
+        // 1
+        let managedContext =
+            appDelegate.persistentContainer.viewContext
+      
+        // 2
+        let entity =
+            NSEntityDescription.entity(forEntityName: "Headline",
+                                   in: managedContext)!
+      
+        let headlineData = NSManagedObject(entity: entity,
+                                           insertInto: managedContext)
+      
+        // 3
+//      headlineData.setValue(firstPlayerName, forKeyPath: "name")
+        headlineData.setValuesForKeys(["competitors": competitors, "date": date, "result": result,
+                                        "firstPlayerDeck": firstDeck, "secondPlayerDeck": secondDeck])
+        print(headlineData)
+        
+        // 4
+        do {
+            try managedContext.save()
+            coreHeadlines.append(headlineData)
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+    }
+
 }
