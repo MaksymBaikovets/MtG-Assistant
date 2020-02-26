@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CoreData
 
 class StatisticsViewController: UITableViewController {
     var statisticsDataSource = StatisticsDataSource()
@@ -32,7 +31,9 @@ class StatisticsViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+    override func tableView(_ tableView: UITableView,
+                            willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        
         selectedItem = statisticsDataSource.game(at: indexPath)
         return indexPath
     }
@@ -42,7 +43,9 @@ class StatisticsViewController: UITableViewController {
         destinationVC.data = selectedItem
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView,
+                            commit editingStyle: UITableViewCell.EditingStyle,
+                            forRowAt indexPath: IndexPath) {
          
         if editingStyle == .delete {
             statisticsDataSource.delete(to: tableView, at: indexPath)
@@ -51,16 +54,18 @@ class StatisticsViewController: UITableViewController {
     
 }
 
-// -------------------------------------------------------------------
-// MARK: Extensions to UITableViewController
-// -------------------------------------------------------------------
+    // -------------------------------------------------------------------
+    // MARK: Extensions to UITableViewController
+    // -------------------------------------------------------------------
 
 extension StatisticsViewController {
     override func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         statisticsDataSource.numberOfGames()
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView,
+                            cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "StatisticsCell", for: indexPath) as! StatisticsCell
         
         cell.statistics = statisticsDataSource.game(at: indexPath)
@@ -68,9 +73,9 @@ extension StatisticsViewController {
     }
 }
 
-// -------------------------------------------------------------------
-// MARK: - IBActions (unwind segues)
-// -------------------------------------------------------------------
+    // -------------------------------------------------------------------
+    // MARK: - IBActions (unwind segues)
+    // -------------------------------------------------------------------
 
 extension StatisticsViewController {
     @IBAction func cancelSavingStatistics(_: UIStoryboardSegue) {}

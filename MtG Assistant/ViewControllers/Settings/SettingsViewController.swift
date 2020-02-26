@@ -18,7 +18,9 @@ class SettingsViewController: UITableViewController {
 
         if self.traitCollection.userInterfaceStyle == .dark {
             tableView.backgroundColor = RGBColor().UIColorFromRGB(rgbValue: 0x000000)
-        } else {
+        }
+        
+        else {
             tableView.backgroundColor = RGBColor().UIColorFromRGB(rgbValue: 0xF3F3F3)
         }
     }
@@ -28,14 +30,15 @@ class SettingsViewController: UITableViewController {
         self.title = NSLocalizedString("Settings", comment: "")
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView,
+                            didSelectRowAt indexPath: IndexPath) {
+        
         tableView.deselectRow(at: indexPath, animated: true)
         
-        guard let rowTag = tableView.cellForRow(at: indexPath)?.tag else {
-            return
-        }
+        guard let rowTag = tableView.cellForRow(at: indexPath)?.tag else { return }
         
         if rowTag == 5 {
+            
             let message =
             """
             Developer: Maksym Baikovets
@@ -43,13 +46,24 @@ class SettingsViewController: UITableViewController {
 
             App designed for personal use with mind of feature release to AppStore.
             """
-            let alert = UIAlertController(title: NSLocalizedString("About", comment: ""), message: message, preferredStyle: .alert)
             
-            alert.addAction(UIAlertAction(title: NSLocalizedString("Wizards Website", comment: ""), style: .default, handler: { (_: UIAlertAction!) in
-                let url = SFSafariViewController(url: URL(string: "https://magic.wizards.com")!)
+            let alert = UIAlertController(
+                title: NSLocalizedString("About", comment: ""),
+                message: message,
+                preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(
+                title: NSLocalizedString("Wizards Website", comment: ""),
+                style: .default,
+                handler: { (_: UIAlertAction!) in
+                    let url = SFSafariViewController(url: URL(string: "https://magic.wizards.com")!)
                 self.present(url, animated: true, completion: nil)
             }))
-            alert.addAction(UIAlertAction(title: NSLocalizedString("Done", comment: ""), style: .default, handler: nil))
+            
+            alert.addAction(UIAlertAction(
+                title: NSLocalizedString("Done", comment: ""),
+                style: .default,
+                handler: nil))
             
             self.present(alert, animated: true, completion: nil)
         }
@@ -74,16 +88,22 @@ class SettingsViewController: UITableViewController {
     // MARK: Header and Footer settings
     // -------------------------------------------------------------------
     
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    override func tableView(_ tableView: UITableView,
+                            titleForHeaderInSection section: Int) -> String? {
         return nil
     }
 
-    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 44))
+    override func tableView(_ tableView: UITableView,
+                            viewForFooterInSection section: Int) -> UIView? {
+        
+        let footerView = UIView(frame: CGRect(x: 0, y: 0,
+                                              width: tableView.frame.size.width,
+                                              height: 44))
         return footerView
     }
 
-    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    override func tableView(_ tableView: UITableView,
+                            heightForFooterInSection section: Int) -> CGFloat {
         return 44
     }
 
@@ -98,19 +118,5 @@ class SettingsViewController: UITableViewController {
             tableView.backgroundColor = RGBColor().UIColorFromRGB(rgbValue: 0xF3F3F3)
         }
     }
-
-    // -------------------------------------------------------------------
-    // MARK: - Navigation
-    // -------------------------------------------------------------------
-
-    /*
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
     
 }

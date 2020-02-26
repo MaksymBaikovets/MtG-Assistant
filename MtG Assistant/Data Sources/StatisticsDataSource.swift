@@ -1,5 +1,5 @@
 //
-//  StatisticsDataModel.swift
+//  StatisticsDataSource.swift
 //  MtG Assistant
 //
 //  Created by Maksym Baikovets on 13.02.2020.
@@ -26,14 +26,10 @@ class StatisticsDataSource: NSObject {
             //        cell.textLabel?.text =
             //            coreSingleHeadline.value(forKeyPath: "competitors") as? String
             
-            //            StatisticsHeadline(competitors: "Maksym / Ann", date: "03.02.2020", result: "20 / -7", firstPlayerDeck: "Some Unusual Deck", secondPlayerDeck: "Peace of Mastery"),
-            //            StatisticsHeadline(competitors: "Ann / Roman", date: "26.01.2020", result: "3 / -1", firstPlayerDeck: "Some Unusual Deck", secondPlayerDeck: "Peace of Mastery"),
-            //            StatisticsHeadline(competitors: "Roman / Maksym", date: "24.01.2020", result: "-4 / 5", firstPlayerDeck: "Some Unusual Deck", secondPlayerDeck: "Peace of Mastery")
-//        ]
     }
 
     // -------------------------------------------------------------------
-    // MARK: Core Data Methods
+    // MARK: - Core Data Methods
     // -------------------------------------------------------------------
     
     func coreDataFetch() {
@@ -98,15 +94,21 @@ class StatisticsDataSource: NSObject {
             let coreFirstDeck = row.value(forKey: "firstPlayerDeck") as? String ?? ""
             let coreSecondDeck = row.value(forKey: "secondPlayerDeck") as? String ?? ""
 
-            let result = StatisticsHeadline(competitors: coreCompetitors, date: coreDate, result: coreResult,
-                               firstPlayerDeck: coreFirstDeck, secondPlayerDeck: coreSecondDeck)
+            let result = StatisticsHeadline(
+                competitors: coreCompetitors,
+                date: coreDate,
+                result: coreResult,
+                firstPlayerDeck: coreFirstDeck,
+                secondPlayerDeck: coreSecondDeck
+            )
+            
             headlines.append(result)
         }
     }
     
 
     // -------------------------------------------------------------------
-    // MARK: Initializers
+    // MARK: - Initializers
     // -------------------------------------------------------------------
 
     override init() {
@@ -118,7 +120,7 @@ class StatisticsDataSource: NSObject {
     }
 
     // -------------------------------------------------------------------
-    // MARK: Datasource Methods
+    // MARK: - Datasource Methods
     // -------------------------------------------------------------------
 
     func numberOfGames() -> Int {
@@ -146,6 +148,7 @@ class StatisticsDataSource: NSObject {
 
     func game(at indexPath: IndexPath) -> StatisticsHeadline {
         //        FIXME: Kostyli kostyl`nie
+        
         //        let coreSingleHeadline = coreHeadlines[indexPath.row]
         //        let cell = tableView.dequeueReusableCell(withIdentifier: "StatisticsCell",
         //                                                 for: indexPath) as! StatisticsCell

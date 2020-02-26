@@ -16,6 +16,7 @@
 		58092AC323FD6C0100517C8C /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58092AC223FD6C0100517C8C /* UserProfileViewController.swift */; };
 		58216FCC23F5993900FA945A /* StatisticsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58216FCB23F5993900FA945A /* StatisticsDataSource.swift */; };
 		5888BFF223EB70DE005367D9 /* NewStatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5888BFF123EB70DE005367D9 /* NewStatisticsViewController.swift */; };
+		588A25E124071E7B00A52E60 /* EditStatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588A25E024071E7B00A52E60 /* EditStatisticsViewController.swift */; };
 		58D25DB824032BAE00127487 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58D25DBA24032BAE00127487 /* Localizable.strings */; };
 		58DBA18A23E61C02002C3041 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DBA18923E61C02002C3041 /* AppDelegate.swift */; };
 		58DBA18C23E61C02002C3041 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DBA18B23E61C02002C3041 /* SceneDelegate.swift */; };
@@ -46,6 +47,7 @@
 		58092AC223FD6C0100517C8C /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		58216FCB23F5993900FA945A /* StatisticsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsDataSource.swift; sourceTree = "<group>"; };
 		5888BFF123EB70DE005367D9 /* NewStatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewStatisticsViewController.swift; sourceTree = "<group>"; };
+		588A25E024071E7B00A52E60 /* EditStatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditStatisticsViewController.swift; sourceTree = "<group>"; };
 		58D25DB424032B4100127487 /* ru-RU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ru-RU"; path = "ru-RU.lproj/Main.strings"; sourceTree = "<group>"; };
 		58D25DB524032B4200127487 /* ru-RU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ru-RU"; path = "ru-RU.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		58D25DB624032B9300127487 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Main.strings; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				58F2C37523E9B6BB00D75EEB /* StatisticsViewController.swift */,
 				58F2C38323EA0A9400D75EEB /* StatisticsDetailsViewController.swift */,
 				5888BFF123EB70DE005367D9 /* NewStatisticsViewController.swift */,
+				588A25E024071E7B00A52E60 /* EditStatisticsViewController.swift */,
 			);
 			path = Statistics;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 				58F2C38423EA0A9400D75EEB /* StatisticsDetailsViewController.swift in Sources */,
 				58F2C37623E9B6BB00D75EEB /* StatisticsViewController.swift in Sources */,
 				5888BFF223EB70DE005367D9 /* NewStatisticsViewController.swift in Sources */,
+				588A25E124071E7B00A52E60 /* EditStatisticsViewController.swift in Sources */,
 				58092AC123FD6BDE00517C8C /* LanguageViewController.swift in Sources */,
 				58092AAF23FBECD200517C8C /* MtG_Assistant.xcdatamodeld in Sources */,
 				58DDC7EE23F9792E0000D6E7 /* StatisticsHeadlines.swift in Sources */,

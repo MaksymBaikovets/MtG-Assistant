@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  StatisticsDetailsViewController.swift
 //  MtG Assistant
 //
 //  Created by Maksym Baikovets on 04.02.2020.
@@ -22,8 +22,6 @@ class StatisticsDetailsViewController: UIViewController {
     
     @IBAction func shareStatistic(_ sender: UIBarButtonItem) {
         guard let data = data else { return }
-
-        // text to share
         guard let mtgUrl = NSURL(string: "https://magic.wizards.com") else { return }
         
         let text =
@@ -38,13 +36,13 @@ class StatisticsDetailsViewController: UIViewController {
 
         // set up activity view controller
         let textToShare = [ text ]
-        let activityViewController = UIActivityViewController(activityItems: textToShare, applicationActivities: nil)
-        activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
-
-        // exclude some activity types from the list (optional)
+        let activityViewController = UIActivityViewController(
+            activityItems: textToShare,
+            applicationActivities: nil
+        )
+        activityViewController.popoverPresentationController?.sourceView = self.view
         activityViewController.excludedActivityTypes = [UIActivity.ActivityType.airDrop]
 
-        // present the view controller
         self.present(activityViewController, animated: true, completion: nil)
     }
 

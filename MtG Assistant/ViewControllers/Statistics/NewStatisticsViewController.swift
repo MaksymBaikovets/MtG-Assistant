@@ -26,6 +26,8 @@ class NewStatisticsViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet var gameResultInput: UITextField!
     @IBOutlet var gameDateInput: UITextField!
 
+    @IBOutlet weak var saveNavButton: UINavigationItem!
+    
     var statistics: StatisticsHeadline?
     
     // -------------------------------------------------------------------
@@ -39,88 +41,96 @@ class NewStatisticsViewController: UITableViewController, UITextFieldDelegate {
     }
     
     // -------------------------------------------------------------------
-    // MARK: - Keyboard Navigation (NOT USED)
+    // MARK: Keyboard Navigation (NOT USED)
     // -------------------------------------------------------------------
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        let nextTag = textField.tag + 1
+//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//        let nextTag = textField.tag + 1
+//
+//        if let nextResponder = textField.superview?.viewWithTag(nextTag) {
+//            nextResponder.becomeFirstResponder()
+//        } else {
+//            textField.resignFirstResponder()
+//        }
+//
+//        return true
+//    }
+    
+    // -------------------------------------------------------------------
+    //  MARK: - Segues (Error handle in form & Data transfer)
+    // -------------------------------------------------------------------
+    
+    override func shouldPerformSegue(withIdentifier identifier: String,
+                                     sender: Any?) -> Bool {
 
-        if let nextResponder = textField.superview?.viewWithTag(nextTag) {
-            nextResponder.becomeFirstResponder()
-        } else {
-            textField.resignFirstResponder()
+        if identifier == "SaveStatistics" {
+            // TODO: Check fields for correctness
+            if false {
+                let alertController = UIAlertController(
+                    title: "Alert",
+                    message: "Input value",
+                    preferredStyle: .alert
+                )
+                
+                alertController.addAction(UIAlertAction(
+                    title: NSLocalizedString("Done", comment: ""),
+                    style: .default,
+                    handler: nil))
+
+                present(alertController, animated: true, completion: nil)
+                return false
+            }
         }
 
+        guard let firstPlayerName = firstPlayerInput.text else { return false }
+        guard let secondPlayerName = secondPlayerInput.text else { return false }
+
+        guard let firstDeck = firstPlayerDeck.text else { return false }
+        guard let secondDeck = secondPlayerDeck.text else { return false }
+
+        guard let result = gameResultInput.text else { return false }
+        guard let date = gameDateInput.text else { return false }
+
+        let competitors = firstPlayerName + " / " + secondPlayerName
+
+        self.save(competitors: competitors, firstDeck: firstDeck, secondDeck: secondDeck,
+                  result: result, date: date)
+
+        statistics = StatisticsHeadline(competitors: competitors, date: date, result: result,
+                                       firstPlayerDeck: firstDeck, secondPlayerDeck: secondDeck)
+        
         return true
     }
     
     // -------------------------------------------------------------------
-    //  MARK: Errors handling (NOT IMPLEMENTED)
-    // -------------------------------------------------------------------
-
-//    var validForm: Bool = false
-//    @IBAction func doneButtonPress(_ sender: UIBarButtonItem) {
-//        guard let firstPlayerName = firstPlayerInput.text else {
-//            firstPlayerInput.attributedPlaceholder = NSAttributedString(string: "Please enter Your Email ID", attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
-//            validForm = false
-//            return
-//        }
-//    }
-    
-    // -------------------------------------------------------------------
-    //  MARK: Segues
-    // -------------------------------------------------------------------
-
-    override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
-        if segue.identifier == "SaveStatistics" {
-            guard let firstPlayerName = firstPlayerInput.text else { return }
-            guard let secondPlayerName = secondPlayerInput.text else { return }
-
-            guard let firstDeck = firstPlayerDeck.text else { return }
-            guard let secondDeck = secondPlayerDeck.text else { return }
-
-            guard let result = gameResultInput.text else { return }
-            guard let date = gameDateInput.text else { return }
-            
-            let competitors = firstPlayerName + " / " + secondPlayerName
-            
-            self.save(competitors: competitors, firstDeck: firstDeck, secondDeck: secondDeck,
-                      result: result, date: date)
-            
-            statistics = StatisticsHeadline(competitors: competitors, date: date, result: result,
-                                           firstPlayerDeck: firstDeck, secondPlayerDeck: secondDeck)
-
-        }
-    }
-    
     // MARK: - Save to Core Data
-    func save(competitors: String, firstDeck: String, secondDeck: String,
+    // -------------------------------------------------------------------
+
+    func save(competitors: String,
+              firstDeck: String,
+              secondDeck: String,
               result: String, date: String) {
       
         guard let appDelegate =
-            UIApplication.shared.delegate as? AppDelegate else {
-                return
-        }
+            UIApplication.shared.delegate as? AppDelegate else { return }
       
-        // 1
         let managedContext =
             appDelegate.persistentContainer.viewContext
       
-        // 2
         let entity =
             NSEntityDescription.entity(forEntityName: "Headline",
-                                   in: managedContext)!
+                                       in: managedContext)!
       
         let headlineData = NSManagedObject(entity: entity,
                                            insertInto: managedContext)
       
-        // 3
-//      headlineData.setValue(firstPlayerName, forKeyPath: "name")
-        headlineData.setValuesForKeys(["competitors": competitors, "date": date, "result": result,
-                                        "firstPlayerDeck": firstDeck, "secondPlayerDeck": secondDeck])
+        headlineData.setValuesForKeys(["competitors": competitors,
+                                       "date": date,
+                                       "result": result,
+                                       "firstPlayerDeck": firstDeck,
+                                       "secondPlayerDeck": secondDeck])
         print(headlineData)
         
-        // 4
         do {
             try managedContext.save()
             coreHeadlines.append(headlineData)

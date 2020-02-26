@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  PlayersHealthViewController.swift
 //  MtG Assistant
 //
 //  Created by Maksym Baikovets on 01.02.2020.
@@ -43,7 +43,7 @@ class PlayersHealthViewController: UIViewController {
     @IBOutlet weak var secondPlayerCounterValue: UIStepper!
     
     // -------------------------------------------------------------------
-    // MARK: viewDidLoad
+    // MARK: - viewDidLoad
     // -------------------------------------------------------------------
     
     override func viewDidLoad() {
@@ -70,7 +70,7 @@ class PlayersHealthViewController: UIViewController {
         GlobalVariables.devotionToColorOfSecondPlayer = "red"
         
     // -------------------------------------------------------------------
-    // MARK: Gesture Recognizers
+    // MARK: - Gesture Recognizers
     // -------------------------------------------------------------------
         
         for views in [firstPlayerStat, secondPlayerStat] {
@@ -79,10 +79,16 @@ class PlayersHealthViewController: UIViewController {
                 return
             }
             
-            let singleTapGesture = UITapGestureRecognizer(target: self, action: #selector(PlayersHealthViewController.handleSingleTap(_:)))
+            let singleTapGesture = UITapGestureRecognizer(
+                target: self,
+                action: #selector(PlayersHealthViewController.handleSingleTap(_:))
+            )
             singleTapGesture.numberOfTapsRequired = 1
             
-            let doubleTapGesture = UITapGestureRecognizer(target: self, action: #selector(PlayersHealthViewController.handleDoubleTap(_:)))
+            let doubleTapGesture = UITapGestureRecognizer(
+                target: self,
+                action: #selector(PlayersHealthViewController.handleDoubleTap(_:))
+            )
             doubleTapGesture.numberOfTapsRequired = 2
             
             gestureTarget.addGestureRecognizer(singleTapGesture)
@@ -99,7 +105,7 @@ class PlayersHealthViewController: UIViewController {
     }
     
     // -------------------------------------------------------------------
-    // MARK: Tables Settings (change table color)
+    // MARK: - Tables Settings (change table color)
     // -------------------------------------------------------------------
 
     @IBAction func firstPlayerSetting(_ sender: UIButton) {
@@ -121,39 +127,54 @@ class PlayersHealthViewController: UIViewController {
     func chooseTableColor(player: String) {
         var changedDevotion: String = ""
 
-        let optionMenu = UIAlertController(title: NSLocalizedString("Table Color", comment: ""), message: NSLocalizedString("Choose table color for the player", comment: ""), preferredStyle: .alert)
+        let optionMenu = UIAlertController(
+            title: NSLocalizedString("Table Color", comment: ""),
+            message: NSLocalizedString("Choose table color for the player", comment: ""),
+            preferredStyle: .alert)
 
-        let whiteAction = UIAlertAction(title: NSLocalizedString("White (Plain)", comment: ""), style: .default, handler: { (_: UIAlertAction!) in
-            changedDevotion = "white"
+        let whiteAction = UIAlertAction(
+            title: NSLocalizedString("White (Plain)", comment: ""),
+            style: .default,
+            handler: { (_: UIAlertAction!) in changedDevotion = "white"
             self.backgroundChange(player: player, devotion: changedDevotion)
             GlobalVariables.showAlert = false
         })
 
-        let redAction = UIAlertAction(title: NSLocalizedString("Red (Mountain)", comment: ""), style: .default, handler: { (_: UIAlertAction!) in
-            changedDevotion = "red"
+        let redAction = UIAlertAction(
+            title: NSLocalizedString("Red (Mountain)", comment: ""),
+            style: .default,
+            handler: { (_: UIAlertAction!) in changedDevotion = "red"
             self.backgroundChange(player: player, devotion: changedDevotion)
             GlobalVariables.showAlert = false
         })
 
-        let blackAction = UIAlertAction(title: NSLocalizedString("Black (Swamp)", comment: ""), style: .default, handler: { (_: UIAlertAction!) in
-            changedDevotion = "black"
+        let blackAction = UIAlertAction(
+            title: NSLocalizedString("Black (Swamp)", comment: ""),
+            style: .default,
+            handler: { (_: UIAlertAction!) in changedDevotion = "black"
             self.backgroundChange(player: player, devotion: changedDevotion)
             GlobalVariables.showAlert = false
         })
 
-        let greenAction = UIAlertAction(title: NSLocalizedString("Green (Forest)", comment: ""), style: .default, handler: { (_: UIAlertAction!) in
-            changedDevotion = "green"
+        let greenAction = UIAlertAction(
+            title: NSLocalizedString("Green (Forest)", comment: ""),
+            style: .default,
+            handler: { (_: UIAlertAction!) in changedDevotion = "green"
             self.backgroundChange(player: player, devotion: changedDevotion)
             GlobalVariables.showAlert = false
         })
 
-        let blueAction = UIAlertAction(title: NSLocalizedString("Blue (Island)", comment: ""), style: .default, handler: { (_: UIAlertAction!) in
-            changedDevotion = "blue"
+        let blueAction = UIAlertAction(
+            title: NSLocalizedString("Blue (Island)", comment: ""),
+            style: .default, handler: { (_: UIAlertAction!) in changedDevotion = "blue"
             self.backgroundChange(player: player, devotion: changedDevotion)
             GlobalVariables.showAlert = false
         })
 
-        let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel)
+        let cancelAction = UIAlertAction(
+            title: NSLocalizedString("Cancel", comment: ""),
+            style: .cancel
+        )
 
         optionMenu.addAction(whiteAction)
         optionMenu.addAction(redAction)
@@ -168,7 +189,7 @@ class PlayersHealthViewController: UIViewController {
     }
 
     // -------------------------------------------------------------------
-    // MARK: Changing Backgrounds (choose random from color backgrounds)
+    // MARK: - Changing Backgrounds (choose random from color backgrounds)
     // -------------------------------------------------------------------
 
     @IBAction func firstPlayerTableChange(_ sender: UIButton) {
@@ -195,7 +216,11 @@ class PlayersHealthViewController: UIViewController {
                 GlobalVariables.devotionToColorOfFirstPlayer = devotion!
             }
 
-            firstPlayerTable.image = selectBackground(current: img, playerDevotion: GlobalVariables.devotionToColorOfFirstPlayer)
+            firstPlayerTable.image = selectBackground(
+                current: img,
+                playerDevotion: GlobalVariables.devotionToColorOfFirstPlayer
+            )
+            
         }
         
         else if player == "secondPlayer" {
@@ -205,7 +230,11 @@ class PlayersHealthViewController: UIViewController {
                 GlobalVariables.devotionToColorOfSecondPlayer = devotion!
             }
 
-            secondPlayerTable.image = selectBackground(current: img, playerDevotion: GlobalVariables.devotionToColorOfSecondPlayer)
+            secondPlayerTable.image = selectBackground(
+                current: img,
+                playerDevotion: GlobalVariables.devotionToColorOfSecondPlayer
+            )
+            
         }
     }
 
@@ -232,7 +261,7 @@ class PlayersHealthViewController: UIViewController {
     }
 
     // -------------------------------------------------------------------
-    // MARK: Health Counters Initial Values
+    // MARK: - Health Counters Initial Values
     // -------------------------------------------------------------------
 
     @IBAction func firstPlayerCounter(_ sender: UIStepper) {
@@ -247,9 +276,9 @@ class PlayersHealthViewController: UIViewController {
     
 }
 
-// -------------------------------------------------------------------
-// MARK: Gestures Actions
-// -------------------------------------------------------------------
+    // -------------------------------------------------------------------
+    // MARK: - Gestures Actions
+    // -------------------------------------------------------------------
 
 extension PlayersHealthViewController: UIGestureRecognizerDelegate {
     

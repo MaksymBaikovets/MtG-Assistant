@@ -1,15 +1,12 @@
 //
-//  Headline.swift
+//  StatisticsHeadlines.swift
 //  MtG Assistant
 //
 //  Created by Maksym Baikovets on 16.02.2020.
 //  Copyright © 2020 Maksym Baikovets. All rights reserved.
 //
 
-import Foundation
-
 struct StatisticsHeadline: Codable {
-//    var id: UUID
     var competitors: String
     var date: String
     var result: String
