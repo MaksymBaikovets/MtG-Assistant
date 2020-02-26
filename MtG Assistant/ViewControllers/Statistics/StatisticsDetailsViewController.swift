@@ -63,3 +63,17 @@ class StatisticsDetailsViewController: UIViewController {
     }
 
 }
+
+    // -------------------------------------------------------------------
+    // MARK: - IBActions (unwind segues)
+    // -------------------------------------------------------------------
+
+extension StatisticsDetailsViewController {
+    @IBAction func cancelUpdatingStatistics(_: UIStoryboardSegue) { }
+
+    @IBAction func saveUpdatedStatistics(_ segue: UIStoryboardSegue) {
+        // TODO: Perform Updating of data inside detials view
+        
+    }
+    
+}

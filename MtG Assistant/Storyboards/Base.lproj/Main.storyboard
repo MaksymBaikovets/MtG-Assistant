@@ -476,7 +476,7 @@
                                                             <constraint firstAttribute="height" constant="40" id="u1c-cq-Mcr"/>
                                                         </constraints>
                                                         <color key="tintColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <state key="normal" image="square.and.pencil" catalog="system"/>
+                                                        <state key="normal" image="arrow.right.arrow.left" catalog="system"/>
                                                         <connections>
                                                             <action selector="firstPlayerSetting:" destination="8rJ-Kc-sve" eventType="touchDown" id="Jb5-xO-gWy"/>
                                                         </connections>
@@ -546,7 +546,7 @@
                                                     <constraint firstAttribute="width" constant="40" id="vUf-7e-7J8"/>
                                                 </constraints>
                                                 <color key="tintColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" image="square.and.pencil" catalog="system"/>
+                                                <state key="normal" image="arrow.right.arrow.left" catalog="system"/>
                                                 <connections>
                                                     <action selector="secondPlayerSetting:" destination="8rJ-Kc-sve" eventType="touchUpInside" id="1Cx-8q-ItX"/>
                                                 </connections>
@@ -1038,7 +1038,7 @@
                             </barButtonItem>
                             <barButtonItem title="Edit" image="pencil" catalog="system" id="fVE-gK-KYm">
                                 <connections>
-                                    <segue destination="frm-cb-suG" kind="show" id="GM9-ee-07O"/>
+                                    <segue destination="frm-cb-suG" kind="showDetail" id="GM9-ee-07O"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -1053,39 +1053,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nhe-Xy-kZj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3362" y="1637"/>
-        </scene>
-        <!--Edit Game-->
-        <scene sceneID="HZp-5h-iIH">
-            <objects>
-                <tableViewController id="O1k-lU-MAc" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="mU2-OK-F9F">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="YQg-Eu-93S">
-                                <rect key="frame" x="0.0" y="28" width="320" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YQg-Eu-93S" id="Tos-TE-vln">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="O1k-lU-MAc" id="Yfg-xx-j6H"/>
-                            <outlet property="delegate" destination="O1k-lU-MAc" id="hXc-KS-ZAR"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Edit Game" id="tal-qN-G4V">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="pUp-Cd-04p"/>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="ijz-Ro-fkB"/>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SVw-Uy-fPX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5411" y="1636"/>
+            <point key="canvasLocation" x="2379" y="1621"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kAg-Qx-Had">
@@ -1097,12 +1065,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="O1k-lU-MAc" kind="relationship" relationship="rootViewController" id="EuF-68-EbW"/>
+                        <segue destination="hdh-Ld-rin" kind="relationship" relationship="rootViewController" id="HJF-O9-PEz"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gwS-Mx-lsW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4397" y="1636"/>
+            <point key="canvasLocation" x="3360" y="1620"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -1205,9 +1173,181 @@
             </objects>
             <point key="canvasLocation" x="3361" y="-698"/>
         </scene>
+        <!--Edit Game-->
+        <scene sceneID="zlQ-ka-8oR">
+            <objects>
+                <tableViewController id="hdh-Ld-rin" customClass="EditStatisticsViewController" customModule="MtG_Assistant" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="static" style="grouped" rowHeight="44" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="d7k-EQ-a6J">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="PLAYERS NAMES" id="z4c-uy-S9f">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="44" id="42q-Gy-1wt">
+                                        <rect key="frame" x="0.0" y="55.5" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="42q-Gy-1wt" id="VqT-Xc-Z0Q">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Player" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ylt-IQ-0mu" customClass="TextField" customModule="MtG_Assistant" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Ylt-IQ-0mu" firstAttribute="centerY" secondItem="VqT-Xc-Z0Q" secondAttribute="centerY" id="Nb6-4K-FEc"/>
+                                                <constraint firstItem="Ylt-IQ-0mu" firstAttribute="top" secondItem="VqT-Xc-Z0Q" secondAttribute="top" id="f6H-4g-N9r"/>
+                                                <constraint firstAttribute="trailing" secondItem="Ylt-IQ-0mu" secondAttribute="trailing" id="whO-Rc-HCz"/>
+                                                <constraint firstItem="Ylt-IQ-0mu" firstAttribute="leading" secondItem="VqT-Xc-Z0Q" secondAttribute="leading" id="x8P-XE-ZdY"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="44" id="bu8-uT-EOW">
+                                        <rect key="frame" x="0.0" y="99.5" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bu8-uT-EOW" id="9h4-Co-ABO">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Second Player" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R8W-H6-Rtp" customClass="TextField" customModule="MtG_Assistant" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="R8W-H6-Rtp" firstAttribute="top" secondItem="9h4-Co-ABO" secondAttribute="top" id="1or-3W-Gkt"/>
+                                                <constraint firstAttribute="trailing" secondItem="R8W-H6-Rtp" secondAttribute="trailing" id="3PE-dJ-CZp"/>
+                                                <constraint firstItem="R8W-H6-Rtp" firstAttribute="leading" secondItem="9h4-Co-ABO" secondAttribute="leading" id="53N-7k-eJo"/>
+                                                <constraint firstAttribute="bottom" secondItem="R8W-H6-Rtp" secondAttribute="bottom" id="pRT-9A-HNg"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="PLAYERS DECKS" id="MzA-eQ-o2u">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="44" id="0xD-cW-U3k">
+                                        <rect key="frame" x="0.0" y="199.5" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0xD-cW-U3k" id="fuC-RU-31h">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Player Deck" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QSy-nN-gkX" customClass="TextField" customModule="MtG_Assistant" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="-1" width="320" height="44"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="QSy-nN-gkX" firstAttribute="centerY" secondItem="fuC-RU-31h" secondAttribute="centerY" constant="-1" id="1Sw-DX-xgn"/>
+                                                <constraint firstItem="QSy-nN-gkX" firstAttribute="leading" secondItem="fuC-RU-31h" secondAttribute="leading" id="cSd-al-NC9"/>
+                                                <constraint firstItem="QSy-nN-gkX" firstAttribute="top" secondItem="fuC-RU-31h" secondAttribute="topMargin" constant="-12" id="jhJ-66-sjX"/>
+                                                <constraint firstAttribute="trailing" secondItem="QSy-nN-gkX" secondAttribute="trailing" id="ogc-YE-xKN"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="44" id="IWe-F9-vI8">
+                                        <rect key="frame" x="0.0" y="243.5" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IWe-F9-vI8" id="enW-DP-lpb">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Second Player Deck" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MvD-ey-BHe" customClass="TextField" customModule="MtG_Assistant" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="-1" width="320" height="44"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="MvD-ey-BHe" secondAttribute="trailing" id="362-hh-Lrt"/>
+                                                <constraint firstItem="MvD-ey-BHe" firstAttribute="centerY" secondItem="enW-DP-lpb" secondAttribute="centerY" constant="-1" id="H1R-in-89R"/>
+                                                <constraint firstItem="MvD-ey-BHe" firstAttribute="leading" secondItem="enW-DP-lpb" secondAttribute="leading" id="S3h-7Y-2og"/>
+                                                <constraint firstItem="MvD-ey-BHe" firstAttribute="top" secondItem="enW-DP-lpb" secondAttribute="topMargin" constant="-12" id="fUQ-sH-Ibj"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="GAME INFO" id="x0h-rG-ZuP">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="44" id="bJz-8V-4ES">
+                                        <rect key="frame" x="0.0" y="343.5" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bJz-8V-4ES" id="hRF-Rr-NW4">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Result (P1 health : P2 health)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qeI-w6-ON0" customClass="TextField" customModule="MtG_Assistant" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="-1" width="320" height="44"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="qeI-w6-ON0" firstAttribute="leading" secondItem="hRF-Rr-NW4" secondAttribute="leading" id="AjS-Co-yf9"/>
+                                                <constraint firstItem="qeI-w6-ON0" firstAttribute="top" secondItem="hRF-Rr-NW4" secondAttribute="topMargin" constant="-12" id="HvX-7X-45d"/>
+                                                <constraint firstItem="qeI-w6-ON0" firstAttribute="centerY" secondItem="hRF-Rr-NW4" secondAttribute="centerY" constant="-1" id="Iq4-cX-5v5"/>
+                                                <constraint firstAttribute="trailing" secondItem="qeI-w6-ON0" secondAttribute="trailing" id="lNU-Id-7g4"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="44" id="ndh-vJ-gDL">
+                                        <rect key="frame" x="0.0" y="387.5" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ndh-vJ-gDL" id="vra-Jc-6jQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date Of Game (DD.MM.YYYY)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2tN-B9-MUi" customClass="TextField" customModule="MtG_Assistant" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="-1" width="320" height="44"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="2tN-B9-MUi" firstAttribute="leading" secondItem="vra-Jc-6jQ" secondAttribute="leading" id="Dyl-Xr-i2P"/>
+                                                <constraint firstItem="2tN-B9-MUi" firstAttribute="centerY" secondItem="vra-Jc-6jQ" secondAttribute="centerY" constant="-1" id="b3i-Ew-Uub"/>
+                                                <constraint firstAttribute="trailing" secondItem="2tN-B9-MUi" secondAttribute="trailing" id="bdZ-Fp-kkW"/>
+                                                <constraint firstItem="2tN-B9-MUi" firstAttribute="top" secondItem="vra-Jc-6jQ" secondAttribute="topMargin" constant="-12" id="sNK-bO-G76"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="hdh-Ld-rin" id="Vy0-i3-bkU"/>
+                            <outlet property="delegate" destination="hdh-Ld-rin" id="EZ2-h7-937"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Edit Game" id="mtC-mf-ZCK">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="w2c-7t-nrK">
+                            <connections>
+                                <segue destination="Eyd-1t-nR8" kind="unwind" unwindAction="cancelUpdatingStatistics:" id="dVv-7F-oKn"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="6X9-Jb-Y5N">
+                            <connections>
+                                <segue destination="Eyd-1t-nR8" kind="unwind" unwindAction="saveUpdatedStatistics:" id="r45-ZX-RP2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0zt-A0-uBW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Eyd-1t-nR8" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="4333" y="1620"/>
+        </scene>
     </scenes>
     <resources>
         <image name="a.square" catalog="system" width="64" height="56"/>
+        <image name="arrow.right.arrow.left" catalog="system" width="58" height="64"/>
         <image name="gradient" width="414" height="50"/>
         <image name="healthIcon" width="28.5" height="28.5"/>
         <image name="info" catalog="system" width="46" height="64"/>
@@ -1218,7 +1358,6 @@
         <image name="settingsIcon" width="28.5" height="28.5"/>
         <image name="shuffle" catalog="system" width="64" height="46"/>
         <image name="square.and.arrow.up" catalog="system" width="56" height="64"/>
-        <image name="square.and.pencil" catalog="system" width="64" height="58"/>
         <image name="square.stack.3d.up.fill" catalog="system" width="64" height="62"/>
         <image name="statisticsIcon" width="19" height="19"/>
     </resources>

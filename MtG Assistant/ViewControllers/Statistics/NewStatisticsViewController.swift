@@ -12,6 +12,7 @@ import CoreData
 class NewStatisticsViewController: UITableViewController, UITextFieldDelegate {
     
     var coreHeadlines: [NSManagedObject] = []
+    var statistics: StatisticsHeadline?
     
     // -------------------------------------------------------------------
     // MARK: New Statistics Scene: Outlets
@@ -25,10 +26,6 @@ class NewStatisticsViewController: UITableViewController, UITextFieldDelegate {
 
     @IBOutlet var gameResultInput: UITextField!
     @IBOutlet var gameDateInput: UITextField!
-
-    @IBOutlet weak var saveNavButton: UINavigationItem!
-    
-    var statistics: StatisticsHeadline?
     
     // -------------------------------------------------------------------
     // MARK: viewDidLoad
@@ -62,26 +59,7 @@ class NewStatisticsViewController: UITableViewController, UITextFieldDelegate {
     
     override func shouldPerformSegue(withIdentifier identifier: String,
                                      sender: Any?) -> Bool {
-
-        if identifier == "SaveStatistics" {
-            // TODO: Check fields for correctness
-            if false {
-                let alertController = UIAlertController(
-                    title: "Alert",
-                    message: "Input value",
-                    preferredStyle: .alert
-                )
-                
-                alertController.addAction(UIAlertAction(
-                    title: NSLocalizedString("Done", comment: ""),
-                    style: .default,
-                    handler: nil))
-
-                present(alertController, animated: true, completion: nil)
-                return false
-            }
-        }
-
+        
         guard let firstPlayerName = firstPlayerInput.text else { return false }
         guard let secondPlayerName = secondPlayerInput.text else { return false }
 
@@ -91,15 +69,85 @@ class NewStatisticsViewController: UITableViewController, UITextFieldDelegate {
         guard let result = gameResultInput.text else { return false }
         guard let date = gameDateInput.text else { return false }
 
-        let competitors = firstPlayerName + " / " + secondPlayerName
+        if identifier == "SaveStatistics" {
+            
+            // TODO: Check fields for correctness and show errors on form
+            while true {
+                var alertTitle = String()
+                var alertMessage = String()
+                
+                if firstPlayerName == "" {
+                    alertTitle = "Field Missing"
+                    alertMessage = "Enter First Player name!"
+                }
+                
+                else if secondPlayerName == "" {
+                    alertTitle = "Field Missing"
+                    alertMessage = "Enter Second Player name!"
+                }
+                    
+                else if firstDeck == "" {
+                    alertTitle = "Field Missing"
+                    alertMessage = "Enter First Deck name!"
+                }
+                    
+                else if secondDeck == "" {
+                    alertTitle = "Field Missing"
+                    alertMessage = "Enter Second Deck name!"
+                }
+                    
+                else if result == "" {
+                    alertTitle = "Field Missing"
+                    alertMessage = "Enter Result of the game!"
+                }
+                    
+                else if date == "" {
+                    alertTitle = "Field Missing"
+                    alertMessage = "Enter date of the game!"
+                }
+                    
+                else {
+                    break
+                }
+                    
+                let alertController = UIAlertController(
+                    title: alertTitle,
+                    message: alertMessage,
+                    preferredStyle: .alert
+                )
+                    
+                alertController.addAction(UIAlertAction(
+                    title: NSLocalizedString("Done", comment: ""),
+                    style: .default,
+                    handler: nil))
 
-        self.save(competitors: competitors, firstDeck: firstDeck, secondDeck: secondDeck,
-                  result: result, date: date)
+                present(alertController, animated: true, completion: nil)
+                return false
+                
+            }
+            
+            let competitors = firstPlayerName + " / " + secondPlayerName
 
-        statistics = StatisticsHeadline(competitors: competitors, date: date, result: result,
-                                       firstPlayerDeck: firstDeck, secondPlayerDeck: secondDeck)
+            self.save(competitors: competitors,
+                      firstDeck: firstDeck,
+                      secondDeck: secondDeck,
+                      result: result,
+                      date: date
+            )
+
+            statistics = StatisticsHeadline(competitors: competitors,
+                                            date: date,
+                                            result: result,
+                                            firstPlayerDeck: firstDeck,
+                                            secondPlayerDeck: secondDeck
+            )
+            
+            return true
+            
+        }
         
         return true
+        
     }
     
     // -------------------------------------------------------------------
