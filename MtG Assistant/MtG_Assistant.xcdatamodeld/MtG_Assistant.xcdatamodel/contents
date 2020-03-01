@@ -3,11 +3,13 @@
     <entity name="Headline" representedClassName="Headline" syncable="YES" codeGenerationType="class">
         <attribute name="competitors" attributeType="String"/>
         <attribute name="date" attributeType="String"/>
+        <attribute name="firstPlayer" optional="YES" attributeType="String"/>
         <attribute name="firstPlayerDeck" attributeType="String"/>
         <attribute name="result" attributeType="String"/>
+        <attribute name="secondPlayer" optional="YES" attributeType="String"/>
         <attribute name="secondPlayerDeck" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Headline" positionX="-63" positionY="-18" width="128" height="118"/>
+        <element name="Headline" positionX="-63" positionY="-18" width="128" height="148"/>
     </elements>
 </model>

@@ -9,6 +9,7 @@
 import UIKit
 
 class StatisticsViewController: UITableViewController {
+    
     var statisticsDataSource = StatisticsDataSource()
     var selectedItem: StatisticsHeadline?
     

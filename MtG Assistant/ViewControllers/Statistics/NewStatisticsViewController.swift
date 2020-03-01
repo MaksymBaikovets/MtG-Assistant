@@ -15,7 +15,7 @@ class NewStatisticsViewController: UITableViewController, UITextFieldDelegate {
     var statistics: StatisticsHeadline?
     
     // -------------------------------------------------------------------
-    // MARK: New Statistics Scene: Outlets
+    // MARK: Outlets
     // -------------------------------------------------------------------
 
     @IBOutlet var firstPlayerInput: UITextField!
@@ -126,16 +126,16 @@ class NewStatisticsViewController: UITableViewController, UITextFieldDelegate {
                 
             }
             
-            let competitors = firstPlayerName + " / " + secondPlayerName
-
-            self.save(competitors: competitors,
+            self.save(firstPlayer: firstPlayerName,
+                      secondPlayer: secondPlayerName,
                       firstDeck: firstDeck,
                       secondDeck: secondDeck,
                       result: result,
                       date: date
             )
 
-            statistics = StatisticsHeadline(competitors: competitors,
+            statistics = StatisticsHeadline(firstPlayer: firstPlayerName,
+                                            secondPlayer: secondPlayerName,
                                             date: date,
                                             result: result,
                                             firstPlayerDeck: firstDeck,
@@ -154,7 +154,8 @@ class NewStatisticsViewController: UITableViewController, UITextFieldDelegate {
     // MARK: - Save to Core Data
     // -------------------------------------------------------------------
 
-    func save(competitors: String,
+    func save(firstPlayer: String,
+              secondPlayer: String,
               firstDeck: String,
               secondDeck: String,
               result: String, date: String) {
@@ -172,7 +173,8 @@ class NewStatisticsViewController: UITableViewController, UITextFieldDelegate {
         let headlineData = NSManagedObject(entity: entity,
                                            insertInto: managedContext)
       
-        headlineData.setValuesForKeys(["competitors": competitors,
+        headlineData.setValuesForKeys(["firstPlayer": firstPlayer,
+                                       "secondPlayer": secondPlayer,
                                        "date": date,
                                        "result": result,
                                        "firstPlayerDeck": firstDeck,

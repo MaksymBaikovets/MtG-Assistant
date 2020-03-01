@@ -91,7 +91,9 @@ class StatisticsDataSource: NSObject {
     func coreDataToStatisticsHeadline() {
         
         for row in coreHeadlines {
-            let coreCompetitors = row.value(forKey: "competitors") as? String ?? ""
+            let coreFirstPlayer = row.value(forKey: "firstPlayer") as? String ?? ""
+            let coreSecondPlayer = row.value(forKey: "secondPlayer") as? String ?? ""
+
             let coreResult = row.value(forKey: "result") as? String ?? ""
             let coreDate = row.value(forKey: "date") as? String ?? ""
             
@@ -99,7 +101,9 @@ class StatisticsDataSource: NSObject {
             let coreSecondDeck = row.value(forKey: "secondPlayerDeck") as? String ?? ""
 
             let result = StatisticsHeadline(
-                competitors: coreCompetitors,
+                firstPlayer: coreFirstPlayer,
+                secondPlayer: coreSecondPlayer,
+
                 date: coreDate,
                 result: coreResult,
                 firstPlayerDeck: coreFirstDeck,

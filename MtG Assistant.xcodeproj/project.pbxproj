@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F2D5273A050777F9C992D69 /* Pods_MtG_Assistant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F51E896CD21AC47C5EA1144B /* Pods_MtG_Assistant.framework */; };
 		58092AAF23FBECD200517C8C /* MtG_Assistant.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 58092AAD23FBECD200517C8C /* MtG_Assistant.xcdatamodeld */; };
 		58092AB723FD5E5500517C8C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58092AB623FD5E5500517C8C /* SettingsViewController.swift */; };
 		58092ABA23FD67D200517C8C /* UIColorFromRGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58092AB923FD67D200517C8C /* UIColorFromRGB.swift */; };
@@ -17,6 +18,11 @@
 		58216FCC23F5993900FA945A /* StatisticsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58216FCB23F5993900FA945A /* StatisticsDataSource.swift */; };
 		5888BFF223EB70DE005367D9 /* NewStatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5888BFF123EB70DE005367D9 /* NewStatisticsViewController.swift */; };
 		588A25E124071E7B00A52E60 /* EditStatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588A25E024071E7B00A52E60 /* EditStatisticsViewController.swift */; };
+		58C855F1240C1F69001694C2 /* Displayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C855F0240C1F69001694C2 /* Displayable.swift */; };
+		58C855F5240C1F91001694C2 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C855F4240C1F91001694C2 /* Card.swift */; };
+		58C855F8240C24CD001694C2 /* CardsSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C855F7240C24CD001694C2 /* CardsSearchViewController.swift */; };
+		58C855FC240C2835001694C2 /* CardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C855FB240C2835001694C2 /* CardDetailViewController.swift */; };
+		58C855FE240C3D6D001694C2 /* CardsSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C855FD240C3D6D001694C2 /* CardsSearch.swift */; };
 		58D25DB824032BAE00127487 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 58D25DBA24032BAE00127487 /* Localizable.strings */; };
 		58DBA18A23E61C02002C3041 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DBA18923E61C02002C3041 /* AppDelegate.swift */; };
 		58DBA18C23E61C02002C3041 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DBA18B23E61C02002C3041 /* SceneDelegate.swift */; };
@@ -48,6 +54,11 @@
 		58216FCB23F5993900FA945A /* StatisticsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsDataSource.swift; sourceTree = "<group>"; };
 		5888BFF123EB70DE005367D9 /* NewStatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewStatisticsViewController.swift; sourceTree = "<group>"; };
 		588A25E024071E7B00A52E60 /* EditStatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditStatisticsViewController.swift; sourceTree = "<group>"; };
+		58C855F0240C1F69001694C2 /* Displayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Displayable.swift; sourceTree = "<group>"; };
+		58C855F4240C1F91001694C2 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		58C855F7240C24CD001694C2 /* CardsSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsSearchViewController.swift; sourceTree = "<group>"; };
+		58C855FB240C2835001694C2 /* CardDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailViewController.swift; sourceTree = "<group>"; };
+		58C855FD240C3D6D001694C2 /* CardsSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsSearch.swift; sourceTree = "<group>"; };
 		58D25DB424032B4100127487 /* ru-RU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ru-RU"; path = "ru-RU.lproj/Main.strings"; sourceTree = "<group>"; };
 		58D25DB524032B4200127487 /* ru-RU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ru-RU"; path = "ru-RU.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		58D25DB624032B9300127487 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Main.strings; sourceTree = "<group>"; };
@@ -74,6 +85,9 @@
 		58F2C37C23E9DE8000D75EEB /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; };
 		58F2C37D23E9DE8000D75EEB /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
 		58F2C38323EA0A9400D75EEB /* StatisticsDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsDetailsViewController.swift; sourceTree = "<group>"; };
+		5D8360C801916027DE1B407C /* Pods-MtG Assistant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MtG Assistant.debug.xcconfig"; path = "Target Support Files/Pods-MtG Assistant/Pods-MtG Assistant.debug.xcconfig"; sourceTree = "<group>"; };
+		8171D96D7406A270E325CC7F /* Pods-MtG Assistant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MtG Assistant.release.xcconfig"; path = "Target Support Files/Pods-MtG Assistant/Pods-MtG Assistant.release.xcconfig"; sourceTree = "<group>"; };
+		F51E896CD21AC47C5EA1144B /* Pods_MtG_Assistant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MtG_Assistant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F2D5273A050777F9C992D69 /* Pods_MtG_Assistant.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,6 +178,25 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		58C855EF240C1E69001694C2 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				58C855F0240C1F69001694C2 /* Displayable.swift */,
+				58C855F4240C1F91001694C2 /* Card.swift */,
+				58C855FD240C3D6D001694C2 /* CardsSearch.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		58C855F6240C24A9001694C2 /* Cards Search */ = {
+			isa = PBXGroup;
+			children = (
+				58C855F7240C24CD001694C2 /* CardsSearchViewController.swift */,
+				58C855FB240C2835001694C2 /* CardDetailViewController.swift */,
+			);
+			path = "Cards Search";
+			sourceTree = "<group>";
+		};
 		58D25DB32403288B00127487 /* PlayerHealth */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +210,8 @@
 			children = (
 				58DBA18823E61C02002C3041 /* MtG Assistant */,
 				58DBA18723E61C02002C3041 /* Products */,
+				957CDBDB7204163A3F91E837 /* Pods */,
+				74BD99BB2A3F842ACF53C474 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -190,10 +226,10 @@
 		58DBA18823E61C02002C3041 /* MtG Assistant */ = {
 			isa = PBXGroup;
 			children = (
+				58C855EF240C1E69001694C2 /* Networking */,
 				58DDC7F623FA923D0000D6E7 /* Helpers */,
 				58DDC7EC23F979130000D6E7 /* Models */,
 				58216FC923F598F600FA945A /* Data Sources */,
-				58DDC7F323F97FDF0000D6E7 /* Views */,
 				58F2C37823E9DE4D00D75EEB /* ViewControllers */,
 				58216FCA23F5991300FA945A /* Storyboards */,
 				58F2C37723E9DE2A00D75EEB /* Resources */,
@@ -224,6 +260,7 @@
 		58DDC7F623FA923D0000D6E7 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				58DDC7F323F97FDF0000D6E7 /* Views */,
 				58DDC7F723FA92570000D6E7 /* UITextFieldPaddings.swift */,
 				58092AB923FD67D200517C8C /* UIColorFromRGB.swift */,
 			);
@@ -244,11 +281,29 @@
 		58F2C37823E9DE4D00D75EEB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				58C855F6240C24A9001694C2 /* Cards Search */,
 				58D25DB32403288B00127487 /* PlayerHealth */,
 				58092AB823FD5E5900517C8C /* Statistics */,
 				58092ABB23FD6A1500517C8C /* Settings */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		74BD99BB2A3F842ACF53C474 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F51E896CD21AC47C5EA1144B /* Pods_MtG_Assistant.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		957CDBDB7204163A3F91E837 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5D8360C801916027DE1B407C /* Pods-MtG Assistant.debug.xcconfig */,
+				8171D96D7406A270E325CC7F /* Pods-MtG Assistant.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,9 +313,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 58DBA19C23E61C05002C3041 /* Build configuration list for PBXNativeTarget "MtG Assistant" */;
 			buildPhases = (
+				4ED397FAF42D1ECA17764517 /* [CP] Check Pods Manifest.lock */,
 				58DBA18223E61C02002C3041 /* Sources */,
 				58DBA18323E61C02002C3041 /* Frameworks */,
 				58DBA18423E61C02002C3041 /* Resources */,
+				6BCB2705406581DA69BC1722 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -325,12 +382,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4ED397FAF42D1ECA17764517 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MtG Assistant-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6BCB2705406581DA69BC1722 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MtG Assistant/Pods-MtG Assistant-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MtG Assistant/Pods-MtG Assistant-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MtG Assistant/Pods-MtG Assistant-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		58DBA18223E61C02002C3041 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				58F2C38423EA0A9400D75EEB /* StatisticsDetailsViewController.swift in Sources */,
+				58C855F8240C24CD001694C2 /* CardsSearchViewController.swift in Sources */,
 				58F2C37623E9B6BB00D75EEB /* StatisticsViewController.swift in Sources */,
 				5888BFF223EB70DE005367D9 /* NewStatisticsViewController.swift in Sources */,
 				588A25E124071E7B00A52E60 /* EditStatisticsViewController.swift in Sources */,
@@ -341,6 +441,7 @@
 				58092AC323FD6C0100517C8C /* UserProfileViewController.swift in Sources */,
 				58092ABA23FD67D200517C8C /* UIColorFromRGB.swift in Sources */,
 				58DDC7F223F97FD80000D6E7 /* StatisticsCell.swift in Sources */,
+				58C855FC240C2835001694C2 /* CardDetailViewController.swift in Sources */,
 				58092ABD23FD6BBA00517C8C /* AppearanceViewController.swift in Sources */,
 				58DDC7F023F97D090000D6E7 /* BackgroundsDataSource.swift in Sources */,
 				58DBA18E23E61C02002C3041 /* PlayersHealthViewController.swift in Sources */,
@@ -348,7 +449,10 @@
 				58DDC7F823FA92570000D6E7 /* UITextFieldPaddings.swift in Sources */,
 				58092AB723FD5E5500517C8C /* SettingsViewController.swift in Sources */,
 				58DBA18C23E61C02002C3041 /* SceneDelegate.swift in Sources */,
+				58C855F1240C1F69001694C2 /* Displayable.swift in Sources */,
 				58216FCC23F5993900FA945A /* StatisticsDataSource.swift in Sources */,
+				58C855F5240C1F91001694C2 /* Card.swift in Sources */,
+				58C855FE240C3D6D001694C2 /* CardsSearch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,6 +610,7 @@
 		};
 		58DBA19D23E61C05002C3041 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D8360C801916027DE1B407C /* Pods-MtG Assistant.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "MtG Assistant/MtG Assistant.entitlements";
@@ -528,6 +633,7 @@
 		};
 		58DBA19E23E61C05002C3041 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8171D96D7406A270E325CC7F /* Pods-MtG Assistant.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "MtG Assistant/MtG Assistant.entitlements";

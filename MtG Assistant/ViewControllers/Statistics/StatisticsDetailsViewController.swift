@@ -13,6 +13,10 @@ class StatisticsDetailsViewController: UIViewController {
     var statisticsDataSource = StatisticsDataSource()
     var data: StatisticsHeadline?
     
+    // -------------------------------------------------------------------
+    // MARK: Outlets
+    // -------------------------------------------------------------------
+    
     @IBOutlet weak var competitorsLabel: UILabel!
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var gameDateLabel: UILabel!
@@ -20,13 +24,17 @@ class StatisticsDetailsViewController: UIViewController {
     @IBOutlet weak var firstDeckLabel: UILabel!
     @IBOutlet weak var secondDeckLabel: UILabel!
     
+    // -------------------------------------------------------------------
+    // MARK: Share Statistics
+    // -------------------------------------------------------------------
+    
     @IBAction func shareStatistic(_ sender: UIBarButtonItem) {
         guard let data = data else { return }
         guard let mtgUrl = NSURL(string: "https://magic.wizards.com") else { return }
         
         let text =
         """
-        Check out results of \(data.competitors) playing MtG at \(data.date):
+        Check out results of \(data.firstPlayer) and \(data.secondPlayer) playing MtG at \(data.date):
         
         Decks used: "\(data.firstPlayerDeck)" and "\(data.secondPlayerDeck)" accordingly.
         Result was: \(data.result) !
@@ -46,14 +54,13 @@ class StatisticsDetailsViewController: UIViewController {
         self.present(activityViewController, animated: true, completion: nil)
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        commonInit()
-    }
+    // -------------------------------------------------------------------
+    // MARK: Outlets
+    // -------------------------------------------------------------------
 
     private func commonInit() {
         guard let data = data else { return }
-        competitorsLabel.text = data.competitors
+        competitorsLabel.text = data.firstPlayer + " / " + data.secondPlayer
         resultLabel.text = data.result
         gameDateLabel.text = data.date
         
@@ -61,6 +68,15 @@ class StatisticsDetailsViewController: UIViewController {
         secondDeckLabel.text = data.secondPlayerDeck
 
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        commonInit()
+    }
+    
+    // -------------------------------------------------------------------
+    // MARK: - Segues Methods
+    // -------------------------------------------------------------------
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let destinationVC = segue.destination as? UINavigationController else { return }
@@ -71,10 +87,6 @@ class StatisticsDetailsViewController: UIViewController {
     }
 
 }
-
-    // -------------------------------------------------------------------
-    // MARK: - IBActions (unwind segues)
-    // -------------------------------------------------------------------
 
 extension StatisticsDetailsViewController {
     @IBAction func cancelUpdatingStatistics(_: UIStoryboardSegue) { }

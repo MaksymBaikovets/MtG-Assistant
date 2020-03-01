@@ -9,10 +9,6 @@
 import UIKit
 
 class PlayersHealthViewController: UIViewController {
-    
-    // -------------------------------------------------------------------
-    // MARK: Global variables:
-    // -------------------------------------------------------------------
 
     struct GlobalVariables {
         static var devotionToColorOfFirstPlayer = ""
@@ -26,7 +22,7 @@ class PlayersHealthViewController: UIViewController {
     let buttonsFeedback = UISelectionFeedbackGenerator()
     
     // -------------------------------------------------------------------
-    // MARK: Player Health Scene: Outlets
+    // MARK: Outlets
     // -------------------------------------------------------------------
 
     @IBOutlet var firstPlayerStat: UILabel!

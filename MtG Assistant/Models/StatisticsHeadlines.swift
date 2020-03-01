@@ -7,7 +7,9 @@
 //
 
 struct StatisticsHeadline: Codable {
-    var competitors: String
+    var firstPlayer: String
+    var secondPlayer: String
+
     var date: String
     var result: String
     var firstPlayerDeck: String

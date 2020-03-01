@@ -26,7 +26,7 @@ class StatisticsCell: UITableViewCell {
         didSet {
             guard let statistics = statistics else { return }
 
-            competitorsLabel.text = statistics.competitors
+            competitorsLabel.text = statistics.firstPlayer + " / " + statistics.secondPlayer
             dateLabel.text = statistics.date
             resultLabel.text = statistics.result
         }
