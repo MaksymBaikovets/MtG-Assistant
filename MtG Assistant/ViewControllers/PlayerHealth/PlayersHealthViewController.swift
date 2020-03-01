@@ -43,7 +43,7 @@ class PlayersHealthViewController: UIViewController {
     @IBOutlet weak var secondPlayerCounterValue: UIStepper!
     
     // -------------------------------------------------------------------
-    // MARK: - viewDidLoad
+    // MARK: - viewDidLoad / awakeFromNib
     // -------------------------------------------------------------------
     
     override func viewDidLoad() {
@@ -54,7 +54,6 @@ class PlayersHealthViewController: UIViewController {
         secondPlayerStat.layer.masksToBounds = true
         secondPlayerStat.layer.cornerRadius = secondPlayerStat.frame.size.width / 2.0
     
-
         // Mirroring things for the First Player
         firstPlayerStat.transform = CGAffineTransform(scaleX: -1, y: -1)
         firstPlayerTable.transform = CGAffineTransform(scaleX: -1, y: -1)

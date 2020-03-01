@@ -61,6 +61,14 @@ class StatisticsDetailsViewController: UIViewController {
         secondDeckLabel.text = data.secondPlayerDeck
 
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destinationVC = segue.destination as? UINavigationController else { return }
+        guard let targetController = destinationVC.topViewController
+            as? EditStatisticsViewController else { return }
+        
+        targetController.data = data
+    }
 
 }
 

@@ -126,8 +126,8 @@
 			isa = PBXGroup;
 			children = (
 				58F2C37523E9B6BB00D75EEB /* StatisticsViewController.swift */,
-				58F2C38323EA0A9400D75EEB /* StatisticsDetailsViewController.swift */,
 				5888BFF123EB70DE005367D9 /* NewStatisticsViewController.swift */,
+				58F2C38323EA0A9400D75EEB /* StatisticsDetailsViewController.swift */,
 				588A25E024071E7B00A52E60 /* EditStatisticsViewController.swift */,
 			);
 			path = Statistics;

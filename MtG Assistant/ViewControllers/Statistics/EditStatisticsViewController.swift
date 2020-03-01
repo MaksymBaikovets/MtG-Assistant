@@ -12,10 +12,12 @@ import CoreData
 class EditStatisticsViewController: UITableViewController, UITextFieldDelegate {
 
     var coreHeadlines: [NSManagedObject] = []
-    var statistics: StatisticsHeadline?
+    var data: StatisticsHeadline?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print([data])
 
     }
 
