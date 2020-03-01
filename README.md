@@ -1,5 +1,5 @@
 # MtG Assistant
-("Magic The Gathering" belongs to © 1993-2020 Wizards of the Coast LLC, a subsidiary of Hasbro, Inc. All Rights Reserved.)
+"Magic The Gathering" belongs to © 1993-2020 Wizards of the Coast LLC, a subsidiary of Hasbro, Inc. All Rights Reserved.
 
 Tool designed to give you more flexibility while playing **Magic The Gathering** game with your friends.
 
@@ -11,3 +11,5 @@ Tool designed to give you more flexibility while playing **Magic The Gathering**
 - Settings (on the way)
 - Cards Search (using: https://scryfall.com/docs/api)
 - Battlefield (to track current counters)
+
+**Idea of App:** Makym Baikovets
