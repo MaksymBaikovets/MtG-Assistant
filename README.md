@@ -7,5 +7,7 @@ Tool designed to give you more flexibility while playing **Magic The Gathering**
 - Player's health tracker
 
 **To-Be Implemented:**
-- Statistics Screen (on the way)
-- Deck Builder
+- Statistics Screen (missing search and visual part; need to rework)
+- Settings (on the way)
+- Cards Search (using: https://scryfall.com/docs/api)
+- Battlefield (to track current counters)
