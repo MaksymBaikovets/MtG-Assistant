@@ -54,7 +54,7 @@ class CardsSearchViewController: UITableViewController {
         cell.textLabel?.text = item.name
         cell.detailTextLabel?.text = item.typeLine
         
-        print(item.oracleText)
+        print(item.oracleText as Any)
         print(item.flavorText as Any)
 
         return cell
@@ -92,11 +92,15 @@ extension CardsSearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let cardName = searchBar.text else { return }
         cardsSerch(for: cardName)
+        
+        searchBar.showsCancelButton = false
         searchBar.resignFirstResponder()
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         self.searchBar.endEditing(true)
+        searchBar.showsCancelButton = false
+
         searchBar.resignFirstResponder()
     }
     

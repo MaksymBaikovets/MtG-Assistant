@@ -19,6 +19,8 @@ class CardDetailViewController: UIViewController {
     
     @IBOutlet weak var cardName: UILabel!
     @IBOutlet weak var cardType: UILabel!
+    
+    @IBOutlet weak var oracleTextTitle: UILabel!
     @IBOutlet weak var oracleText: UILabel!
     
     @IBOutlet weak var flavorTextTitle: UILabel!
@@ -33,8 +35,14 @@ class CardDetailViewController: UIViewController {
 
         cardName.text = data.name
         cardType.text = data.typeLine
-
-        oracleText.text = data.oracleText
+        
+        if data.oracleText == nil {
+            oracleTextTitle.isHidden = true
+            oracleText.isHidden = true
+        } else {
+            oracleText.text = data.oracleText
+        }
+        
         if data.flavorText == nil {
             flavorTextTitle.isHidden = true
             flavorText.isHidden = true
