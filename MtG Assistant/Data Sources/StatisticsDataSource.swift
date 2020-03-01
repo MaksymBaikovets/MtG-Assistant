@@ -52,6 +52,8 @@ class StatisticsDataSource: NSObject {
         }
     }
     
+    // -------------------------------------------------------------------
+
     func coreDataRemoveRow(at indexPath: IndexPath) {
               
         guard let appDelegate =
@@ -83,7 +85,9 @@ class StatisticsDataSource: NSObject {
         
     }
     
+    // -------------------------------------------------------------------
     // FIXME: Kostyli kostyl`nie
+    
     func coreDataToStatisticsHeadline() {
         
         for row in coreHeadlines {
@@ -129,11 +133,15 @@ class StatisticsDataSource: NSObject {
         headlines.count
     }
 
+    // -------------------------------------------------------------------
+
     func append(haedline: StatisticsHeadline, to tableView: UITableView) {
         headlines.append(haedline)
         tableView.insertRows(at: [IndexPath(row: headlines.count - 1, section: 0)], with: .automatic)
     }
     
+    // -------------------------------------------------------------------
+
     func delete(to tableView: UITableView, at indexPath: IndexPath) {
         coreDataFetch()
         print("Rows before deletion: \(coreHeadlines.count)")
@@ -145,6 +153,8 @@ class StatisticsDataSource: NSObject {
         headlines.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .automatic)
     }
+
+    // -------------------------------------------------------------------
 
     func game(at indexPath: IndexPath) -> StatisticsHeadline {
         //        FIXME: Kostyli kostyl`nie

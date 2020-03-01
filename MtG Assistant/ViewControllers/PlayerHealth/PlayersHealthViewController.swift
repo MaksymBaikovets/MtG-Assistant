@@ -98,6 +98,8 @@ class PlayersHealthViewController: UIViewController {
             
     } // end of viewDidLoad()
     
+    // -------------------------------------------------------------------
+
     override  func awakeFromNib() {
         super.awakeFromNib()
         self.title = NSLocalizedString("Players Health", comment: "")
@@ -122,6 +124,8 @@ class PlayersHealthViewController: UIViewController {
             chooseTableColor(player: "secondPlayer")
         }
     }
+
+    // -------------------------------------------------------------------
 
     func chooseTableColor(player: String) {
         var changedDevotion: String = ""
@@ -207,6 +211,8 @@ class PlayersHealthViewController: UIViewController {
         }
     }
 
+    // -------------------------------------------------------------------
+
     func backgroundChange(player: String, devotion: String? = "") {
         if player == "firstPlayer" {
             guard let img = firstPlayerTable.image else { return }
@@ -236,6 +242,8 @@ class PlayersHealthViewController: UIViewController {
             
         }
     }
+
+    // -------------------------------------------------------------------
 
     func selectBackground(current: UIImage, playerDevotion: String) -> UIImage {
         var newBackground: UIImage = current
