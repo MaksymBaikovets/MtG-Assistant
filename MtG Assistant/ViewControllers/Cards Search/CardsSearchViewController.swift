@@ -38,6 +38,14 @@ class CardsSearchViewController: UITableViewController {
             self.disableScrollsToTopPropertyOnAllSubviewsOf(view: subview as UIView)
         }
     }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        if items.count == 0 {
+            self.tableView.setEmptyMessage("Type a request to start a search")
+        } else {
+            self.tableView.restore()
+        }
+    }
 
     // -------------------------------------------------------------------
     // MARK: Extensions to UITableViewController
@@ -60,8 +68,9 @@ class CardsSearchViewController: UITableViewController {
         cell.textLabel?.text = item.name
         cell.detailTextLabel?.text = item.typeLine
         
-        print(item.oracleText as Any)
-        print(item.flavorText as Any)
+        print()
+//        print(item.oracleText as Any)
+//        print(item.flavorText as Any)
 
         return cell
     }
@@ -137,9 +146,12 @@ extension CardsSearchViewController {
             .responseDecodable(of: CardsSearch.self) {
                 (response) in guard let cards = response.value else { return }
 
-                print(cards.data)
+//                print(cards.totalCards)
+//                print(cards.data)
+                
                 self.cards = cards.data
                 self.items = cards.data
+                                
                 self.tableView.reloadData()
         }
     }

@@ -86,7 +86,6 @@ class StatisticsDataSource: NSObject {
     }
     
     // -------------------------------------------------------------------
-    // FIXME: Kostyli kostyl`nie
     
     func coreDataToStatisticsHeadline() {
         
@@ -114,7 +113,6 @@ class StatisticsDataSource: NSObject {
         }
     }
     
-
     // -------------------------------------------------------------------
     // MARK: - Initializers
     // -------------------------------------------------------------------
@@ -132,7 +130,6 @@ class StatisticsDataSource: NSObject {
     // -------------------------------------------------------------------
 
     func numberOfGames() -> Int {
-        //        FIXME: Kostyli kostyl`nie
         //        return coreHeadlines.count
         headlines.count
     }
@@ -161,7 +158,6 @@ class StatisticsDataSource: NSObject {
     // -------------------------------------------------------------------
 
     func game(at indexPath: IndexPath) -> StatisticsHeadline {
-        //        FIXME: Kostyli kostyl`nie
         
         //        let coreSingleHeadline = coreHeadlines[indexPath.row]
         //        let cell = tableView.dequeueReusableCell(withIdentifier: "StatisticsCell",

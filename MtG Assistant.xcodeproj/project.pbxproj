@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -35,6 +35,7 @@
 		58DDC7F023F97D090000D6E7 /* BackgroundsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DDC7EF23F97D090000D6E7 /* BackgroundsDataSource.swift */; };
 		58DDC7F223F97FD80000D6E7 /* StatisticsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DDC7F123F97FD80000D6E7 /* StatisticsCell.swift */; };
 		58DDC7F823FA92570000D6E7 /* UITextFieldPaddings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DDC7F723FA92570000D6E7 /* UITextFieldPaddings.swift */; };
+		58EE2AB1240DB0C1000F81FC /* CardImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58EE2AB0240DB0C1000F81FC /* CardImages.swift */; };
 		58F2C37623E9B6BB00D75EEB /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F2C37523E9B6BB00D75EEB /* StatisticsViewController.swift */; };
 		58F2C37E23E9DE8000D75EEB /* SF-Pro-Display-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 58F2C37923E9DE8000D75EEB /* SF-Pro-Display-Light.otf */; };
 		58F2C37F23E9DE8000D75EEB /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 58F2C37A23E9DE8000D75EEB /* SF-Pro-Display-Regular.otf */; };
@@ -80,6 +81,7 @@
 		58DDC7EF23F97D090000D6E7 /* BackgroundsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundsDataSource.swift; sourceTree = "<group>"; };
 		58DDC7F123F97FD80000D6E7 /* StatisticsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsCell.swift; sourceTree = "<group>"; };
 		58DDC7F723FA92570000D6E7 /* UITextFieldPaddings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldPaddings.swift; sourceTree = "<group>"; };
+		58EE2AB0240DB0C1000F81FC /* CardImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImages.swift; sourceTree = "<group>"; };
 		58F2C37523E9B6BB00D75EEB /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		58F2C37923E9DE8000D75EEB /* SF-Pro-Display-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Light.otf"; sourceTree = "<group>"; };
 		58F2C37A23E9DE8000D75EEB /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				58C855F0240C1F69001694C2 /* Displayable.swift */,
+				58EE2AB0240DB0C1000F81FC /* CardImages.swift */,
 				58C855F4240C1F91001694C2 /* Card.swift */,
 				58C855FD240C3D6D001694C2 /* CardsSearch.swift */,
 			);
@@ -423,6 +426,7 @@
 				58092ABD23FD6BBA00517C8C /* AppearanceViewController.swift in Sources */,
 				58DDC7F023F97D090000D6E7 /* BackgroundsDataSource.swift in Sources */,
 				58DBA18E23E61C02002C3041 /* PlayersHealthViewController.swift in Sources */,
+				58EE2AB1240DB0C1000F81FC /* CardImages.swift in Sources */,
 				58DBA18A23E61C02002C3041 /* AppDelegate.swift in Sources */,
 				58DDC7F823FA92570000D6E7 /* UITextFieldPaddings.swift in Sources */,
 				58092AB723FD5E5500517C8C /* SettingsViewController.swift in Sources */,

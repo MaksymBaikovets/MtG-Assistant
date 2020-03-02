@@ -12,14 +12,14 @@ struct Card: Decodable {
     let typeLine: String
     let oracleText: String?
     let flavorText: String?
-//    let imageUris: [String]
+    let imageUris: CardImages?
   
     enum CodingKeys: String, CodingKey {
         case name
         case typeLine = "type_line"
         case oracleText = "oracle_text"
         case flavorText = "flavor_text"
-//        case imageUris = "image_uris"
+        case imageUris = "image_uris"
     }
     
 }
@@ -41,9 +41,9 @@ extension Card: Displayable {
     var flavorDescription: (label: String, value: String) {
         ("Flavor Text: ", flavorText ?? "")
     }
-
-//    var image: [String] {
-//        imageUris
-//    }
+    
+    var images: CardImages? {
+        imageUris
+    }
     
 }

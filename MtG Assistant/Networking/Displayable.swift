@@ -11,7 +11,10 @@ protocol Displayable {
     var typeLine: String { get }
     var oracleText: String? { get }
     var flavorText: String? { get }
-//    var imageUris: [String] { get }
+    var imageUris: CardImages? { get }
+
+// TODO: Implement vars with labels
 //    var item2: (label: String, value: String) { get }
 //    var item3: (label: String, value: String) { get }
+    
 }

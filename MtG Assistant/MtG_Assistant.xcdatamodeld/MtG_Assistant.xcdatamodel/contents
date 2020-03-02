@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19D76" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Headline" representedClassName="Headline" syncable="YES" codeGenerationType="class">
-        <attribute name="competitors" attributeType="String"/>
         <attribute name="date" attributeType="String"/>
         <attribute name="firstPlayer" optional="YES" attributeType="String"/>
         <attribute name="firstPlayerDeck" attributeType="String"/>
@@ -10,6 +9,6 @@
         <attribute name="secondPlayerDeck" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Headline" positionX="-63" positionY="-18" width="128" height="148"/>
+        <element name="Headline" positionX="-63" positionY="-18" width="128" height="133"/>
     </elements>
 </model>

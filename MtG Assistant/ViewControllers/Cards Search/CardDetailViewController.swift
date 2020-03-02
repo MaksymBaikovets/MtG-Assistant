@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class CardDetailViewController: UIViewController {
 
@@ -26,6 +27,7 @@ class CardDetailViewController: UIViewController {
     @IBOutlet weak var flavorTextTitle: UILabel!
     @IBOutlet weak var flavorText: UILabel!
     
+    @IBOutlet weak var cardImage: UIImageView!
     // -------------------------------------------------------------------
     // MARK: commonInit
     // -------------------------------------------------------------------
@@ -33,24 +35,44 @@ class CardDetailViewController: UIViewController {
     private func commonInit() {
         guard let data = data else { return }
 
-        cardName.text = data.name
-        cardType.text = data.typeLine
-        
-        if data.oracleText == nil {
-            oracleTextTitle.isHidden = true
-            oracleText.isHidden = true
-        } else {
-            oracleText.text = data.oracleText
+        cardImageLoad()
+
+        DispatchQueue.main.async {
+            self.cardName.text = data.name
+            self.cardType.text = data.typeLine
+            
+            if data.oracleText == nil {
+                self.oracleTextTitle.isHidden = true
+                self.oracleText.isHidden = true
+            } else {
+                self.oracleText.text = data.oracleText
+            }
+            
+            if data.flavorText == nil {
+                self.flavorTextTitle.isHidden = true
+                self.flavorText.isHidden = true
+            } else {
+                self.flavorText.text = data.flavorText
+            }
         }
         
-        if data.flavorText == nil {
-            flavorTextTitle.isHidden = true
-            flavorText.isHidden = true
-        } else {
-            flavorText.text = data.flavorText
-        }
     }
 
+    func cardImageLoad() {
+        guard let data = data else { return }
+//        guard let urlPng = data.imageUris?.png else { return }
+//        guard let urlLarge = data.imageUris?.large else { return }
+        guard let urlNormal = data.imageUris?.normal else { return }
+        
+        AF.request(urlNormal, method: .get)
+            .validate()
+            .responseData(completionHandler: { (responseData) in
+                self.cardImage.image = UIImage(data: responseData.data!)
+                
+            })
+    }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         commonInit()
