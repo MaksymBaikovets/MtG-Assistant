@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3F2D5273A050777F9C992D69 /* Pods_MtG_Assistant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F51E896CD21AC47C5EA1144B /* Pods_MtG_Assistant.framework */; };
+		3EFD952053815911495A9FE2 /* libPods-MtG Assistant.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3B33267BCEA4584DEA33576 /* libPods-MtG Assistant.a */; };
 		58092AAF23FBECD200517C8C /* MtG_Assistant.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 58092AAD23FBECD200517C8C /* MtG_Assistant.xcdatamodeld */; };
 		58092AB723FD5E5500517C8C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58092AB623FD5E5500517C8C /* SettingsViewController.swift */; };
 		58092ABA23FD67D200517C8C /* UIColorFromRGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58092AB923FD67D200517C8C /* UIColorFromRGB.swift */; };
@@ -16,6 +16,7 @@
 		58092AC123FD6BDE00517C8C /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58092AC023FD6BDE00517C8C /* LanguageViewController.swift */; };
 		58092AC323FD6C0100517C8C /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58092AC223FD6C0100517C8C /* UserProfileViewController.swift */; };
 		58216FCC23F5993900FA945A /* StatisticsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58216FCB23F5993900FA945A /* StatisticsDataSource.swift */; };
+		584C1AEF240D35200022C353 /* TableViewEmptyHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584C1AEE240D35200022C353 /* TableViewEmptyHelper.swift */; };
 		5888BFF223EB70DE005367D9 /* NewStatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5888BFF123EB70DE005367D9 /* NewStatisticsViewController.swift */; };
 		588A25E124071E7B00A52E60 /* EditStatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588A25E024071E7B00A52E60 /* EditStatisticsViewController.swift */; };
 		58C855F1240C1F69001694C2 /* Displayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C855F0240C1F69001694C2 /* Displayable.swift */; };
@@ -52,6 +53,7 @@
 		58092AC023FD6BDE00517C8C /* LanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewController.swift; sourceTree = "<group>"; };
 		58092AC223FD6C0100517C8C /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		58216FCB23F5993900FA945A /* StatisticsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsDataSource.swift; sourceTree = "<group>"; };
+		584C1AEE240D35200022C353 /* TableViewEmptyHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewEmptyHelper.swift; sourceTree = "<group>"; };
 		5888BFF123EB70DE005367D9 /* NewStatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewStatisticsViewController.swift; sourceTree = "<group>"; };
 		588A25E024071E7B00A52E60 /* EditStatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditStatisticsViewController.swift; sourceTree = "<group>"; };
 		58C855F0240C1F69001694C2 /* Displayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Displayable.swift; sourceTree = "<group>"; };
@@ -87,7 +89,7 @@
 		58F2C38323EA0A9400D75EEB /* StatisticsDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsDetailsViewController.swift; sourceTree = "<group>"; };
 		5D8360C801916027DE1B407C /* Pods-MtG Assistant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MtG Assistant.debug.xcconfig"; path = "Target Support Files/Pods-MtG Assistant/Pods-MtG Assistant.debug.xcconfig"; sourceTree = "<group>"; };
 		8171D96D7406A270E325CC7F /* Pods-MtG Assistant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MtG Assistant.release.xcconfig"; path = "Target Support Files/Pods-MtG Assistant/Pods-MtG Assistant.release.xcconfig"; sourceTree = "<group>"; };
-		F51E896CD21AC47C5EA1144B /* Pods_MtG_Assistant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MtG_Assistant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3B33267BCEA4584DEA33576 /* libPods-MtG Assistant.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MtG Assistant.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F2D5273A050777F9C992D69 /* Pods_MtG_Assistant.framework in Frameworks */,
+				3EFD952053815911495A9FE2 /* libPods-MtG Assistant.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,20 +251,13 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		58DDC7F323F97FDF0000D6E7 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				58DDC7F123F97FD80000D6E7 /* StatisticsCell.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		58DDC7F623FA923D0000D6E7 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				58DDC7F323F97FDF0000D6E7 /* Views */,
+				58DDC7F123F97FD80000D6E7 /* StatisticsCell.swift */,
 				58DDC7F723FA92570000D6E7 /* UITextFieldPaddings.swift */,
 				58092AB923FD67D200517C8C /* UIColorFromRGB.swift */,
+				584C1AEE240D35200022C353 /* TableViewEmptyHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -292,7 +287,7 @@
 		74BD99BB2A3F842ACF53C474 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F51E896CD21AC47C5EA1144B /* Pods_MtG_Assistant.framework */,
+				A3B33267BCEA4584DEA33576 /* libPods-MtG Assistant.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -317,7 +312,6 @@
 				58DBA18223E61C02002C3041 /* Sources */,
 				58DBA18323E61C02002C3041 /* Frameworks */,
 				58DBA18423E61C02002C3041 /* Resources */,
-				6BCB2705406581DA69BC1722 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -405,23 +399,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6BCB2705406581DA69BC1722 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MtG Assistant/Pods-MtG Assistant-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MtG Assistant/Pods-MtG Assistant-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MtG Assistant/Pods-MtG Assistant-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -442,6 +419,7 @@
 				58092ABA23FD67D200517C8C /* UIColorFromRGB.swift in Sources */,
 				58DDC7F223F97FD80000D6E7 /* StatisticsCell.swift in Sources */,
 				58C855FC240C2835001694C2 /* CardDetailViewController.swift in Sources */,
+				584C1AEF240D35200022C353 /* TableViewEmptyHelper.swift in Sources */,
 				58092ABD23FD6BBA00517C8C /* AppearanceViewController.swift in Sources */,
 				58DDC7F023F97D090000D6E7 /* BackgroundsDataSource.swift in Sources */,
 				58DBA18E23E61C02002C3041 /* PlayersHealthViewController.swift in Sources */,

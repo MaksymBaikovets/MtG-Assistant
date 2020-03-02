@@ -44,6 +44,12 @@ class CardsSearchViewController: UITableViewController {
     // -------------------------------------------------------------------
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if items.count == 0 {
+            self.tableView.setEmptyMessage("Type a request to start a search")
+        } else {
+            self.tableView.restore()
+        }
+        
         return items.count
     }
 

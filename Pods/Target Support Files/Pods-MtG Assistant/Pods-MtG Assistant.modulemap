@@ -1,4 +1,4 @@
-framework module Pods_MtG_Assistant {
+module Pods_MtG_Assistant {
   umbrella header "Pods-MtG Assistant-umbrella.h"
 
   export *
