@@ -54,6 +54,10 @@ class CardDetailViewController: UIViewController {
             if data.flavorText == nil {
                 self.flavorTextTitle.isHidden = true
                 self.flavorText.isHidden = true
+                self.cardImage.topAnchor
+                    .constraint(equalTo: self.oracleText.bottomAnchor, constant: 16)
+                    .isActive = true
+
             } else {
                 self.flavorText.text = data.flavorText
             }

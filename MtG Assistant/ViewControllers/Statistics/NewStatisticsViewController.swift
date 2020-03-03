@@ -11,8 +11,10 @@ import CoreData
 
 class NewStatisticsViewController: UITableViewController, UITextFieldDelegate {
     
+    var statisticsDataSource = StatisticsDataSource()
     var coreHeadlines: [NSManagedObject] = []
     var statistics: StatisticsHeadline?
+    
     
     // -------------------------------------------------------------------
     // MARK: Outlets
@@ -126,13 +128,11 @@ class NewStatisticsViewController: UITableViewController, UITextFieldDelegate {
                 
             }
             
-            self.save(firstPlayer: firstPlayerName,
-                      secondPlayer: secondPlayerName,
-                      firstDeck: firstDeck,
-                      secondDeck: secondDeck,
-                      result: result,
-                      date: date
-            )
+            statisticsDataSource.saveToCoreData(firstPlayer: firstPlayerName,
+                  secondPlayer: secondPlayerName,
+                  firstDeck: firstDeck,
+                  secondDeck: secondDeck,
+                  result: result, date: date)
 
             statistics = StatisticsHeadline(firstPlayer: firstPlayerName,
                                             secondPlayer: secondPlayerName,
@@ -150,43 +150,5 @@ class NewStatisticsViewController: UITableViewController, UITextFieldDelegate {
         
     }
     
-    // -------------------------------------------------------------------
-    // MARK: - Save to Core Data
-    // -------------------------------------------------------------------
-
-    func save(firstPlayer: String,
-              secondPlayer: String,
-              firstDeck: String,
-              secondDeck: String,
-              result: String, date: String) {
-      
-        guard let appDelegate =
-            UIApplication.shared.delegate as? AppDelegate else { return }
-      
-        let managedContext =
-            appDelegate.persistentContainer.viewContext
-      
-        let entity =
-            NSEntityDescription.entity(forEntityName: "Headline",
-                                       in: managedContext)!
-      
-        let headlineData = NSManagedObject(entity: entity,
-                                           insertInto: managedContext)
-      
-        headlineData.setValuesForKeys(["firstPlayer": firstPlayer,
-                                       "secondPlayer": secondPlayer,
-                                       "date": date,
-                                       "result": result,
-                                       "firstPlayerDeck": firstDeck,
-                                       "secondPlayerDeck": secondDeck])
-        print(headlineData)
-        
-        do {
-            try managedContext.save()
-            coreHeadlines.append(headlineData)
-        } catch let error as NSError {
-            print("Could not save. \(error), \(error.userInfo)")
-        }
-    }
 
 }

@@ -937,7 +937,7 @@
                                 <rect key="frame" x="0.0" y="88" width="375" height="641"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rEk-zR-HIe">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="833.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="769.33333333333337"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Type" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m7v-gw-rdn">
                                                 <rect key="frame" x="20" y="57.666666666666664" width="335" height="19.333333333333336"/>
@@ -976,7 +976,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="K8E-02-0op">
-                                                <rect key="frame" x="33" y="209.33333333333334" width="309" height="431.33333333333326"/>
+                                                <rect key="frame" x="20" y="209.33333333333329" width="335" height="467.66666666666674"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="K8E-02-0op" secondAttribute="height" multiplier="745:1040" id="ZLZ-gT-XU3"/>
                                                 </constraints>
@@ -988,12 +988,11 @@
                                             <constraint firstItem="m7v-gw-rdn" firstAttribute="top" secondItem="TV9-F6-rd1" secondAttribute="bottom" constant="4" id="4cE-eL-BWe"/>
                                             <constraint firstItem="TV9-F6-rd1" firstAttribute="top" secondItem="rEk-zR-HIe" secondAttribute="top" constant="20" id="5pP-pz-0Az"/>
                                             <constraint firstAttribute="trailing" secondItem="TV9-F6-rd1" secondAttribute="trailing" constant="20" id="60h-Sq-Gxf"/>
-                                            <constraint firstAttribute="trailing" secondItem="K8E-02-0op" secondAttribute="trailing" constant="33" id="Ajh-g8-zTl"/>
-                                            <constraint firstItem="K8E-02-0op" firstAttribute="top" relation="greaterThanOrEqual" secondItem="jAo-wd-0cA" secondAttribute="bottom" priority="750" constant="20" id="EQp-oT-nKY"/>
+                                            <constraint firstAttribute="trailing" secondItem="K8E-02-0op" secondAttribute="trailing" constant="20" id="Ajh-g8-zTl"/>
                                             <constraint firstItem="b4C-Ic-F6g" firstAttribute="top" secondItem="m7v-gw-rdn" secondAttribute="bottom" constant="16" id="Iii-jn-T7D"/>
                                             <constraint firstItem="b4C-Ic-F6g" firstAttribute="leading" secondItem="rEk-zR-HIe" secondAttribute="leading" constant="20" id="IkN-ib-gdx"/>
                                             <constraint firstItem="QKO-yy-0x8" firstAttribute="top" secondItem="jAo-wd-0cA" secondAttribute="bottom" constant="16" id="JE3-fA-THm"/>
-                                            <constraint firstItem="K8E-02-0op" firstAttribute="leading" secondItem="rEk-zR-HIe" secondAttribute="leading" constant="33" id="OEV-Za-oiZ"/>
+                                            <constraint firstItem="K8E-02-0op" firstAttribute="leading" secondItem="rEk-zR-HIe" secondAttribute="leading" constant="20" id="OEV-Za-oiZ"/>
                                             <constraint firstAttribute="trailing" secondItem="QKO-yy-0x8" secondAttribute="trailing" constant="20" id="QwC-ZY-rpd"/>
                                             <constraint firstItem="QKO-yy-0x8" firstAttribute="leading" secondItem="rEk-zR-HIe" secondAttribute="leading" constant="20" id="TNk-cl-mqX"/>
                                             <constraint firstAttribute="trailing" secondItem="jAo-wd-0cA" secondAttribute="trailing" constant="20" id="WOR-Ol-3Z8"/>
@@ -1012,7 +1011,7 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="rEk-zR-HIe" firstAttribute="height" secondItem="RzW-8P-SkR" secondAttribute="height" multiplier="1.3" priority="750" id="2ZB-6d-fJD"/>
+                                    <constraint firstItem="rEk-zR-HIe" firstAttribute="height" secondItem="RzW-8P-SkR" secondAttribute="height" multiplier="1.2" priority="250" id="2ZB-6d-fJD"/>
                                     <constraint firstAttribute="bottom" secondItem="rEk-zR-HIe" secondAttribute="bottom" id="Any-ZC-bwm"/>
                                     <constraint firstItem="rEk-zR-HIe" firstAttribute="top" secondItem="9JY-Ii-MO7" secondAttribute="top" id="Apz-Tz-Nbq"/>
                                     <constraint firstItem="rEk-zR-HIe" firstAttribute="centerX" secondItem="RzW-8P-SkR" secondAttribute="centerX" id="LHp-I7-iQg"/>
@@ -1121,7 +1120,7 @@
             </objects>
             <point key="canvasLocation" x="1252" y="1657"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Battlefield-->
         <scene sceneID="XZG-Af-HTy">
             <objects>
                 <tableViewController id="xoT-VC-4lE" sceneMemberID="viewController">
@@ -1144,7 +1143,7 @@
                             <outlet property="delegate" destination="xoT-VC-4lE" id="ZDi-kz-mfu"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="Kt2-CL-vel"/>
+                    <navigationItem key="navigationItem" title="Battlefield" id="Kt2-CL-vel"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wWd-bd-6P5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1612,7 +1611,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="6X9-Jb-Y5N">
                             <connections>
-                                <segue destination="Eyd-1t-nR8" kind="unwind" unwindAction="saveUpdatedStatistics:" id="r45-ZX-RP2"/>
+                                <segue destination="Eyd-1t-nR8" kind="unwind" identifier="SaveUpdatedStatistics" unwindAction="saveUpdatedStatistics:" id="r45-ZX-RP2"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

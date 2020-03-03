@@ -22,10 +22,20 @@ class StatisticsDataSource: NSObject {
         return []
             
             // TODO: Change struct to core data using
-            
             //        cell.textLabel?.text =
             //            coreSingleHeadline.value(forKeyPath: "competitors") as? String
-            
+    }
+    
+    // -------------------------------------------------------------------
+    // MARK: - Initializers
+    // -------------------------------------------------------------------
+
+    override init() {
+        headlines = StatisticsDataSource.generateStatisticsData()
+        super.init()
+        
+        coreDataFetch()
+        coreDataToStatisticsHeadline()
     }
 
     // -------------------------------------------------------------------
@@ -87,6 +97,43 @@ class StatisticsDataSource: NSObject {
     
     // -------------------------------------------------------------------
     
+    func saveToCoreData(firstPlayer: String,
+              secondPlayer: String,
+              firstDeck: String,
+              secondDeck: String,
+              result: String, date: String) {
+      
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else { return }
+      
+        let managedContext =
+            appDelegate.persistentContainer.viewContext
+      
+        let entity =
+            NSEntityDescription.entity(forEntityName: "Headline",
+                                       in: managedContext)!
+      
+        let headlineData = NSManagedObject(entity: entity,
+                                           insertInto: managedContext)
+      
+        headlineData.setValuesForKeys(["firstPlayer": firstPlayer,
+                                       "secondPlayer": secondPlayer,
+                                       "date": date,
+                                       "result": result,
+                                       "firstPlayerDeck": firstDeck,
+                                       "secondPlayerDeck": secondDeck])
+        print(headlineData)
+        
+        do {
+            try managedContext.save()
+            coreHeadlines.append(headlineData)
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+    }
+    
+    // -------------------------------------------------------------------
+
     func coreDataToStatisticsHeadline() {
         
         for row in coreHeadlines {
@@ -111,18 +158,6 @@ class StatisticsDataSource: NSObject {
             
             headlines.append(result)
         }
-    }
-    
-    // -------------------------------------------------------------------
-    // MARK: - Initializers
-    // -------------------------------------------------------------------
-
-    override init() {
-        headlines = StatisticsDataSource.generateStatisticsData()
-        super.init()
-        
-        coreDataFetch()
-        coreDataToStatisticsHeadline()
     }
 
     // -------------------------------------------------------------------
