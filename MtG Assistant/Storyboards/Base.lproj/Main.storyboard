@@ -934,10 +934,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RzW-8P-SkR">
-                                <rect key="frame" x="0.0" y="108" width="375" height="621"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rEk-zR-HIe">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="807.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="833.33333333333337"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Type" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m7v-gw-rdn">
                                                 <rect key="frame" x="20" y="57.666666666666664" width="335" height="19.333333333333336"/>
@@ -1025,7 +1025,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="RzW-8P-SkR" firstAttribute="top" secondItem="PND-e8-ZAk" secondAttribute="top" constant="20" id="7Le-Uk-YLc"/>
+                            <constraint firstItem="RzW-8P-SkR" firstAttribute="top" secondItem="PND-e8-ZAk" secondAttribute="top" id="7Le-Uk-YLc"/>
                             <constraint firstItem="RzW-8P-SkR" firstAttribute="leading" secondItem="PND-e8-ZAk" secondAttribute="leading" id="Hf8-b7-FDh"/>
                             <constraint firstItem="RzW-8P-SkR" firstAttribute="centerX" secondItem="BnM-hA-Wsn" secondAttribute="centerX" id="Ox6-IU-7Gr"/>
                             <constraint firstItem="RzW-8P-SkR" firstAttribute="bottom" secondItem="PND-e8-ZAk" secondAttribute="bottom" id="fhw-Gl-WhF"/>

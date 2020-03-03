@@ -18,6 +18,9 @@ class CardDetailViewController: UIViewController {
     // MARK: Outlets
     // -------------------------------------------------------------------
     
+    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     @IBOutlet weak var cardName: UILabel!
     @IBOutlet weak var cardType: UILabel!
     
@@ -62,9 +65,9 @@ class CardDetailViewController: UIViewController {
         guard let data = data else { return }
 //        guard let urlPng = data.imageUris?.png else { return }
 //        guard let urlLarge = data.imageUris?.large else { return }
-        guard let urlNormal = data.imageUris?.normal else { return }
+        guard let urlBorderCropped = data.imageUris?.borderCrop else { return }
         
-        AF.request(urlNormal, method: .get)
+        AF.request(urlBorderCropped, method: .get)
             .validate()
             .responseData(completionHandler: { (responseData) in
                 self.cardImage.image = UIImage(data: responseData.data!)
