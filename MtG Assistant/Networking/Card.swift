@@ -10,6 +10,7 @@ struct Card: Decodable {
     
     let name: String
     let typeLine: String
+    let setName: String?
     let oracleText: String?
     let flavorText: String?
     let imageUris: CardImages?
@@ -17,6 +18,7 @@ struct Card: Decodable {
     enum CodingKeys: String, CodingKey {
         case name
         case typeLine = "type_line"
+        case setName = "set_name"
         case oracleText = "oracle_text"
         case flavorText = "flavor_text"
         case imageUris = "image_uris"
@@ -32,6 +34,10 @@ extension Card: Displayable {
 
     var cardType: String {
         "\(String(typeLine))"
+    }
+    
+    var nameOfSet: String {
+        "\(String(setName ?? ""))"
     }
 
     var oracleDescription: (label: String, value: String) {

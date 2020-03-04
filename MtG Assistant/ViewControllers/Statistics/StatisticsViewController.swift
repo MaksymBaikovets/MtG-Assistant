@@ -45,22 +45,12 @@ class StatisticsViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView,
-                            commit editingStyle: UITableViewCell.EditingStyle,
-                            forRowAt indexPath: IndexPath) {
+                            commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
          
         if editingStyle == .delete {
             statisticsDataSource.delete(to: tableView, at: indexPath)
         }
      }
-    
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        let itemsCount = statisticsDataSource.numberOfGames()
-        if itemsCount == 0 {
-            self.tableView.setEmptyMessage("No statistics yet")
-        } else {
-            self.tableView.restore()
-        }
-    }
     
 }
 

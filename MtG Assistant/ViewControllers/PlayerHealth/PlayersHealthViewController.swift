@@ -22,7 +22,7 @@ class PlayersHealthViewController: UIViewController {
     let buttonsFeedback = UISelectionFeedbackGenerator()
     
     // -------------------------------------------------------------------
-    // MARK: Outlets
+    // MARK: - Outlets
     // -------------------------------------------------------------------
 
     @IBOutlet var firstPlayerStat: UILabel!
@@ -64,9 +64,7 @@ class PlayersHealthViewController: UIViewController {
         secondPlayerTable.image = Backgrounds().redTableBackground()
         GlobalVariables.devotionToColorOfSecondPlayer = "red"
         
-    // -------------------------------------------------------------------
     // MARK: - Gesture Recognizers
-    // -------------------------------------------------------------------
         
         for views in [firstPlayerStat, secondPlayerStat] {
             

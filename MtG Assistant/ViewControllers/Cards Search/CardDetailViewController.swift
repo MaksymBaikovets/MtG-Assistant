@@ -15,7 +15,7 @@ class CardDetailViewController: UIViewController {
     var listData: [Displayable] = []
     
     // -------------------------------------------------------------------
-    // MARK: Outlets
+    // MARK: - Outlets
     // -------------------------------------------------------------------
     
     @IBOutlet weak var contentView: UIView!
@@ -31,14 +31,22 @@ class CardDetailViewController: UIViewController {
     @IBOutlet weak var flavorText: UILabel!
     
     @IBOutlet weak var cardImage: UIImageView!
+    
     // -------------------------------------------------------------------
-    // MARK: commonInit
+    // MARK: - Init VC
     // -------------------------------------------------------------------
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        commonInit()
+    }
     
     private func commonInit() {
         guard let data = data else { return }
 
         cardImageLoad()
+        self.cardImage.layer.borderWidth = 2
+        self.cardImage.layer.borderColor = UIColor.white.cgColor
 
         DispatchQueue.main.async {
             self.cardName.text = data.name
@@ -65,11 +73,21 @@ class CardDetailViewController: UIViewController {
         
     }
 
+    // -------------------------------------------------------------------
+    // MARK: - Alamofire
+    // -------------------------------------------------------------------
+    
     func cardImageLoad() {
         guard let data = data else { return }
+        
+        // images variants
 //        guard let urlPng = data.imageUris?.png else { return }
 //        guard let urlLarge = data.imageUris?.large else { return }
-        guard let urlBorderCropped = data.imageUris?.borderCrop else { return }
+        
+        guard let urlBorderCropped = data.imageUris?.borderCrop else {
+            self.cardImage.image = #imageLiteral(resourceName: "cardBack")
+            return
+        }
         
         AF.request(urlBorderCropped, method: .get)
             .validate()
@@ -79,9 +97,4 @@ class CardDetailViewController: UIViewController {
             })
     }
 
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        commonInit()
-    }
 }

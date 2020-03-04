@@ -9,6 +9,7 @@
 protocol Displayable {
     var name: String { get }
     var typeLine: String { get }
+    var setName: String? { get }
     var oracleText: String? { get }
     var flavorText: String? { get }
     var imageUris: CardImages? { get }

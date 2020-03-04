@@ -12,45 +12,24 @@ import Alamofire
 class CardsSearchViewController: UITableViewController {
 
     var cards: [Card] = []
+    
     var items: [Displayable] = []
     var selectedItem: Displayable?
-
+    
     @IBOutlet weak var searchBar: UISearchBar!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
         tableView.tableFooterView = UIView()
-        
-        cardsSerch()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        self.tableView.scrollRectToVisible(CGRect(x: 0, y: 0, width: 1, height: 1), animated: true)
-        
-    }
-    
-    func disableScrollsToTopPropertyOnAllSubviewsOf(view: UIView) {
-        for subview in view.subviews {
-            if let scrollView = subview as? UIScrollView {
-                (scrollView as UIScrollView).scrollsToTop = false
-            }
-            self.disableScrollsToTopPropertyOnAllSubviewsOf(view: subview as UIView)
-        }
-    }
-    
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        if items.count == 0 {
-            self.tableView.setEmptyMessage("Type a request to start a search")
-        } else {
-            self.tableView.restore()
-        }
+
     }
 
     // -------------------------------------------------------------------
-    // MARK: Extensions to UITableViewController
+    // MARK: - UITableViewController methods
     // -------------------------------------------------------------------
     
+    // empty table placeholder if empty
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if items.count == 0 {
             self.tableView.setEmptyMessage("Type a request to start a search")
@@ -58,43 +37,54 @@ class CardsSearchViewController: UITableViewController {
             self.tableView.restore()
         }
         
+        // return rows count
         return items.count
     }
 
+    // fill the rows
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "dataCell", for: indexPath)
         let item = items[indexPath.row]
         
         cell.textLabel?.text = item.name
         cell.detailTextLabel?.text = item.typeLine
-        
-        print()
-//        print(item.oracleText as Any)
-//        print(item.flavorText as Any)
 
         return cell
     }
-
+    
+    // define if row selected + remember position
+    var position = CGPoint()
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        position = tableView.contentOffset
+    }
+    
+    // auto-scroll handling
+    override func viewDidAppear(_ animated: Bool) {
+        if position != CGPoint() {
+            self.tableView.setContentOffset(position, animated: true)
+        } else {
+            self.tableView.scrollRectToVisible(CGRect(x: 0, y: 0, width: 1, height: 1), animated: true)
+        }
+    }
+    
+    // define which row selected
     override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         selectedItem = items[indexPath.row]
         return indexPath
     }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // Change the selected background view of the cell.
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
 
+    // prepare CardDetailsVC to receive data
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let destinationVC = segue.destination as? CardDetailViewController else { return }
-        destinationVC.data = selectedItem
+        guard let CardDetailsVC = segue.destination as? CardDetailViewController else { return }
+        CardDetailsVC.data = selectedItem
         
     }
 
 }
 
     // -------------------------------------------------------------------
-    // MARK: - UISearchBarDelegate
+    // MARK: - UISearchBarDelegate extension
     // -------------------------------------------------------------------
 
 extension CardsSearchViewController: UISearchBarDelegate {
@@ -145,9 +135,6 @@ extension CardsSearchViewController {
             .validate()
             .responseDecodable(of: CardsSearch.self) {
                 (response) in guard let cards = response.value else { return }
-
-//                print(cards.totalCards)
-//                print(cards.data)
                 
                 self.cards = cards.data
                 self.items = cards.data
