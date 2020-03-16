@@ -10,13 +10,11 @@ import UIKit
 
 class PlayersHealthViewController: UIViewController {
 
-    struct GlobalVariables {
-        static var devotionToColorOfFirstPlayer = ""
-        static var devotionToColorOfSecondPlayer = ""
+    var devotionToColorOfFirstPlayer = ""
+    var devotionToColorOfSecondPlayer = ""
 
-        static var showAlert = false
-        static var index: Int = 0
-    }
+    var showAlert = false
+    var index: Int = 0
     
     let notification = UINotificationFeedbackGenerator()
     let buttonsFeedback = UISelectionFeedbackGenerator()
@@ -60,9 +58,9 @@ class PlayersHealthViewController: UIViewController {
         
         // Set initaial backgrounds
         firstPlayerTable.image = Backgrounds().greenTableBackground()
-        GlobalVariables.devotionToColorOfFirstPlayer = "green"
+        self.devotionToColorOfFirstPlayer = "green"
         secondPlayerTable.image = Backgrounds().redTableBackground()
-        GlobalVariables.devotionToColorOfSecondPlayer = "red"
+        self.devotionToColorOfSecondPlayer = "red"
         
     // MARK: - Gesture Recognizers
         
@@ -104,17 +102,17 @@ class PlayersHealthViewController: UIViewController {
     // -------------------------------------------------------------------
 
     @IBAction func firstPlayerSetting(_ sender: UIButton) {
-        GlobalVariables.index = sender.tag
-        if GlobalVariables.index == 1 {
-            GlobalVariables.showAlert = true
+        self.index = sender.tag
+        if self.index == 1 {
+            self.showAlert = true
             chooseTableColor(player: "firstPlayer")
         }
     }
 
     @IBAction func secondPlayerSetting(_ sender: UIButton) {
-        GlobalVariables.index = sender.tag
-        if GlobalVariables.index == 2 {
-            GlobalVariables.showAlert = true
+        self.index = sender.tag
+        if self.index == 2 {
+            self.showAlert = true
             chooseTableColor(player: "secondPlayer")
         }
     }
@@ -134,7 +132,7 @@ class PlayersHealthViewController: UIViewController {
             style: .default,
             handler: { (_: UIAlertAction!) in changedDevotion = "white"
             self.backgroundChange(player: player, devotion: changedDevotion)
-            GlobalVariables.showAlert = false
+            self.showAlert = false
         })
 
         let redAction = UIAlertAction(
@@ -142,7 +140,7 @@ class PlayersHealthViewController: UIViewController {
             style: .default,
             handler: { (_: UIAlertAction!) in changedDevotion = "red"
             self.backgroundChange(player: player, devotion: changedDevotion)
-            GlobalVariables.showAlert = false
+            self.showAlert = false
         })
 
         let blackAction = UIAlertAction(
@@ -150,7 +148,7 @@ class PlayersHealthViewController: UIViewController {
             style: .default,
             handler: { (_: UIAlertAction!) in changedDevotion = "black"
             self.backgroundChange(player: player, devotion: changedDevotion)
-            GlobalVariables.showAlert = false
+            self.showAlert = false
         })
 
         let greenAction = UIAlertAction(
@@ -158,14 +156,14 @@ class PlayersHealthViewController: UIViewController {
             style: .default,
             handler: { (_: UIAlertAction!) in changedDevotion = "green"
             self.backgroundChange(player: player, devotion: changedDevotion)
-            GlobalVariables.showAlert = false
+            self.showAlert = false
         })
 
         let blueAction = UIAlertAction(
             title: NSLocalizedString("Blue (Island)", comment: ""),
             style: .default, handler: { (_: UIAlertAction!) in changedDevotion = "blue"
             self.backgroundChange(player: player, devotion: changedDevotion)
-            GlobalVariables.showAlert = false
+            self.showAlert = false
         })
 
         let cancelAction = UIAlertAction(
@@ -180,7 +178,7 @@ class PlayersHealthViewController: UIViewController {
         optionMenu.addAction(blueAction)
         optionMenu.addAction(cancelAction)
 
-        if GlobalVariables.showAlert == true {
+        if self.showAlert == true {
             present(optionMenu, animated: true, completion: nil)
         }
     }
@@ -190,17 +188,17 @@ class PlayersHealthViewController: UIViewController {
     // -------------------------------------------------------------------
 
     @IBAction func firstPlayerTableChange(_ sender: UIButton) {
-        GlobalVariables.index = sender.tag
-        if GlobalVariables.index == 3 {
-            GlobalVariables.showAlert = false
+        self.index = sender.tag
+        if self.index == 3 {
+            self.showAlert = false
             backgroundChange(player: "firstPlayer")
         }
     }
 
     @IBAction func secondPlayerTableChange(_ sender: UIButton) {
-        GlobalVariables.index = sender.tag
-        if GlobalVariables.index == 4 {
-            GlobalVariables.showAlert = false
+        self.index = sender.tag
+        if self.index == 4 {
+            self.showAlert = false
             backgroundChange(player: "secondPlayer")
         }
     }
@@ -212,12 +210,12 @@ class PlayersHealthViewController: UIViewController {
             guard let img = firstPlayerTable.image else { return }
 
             if devotion != "" {
-                GlobalVariables.devotionToColorOfFirstPlayer = devotion!
+                self.devotionToColorOfFirstPlayer = devotion!
             }
 
             firstPlayerTable.image = selectBackground(
                 current: img,
-                playerDevotion: GlobalVariables.devotionToColorOfFirstPlayer
+                playerDevotion: self.devotionToColorOfFirstPlayer
             )
             
         }
@@ -226,12 +224,12 @@ class PlayersHealthViewController: UIViewController {
             guard let img = secondPlayerTable.image else { return }
 
             if devotion != "" {
-                GlobalVariables.devotionToColorOfSecondPlayer = devotion!
+                self.devotionToColorOfSecondPlayer = devotion!
             }
 
             secondPlayerTable.image = selectBackground(
                 current: img,
-                playerDevotion: GlobalVariables.devotionToColorOfSecondPlayer
+                playerDevotion: self.devotionToColorOfSecondPlayer
             )
             
         }

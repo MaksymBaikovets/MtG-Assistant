@@ -13,8 +13,8 @@ class CardsSearchViewController: UITableViewController {
 
     var cards: [Card] = []
     
-    var items: [Displayable] = []
-    var selectedItem: Displayable?
+    var items: [CardDisplayable] = []
+    var selectedItem: CardDisplayable?
     
     @IBOutlet weak var searchBar: UISearchBar!
     

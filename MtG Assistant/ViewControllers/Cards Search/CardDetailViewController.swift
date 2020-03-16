@@ -11,8 +11,8 @@ import Alamofire
 
 class CardDetailViewController: UIViewController {
 
-    var data: Displayable?
-    var listData: [Displayable] = []
+    var data: CardDisplayable?
+    var listData: [CardDisplayable] = []
     
     // -------------------------------------------------------------------
     // MARK: - Outlets

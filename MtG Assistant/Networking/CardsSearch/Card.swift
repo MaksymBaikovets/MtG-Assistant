@@ -26,7 +26,7 @@ struct Card: Decodable {
     
 }
 
-extension Card: Displayable {
+extension Card: CardDisplayable {
     
     var cardName: String {
         name

@@ -1,12 +1,12 @@
 //
-//  Displayable.swift
+//  RulesDisplayable.swift
 //  MtG Assistant
 //
-//  Created by Maksym Baikovets on 01.03.2020.
+//  Created by Maksym Baikovets on 16.03.2020.
 //  Copyright © 2020 Maksym Baikovets. All rights reserved.
 //
 
-protocol Displayable {
+protocol RulesDisplayable {
     var name: String { get }
     var typeLine: String { get }
     var setName: String? { get }

@@ -16,10 +16,11 @@
 		58092AC123FD6BDE00517C8C /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58092AC023FD6BDE00517C8C /* LanguageViewController.swift */; };
 		58092AC323FD6C0100517C8C /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58092AC223FD6C0100517C8C /* UserProfileViewController.swift */; };
 		58216FCC23F5993900FA945A /* StatisticsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58216FCB23F5993900FA945A /* StatisticsDataSource.swift */; };
+		584ACB6B241FD6A200B7ABA2 /* RulesDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584ACB6A241FD6A200B7ABA2 /* RulesDisplayable.swift */; };
 		584C1AEF240D35200022C353 /* TableViewEmptyHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584C1AEE240D35200022C353 /* TableViewEmptyHelper.swift */; };
 		5888BFF223EB70DE005367D9 /* NewStatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5888BFF123EB70DE005367D9 /* NewStatisticsViewController.swift */; };
 		588A25E124071E7B00A52E60 /* EditStatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588A25E024071E7B00A52E60 /* EditStatisticsViewController.swift */; };
-		58C855F1240C1F69001694C2 /* Displayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C855F0240C1F69001694C2 /* Displayable.swift */; };
+		58C855F1240C1F69001694C2 /* CardDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C855F0240C1F69001694C2 /* CardDisplayable.swift */; };
 		58C855F5240C1F91001694C2 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C855F4240C1F91001694C2 /* Card.swift */; };
 		58C855F8240C24CD001694C2 /* CardsSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C855F7240C24CD001694C2 /* CardsSearchViewController.swift */; };
 		58C855FC240C2835001694C2 /* CardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C855FB240C2835001694C2 /* CardDetailViewController.swift */; };
@@ -54,10 +55,11 @@
 		58092AC023FD6BDE00517C8C /* LanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewController.swift; sourceTree = "<group>"; };
 		58092AC223FD6C0100517C8C /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		58216FCB23F5993900FA945A /* StatisticsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsDataSource.swift; sourceTree = "<group>"; };
+		584ACB6A241FD6A200B7ABA2 /* RulesDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesDisplayable.swift; sourceTree = "<group>"; };
 		584C1AEE240D35200022C353 /* TableViewEmptyHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewEmptyHelper.swift; sourceTree = "<group>"; };
 		5888BFF123EB70DE005367D9 /* NewStatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewStatisticsViewController.swift; sourceTree = "<group>"; };
 		588A25E024071E7B00A52E60 /* EditStatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditStatisticsViewController.swift; sourceTree = "<group>"; };
-		58C855F0240C1F69001694C2 /* Displayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Displayable.swift; sourceTree = "<group>"; };
+		58C855F0240C1F69001694C2 /* CardDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDisplayable.swift; sourceTree = "<group>"; };
 		58C855F4240C1F91001694C2 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		58C855F7240C24CD001694C2 /* CardsSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsSearchViewController.swift; sourceTree = "<group>"; };
 		58C855FB240C2835001694C2 /* CardDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailViewController.swift; sourceTree = "<group>"; };
@@ -182,13 +184,30 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		58C855EF240C1E69001694C2 /* Networking */ = {
+		584ACB68241FD5D600B7ABA2 /* CardsSearch */ = {
 			isa = PBXGroup;
 			children = (
-				58C855F0240C1F69001694C2 /* Displayable.swift */,
+				58C855F0240C1F69001694C2 /* CardDisplayable.swift */,
 				58EE2AB0240DB0C1000F81FC /* CardImages.swift */,
 				58C855F4240C1F91001694C2 /* Card.swift */,
 				58C855FD240C3D6D001694C2 /* CardsSearch.swift */,
+			);
+			path = CardsSearch;
+			sourceTree = "<group>";
+		};
+		584ACB69241FD5EB00B7ABA2 /* Rulesbook */ = {
+			isa = PBXGroup;
+			children = (
+				584ACB6A241FD6A200B7ABA2 /* RulesDisplayable.swift */,
+			);
+			path = Rulesbook;
+			sourceTree = "<group>";
+		};
+		58C855EF240C1E69001694C2 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				584ACB69241FD5EB00B7ABA2 /* Rulesbook */,
+				584ACB68241FD5D600B7ABA2 /* CardsSearch */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -428,10 +447,11 @@
 				58DBA18E23E61C02002C3041 /* PlayersHealthViewController.swift in Sources */,
 				58EE2AB1240DB0C1000F81FC /* CardImages.swift in Sources */,
 				58DBA18A23E61C02002C3041 /* AppDelegate.swift in Sources */,
+				584ACB6B241FD6A200B7ABA2 /* RulesDisplayable.swift in Sources */,
 				58DDC7F823FA92570000D6E7 /* UITextFieldPaddings.swift in Sources */,
 				58092AB723FD5E5500517C8C /* SettingsViewController.swift in Sources */,
 				58DBA18C23E61C02002C3041 /* SceneDelegate.swift in Sources */,
-				58C855F1240C1F69001694C2 /* Displayable.swift in Sources */,
+				58C855F1240C1F69001694C2 /* CardDisplayable.swift in Sources */,
 				58216FCC23F5993900FA945A /* StatisticsDataSource.swift in Sources */,
 				58C855F5240C1F91001694C2 /* Card.swift in Sources */,
 				58C855FE240C3D6D001694C2 /* CardsSearch.swift in Sources */,
