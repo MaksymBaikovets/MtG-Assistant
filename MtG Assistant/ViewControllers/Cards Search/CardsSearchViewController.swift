@@ -66,6 +66,10 @@ class CardsSearchViewController: UITableViewController {
         }
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+       position = tableView.contentOffset
+    }
+    
     // define which row selected
     override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         selectedItem = items[indexPath.row]
@@ -114,6 +118,8 @@ extension CardsSearchViewController: UISearchBarDelegate {
         searchBar.resignFirstResponder()
         
         items = cards
+        
+        self.tableView.restore()
         tableView.reloadData()
     }
     
