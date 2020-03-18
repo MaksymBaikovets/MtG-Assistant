@@ -29,6 +29,7 @@ extension UITableView {
         messageLabel.font = UIFont(name: "SFProDisplay", size: 24)
         messageLabel.sizeToFit()
         
+        // TODO: Need to show icon with text
 //        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.bounds.size.width, height: self.bounds.size.height))
 //        imageView.image = #imageLiteral(resourceName: "statisticsPlaceholder")
 

@@ -33,9 +33,7 @@ class CardsSearchViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if items.count == 0 {
             self.tableView.setEmptyMessage("Type a request to start a search")
-        } else {
-            self.tableView.restore()
-        }
+        } 
         
         // return rows count
         return items.count
@@ -128,17 +126,40 @@ extension CardsSearchViewController: UISearchBarDelegate {
 extension CardsSearchViewController {
     
     func cardsSerch(for name: String = "") {
+        
+        // Create the activity indicator
+        let activityIndicator = UIActivityIndicatorView()
+        
+        // add loader on request proceeding
+        view.addSubview(activityIndicator)
+        activityIndicator.center = CGPoint(x: view.frame.size.width * 0.5, y: view.frame.size.height * 0.5)
+        
+        activityIndicator.startAnimating()
+        
         let url = "https://api.scryfall.com/cards/search"
         let parameters: [String: String] = ["q": name, "unique": "cards", "order": "name"]
             
         AF.request(url, parameters: parameters)
             .validate()
             .responseDecodable(of: CardsSearch.self) {
-                (response) in guard let cards = response.value else { return }
+                (response) in guard let cards = response.value else {
+                    activityIndicator.stopAnimating() // On response stop animating
+                    activityIndicator.removeFromSuperview() // remove the view
+                    
+                    self.items = []
+                    self.tableView.reloadData()
+
+                    self.tableView.setEmptyMessage("Nothing found by your request")
+                    return
+                }
+                
+                self.tableView.restore()
+                activityIndicator.stopAnimating() // On response stop animating
+                activityIndicator.removeFromSuperview() // remove the view
                 
                 self.cards = cards.data
                 self.items = cards.data
-                                
+                
                 self.tableView.reloadData()
         }
     }

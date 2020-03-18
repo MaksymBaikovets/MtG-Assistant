@@ -16,7 +16,8 @@
 		58092AC123FD6BDE00517C8C /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58092AC023FD6BDE00517C8C /* LanguageViewController.swift */; };
 		58092AC323FD6C0100517C8C /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58092AC223FD6C0100517C8C /* UserProfileViewController.swift */; };
 		58216FCC23F5993900FA945A /* StatisticsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58216FCB23F5993900FA945A /* StatisticsDataSource.swift */; };
-		584ACB6B241FD6A200B7ABA2 /* RulesDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584ACB6A241FD6A200B7ABA2 /* RulesDisplayable.swift */; };
+		584ACB6D241FD9FE00B7ABA2 /* MagicCompRules_20200122.txt in Resources */ = {isa = PBXBuildFile; fileRef = 584ACB6C241FD9FD00B7ABA2 /* MagicCompRules_20200122.txt */; };
+		584ACB6F241FDDA200B7ABA2 /* RulesbookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584ACB6E241FDDA200B7ABA2 /* RulesbookViewController.swift */; };
 		584C1AEF240D35200022C353 /* TableViewEmptyHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584C1AEE240D35200022C353 /* TableViewEmptyHelper.swift */; };
 		5888BFF223EB70DE005367D9 /* NewStatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5888BFF123EB70DE005367D9 /* NewStatisticsViewController.swift */; };
 		588A25E124071E7B00A52E60 /* EditStatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588A25E024071E7B00A52E60 /* EditStatisticsViewController.swift */; };
@@ -55,7 +56,8 @@
 		58092AC023FD6BDE00517C8C /* LanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewController.swift; sourceTree = "<group>"; };
 		58092AC223FD6C0100517C8C /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		58216FCB23F5993900FA945A /* StatisticsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsDataSource.swift; sourceTree = "<group>"; };
-		584ACB6A241FD6A200B7ABA2 /* RulesDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesDisplayable.swift; sourceTree = "<group>"; };
+		584ACB6C241FD9FD00B7ABA2 /* MagicCompRules_20200122.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MagicCompRules_20200122.txt; sourceTree = "<group>"; };
+		584ACB6E241FDDA200B7ABA2 /* RulesbookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesbookViewController.swift; sourceTree = "<group>"; };
 		584C1AEE240D35200022C353 /* TableViewEmptyHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewEmptyHelper.swift; sourceTree = "<group>"; };
 		5888BFF123EB70DE005367D9 /* NewStatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewStatisticsViewController.swift; sourceTree = "<group>"; };
 		588A25E024071E7B00A52E60 /* EditStatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditStatisticsViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 		58092AB123FC226B00517C8C /* Documents */ = {
 			isa = PBXGroup;
 			children = (
+				584ACB6C241FD9FD00B7ABA2 /* MagicCompRules_20200122.txt */,
 			);
 			path = Documents;
 			sourceTree = "<group>";
@@ -195,18 +198,9 @@
 			path = CardsSearch;
 			sourceTree = "<group>";
 		};
-		584ACB69241FD5EB00B7ABA2 /* Rulesbook */ = {
-			isa = PBXGroup;
-			children = (
-				584ACB6A241FD6A200B7ABA2 /* RulesDisplayable.swift */,
-			);
-			path = Rulesbook;
-			sourceTree = "<group>";
-		};
 		58C855EF240C1E69001694C2 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				584ACB69241FD5EB00B7ABA2 /* Rulesbook */,
 				584ACB68241FD5D600B7ABA2 /* CardsSearch */,
 			);
 			path = Networking;
@@ -302,6 +296,7 @@
 				58D25DB32403288B00127487 /* PlayerHealth */,
 				58092AB823FD5E5900517C8C /* Statistics */,
 				58092ABB23FD6A1500517C8C /* Settings */,
+				584ACB6E241FDDA200B7ABA2 /* RulesbookViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -392,6 +387,7 @@
 				58F2C37F23E9DE8000D75EEB /* SF-Pro-Display-Regular.otf in Resources */,
 				58DBA19323E61C02002C3041 /* Main.storyboard in Resources */,
 				58F2C38223E9DE8000D75EEB /* SF-Pro-Display-Bold.otf in Resources */,
+				584ACB6D241FD9FE00B7ABA2 /* MagicCompRules_20200122.txt in Resources */,
 				58F2C38123E9DE8000D75EEB /* SF-Pro-Display-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -438,6 +434,7 @@
 				58DDC7EE23F9792E0000D6E7 /* StatisticsHeadlines.swift in Sources */,
 				58092ABF23FD6BC800517C8C /* ContactsViewController.swift in Sources */,
 				58092AC323FD6C0100517C8C /* UserProfileViewController.swift in Sources */,
+				584ACB6F241FDDA200B7ABA2 /* RulesbookViewController.swift in Sources */,
 				58092ABA23FD67D200517C8C /* UIColorFromRGB.swift in Sources */,
 				58DDC7F223F97FD80000D6E7 /* StatisticsCell.swift in Sources */,
 				58C855FC240C2835001694C2 /* CardDetailViewController.swift in Sources */,
@@ -447,7 +444,6 @@
 				58DBA18E23E61C02002C3041 /* PlayersHealthViewController.swift in Sources */,
 				58EE2AB1240DB0C1000F81FC /* CardImages.swift in Sources */,
 				58DBA18A23E61C02002C3041 /* AppDelegate.swift in Sources */,
-				584ACB6B241FD6A200B7ABA2 /* RulesDisplayable.swift in Sources */,
 				58DDC7F823FA92570000D6E7 /* UITextFieldPaddings.swift in Sources */,
 				58092AB723FD5E5500517C8C /* SettingsViewController.swift in Sources */,
 				58DBA18C23E61C02002C3041 /* SceneDelegate.swift in Sources */,

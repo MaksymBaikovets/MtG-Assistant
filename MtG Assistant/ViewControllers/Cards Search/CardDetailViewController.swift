@@ -65,7 +65,6 @@ class CardDetailViewController: UIViewController {
                 self.cardImage.topAnchor
                     .constraint(equalTo: self.oracleText.bottomAnchor, constant: 16)
                     .isActive = true
-
             } else {
                 self.flavorText.text = data.flavorText
             }

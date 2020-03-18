@@ -23,18 +23,23 @@ class PlayersHealthViewController: UIViewController {
     // MARK: - Outlets
     // -------------------------------------------------------------------
 
+    @IBOutlet weak var increaseFirstStatButton: UIButton!
+    @IBOutlet weak var decreaseFirstStatButton: UIButton!
     @IBOutlet var firstPlayerStat: UILabel!
+    
     @IBOutlet var firstPlayerTable: UIImageView!
     @IBOutlet var firstPlayerGradient: UIImageView!
-    @IBOutlet weak var firstPlayerCounterView: UIView!
     @IBOutlet weak var firstPlayerSettingView: UIView!
     @IBOutlet weak var firstPlayerTableChangeView: UIView!
-    @IBOutlet weak var firstPlayerCounterValue: UIStepper!
     
+    // --- //
+    
+    @IBOutlet weak var increaseSecondStatButton: UIButton!
+    @IBOutlet weak var decreaseSecondStatButton: UIButton!
     @IBOutlet var secondPlayerStat: UILabel!
+    
     @IBOutlet var secondPlayerTable: UIImageView!
     @IBOutlet var secondPlayerGradient: UIImageView!
-    @IBOutlet weak var secondPlayerCounterValue: UIStepper!
     
     // -------------------------------------------------------------------
     // MARK: - viewDidLoad / awakeFromNib
@@ -42,8 +47,19 @@ class PlayersHealthViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        increaseFirstStatButton.layer.masksToBounds = true
+        increaseFirstStatButton.layer.cornerRadius = increaseFirstStatButton.frame.size.width / 2.0
+        decreaseFirstStatButton.layer.masksToBounds = true
+        decreaseFirstStatButton.layer.cornerRadius = decreaseFirstStatButton.frame.size.width / 2.0
+        
         firstPlayerStat.layer.masksToBounds = true
         firstPlayerStat.layer.cornerRadius = firstPlayerStat.frame.size.width / 2.0
+        
+        increaseSecondStatButton.layer.masksToBounds = true
+        increaseSecondStatButton.layer.cornerRadius = increaseSecondStatButton.frame.size.width / 2.0
+        decreaseSecondStatButton.layer.masksToBounds = true
+        decreaseSecondStatButton.layer.cornerRadius = decreaseSecondStatButton.frame.size.width / 2.0
 
         secondPlayerStat.layer.masksToBounds = true
         secondPlayerStat.layer.cornerRadius = secondPlayerStat.frame.size.width / 2.0
@@ -54,7 +70,6 @@ class PlayersHealthViewController: UIViewController {
         firstPlayerGradient.transform = CGAffineTransform(scaleX: -1, y: -1)
         firstPlayerSettingView.transform = CGAffineTransform(scaleX: -1, y: -1)
         firstPlayerTableChangeView.transform = CGAffineTransform(scaleX: -1, y: -1)
-        firstPlayerCounterView.transform = CGAffineTransform(scaleX: -1, y: -1)
         
         // Set initaial backgrounds
         firstPlayerTable.image = Backgrounds().greenTableBackground()
@@ -260,16 +275,44 @@ class PlayersHealthViewController: UIViewController {
     }
 
     // -------------------------------------------------------------------
-    // MARK: - Health Counters Initial Values
+    // MARK: - Health Counters Up and Down
     // -------------------------------------------------------------------
+    
+    @IBAction func counterUp(_ sender: UIButton) {
+        if sender.accessibilityLabel == "increaseSecond" {
+            guard let value = Int(secondPlayerStat.text!) else { return }
+            if value == 99 {
+                return
+            }
+            secondPlayerStat.text = String(value + 1)
 
-    @IBAction func firstPlayerCounter(_ sender: UIStepper) {
-        firstPlayerStat.text = Int(sender.value).description
+        } else if sender.accessibilityLabel == "increaseFirst" {
+            guard let value = Int(firstPlayerStat.text!) else { return }
+            if value == 99 {
+                return
+            }
+            firstPlayerStat.text = String(value + 1)
+        }
+        
         buttonsFeedback.selectionChanged()
     }
     
-    @IBAction func secondPlayerCounter(_ sender: UIStepper) {
-        secondPlayerStat.text = Int(sender.value).description
+    @IBAction func counterDown(_ sender: UIButton) {
+        if sender.accessibilityLabel == "decreaseSecond" {
+            guard let value = Int(secondPlayerStat.text!) else { return }
+            if value == -99 {
+                return
+            }
+            secondPlayerStat.text = String(value - 1)
+
+        } else if sender.accessibilityLabel == "decreaseFirst" {
+            guard let value = Int(firstPlayerStat.text!) else { return }
+            if value == -99 {
+                return
+            }
+            firstPlayerStat.text = String(value - 1)
+        }
+        
         buttonsFeedback.selectionChanged()
     }
     
@@ -285,18 +328,12 @@ extension PlayersHealthViewController: UIGestureRecognizerDelegate {
         firstPlayerStat.text = "30"
         secondPlayerStat.text = "30"
         
-        self.firstPlayerCounterValue.value = 30
-        self.secondPlayerCounterValue.value = 30
-        
         notification.notificationOccurred(.warning)
     }
     
     @objc func handleDoubleTap(_ gesture: UITapGestureRecognizer){
         firstPlayerStat.text = "20"
         secondPlayerStat.text = "20"
-        
-        self.firstPlayerCounterValue.value = 20
-        self.secondPlayerCounterValue.value = 20
         
         notification.notificationOccurred(.success)
     }
