@@ -11,10 +11,8 @@
 		58092AAF23FBECD200517C8C /* MtG_Assistant.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 58092AAD23FBECD200517C8C /* MtG_Assistant.xcdatamodeld */; };
 		58092AB723FD5E5500517C8C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58092AB623FD5E5500517C8C /* SettingsViewController.swift */; };
 		58092ABA23FD67D200517C8C /* UIColorFromRGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58092AB923FD67D200517C8C /* UIColorFromRGB.swift */; };
-		58092ABD23FD6BBA00517C8C /* AppearanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58092ABC23FD6BBA00517C8C /* AppearanceViewController.swift */; };
 		58092ABF23FD6BC800517C8C /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58092ABE23FD6BC800517C8C /* ContactsViewController.swift */; };
 		58092AC123FD6BDE00517C8C /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58092AC023FD6BDE00517C8C /* LanguageViewController.swift */; };
-		58092AC323FD6C0100517C8C /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58092AC223FD6C0100517C8C /* UserProfileViewController.swift */; };
 		58216FCC23F5993900FA945A /* StatisticsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58216FCB23F5993900FA945A /* StatisticsDataSource.swift */; };
 		58355E372422768800B97DF5 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58355E362422768800B97DF5 /* Localizable.swift */; };
 		584ACB6D241FD9FE00B7ABA2 /* MagicCompRules_20200122.txt in Resources */ = {isa = PBXBuildFile; fileRef = 584ACB6C241FD9FD00B7ABA2 /* MagicCompRules_20200122.txt */; };
@@ -52,10 +50,8 @@
 		58092AAE23FBECD200517C8C /* MtG_Assistant.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MtG_Assistant.xcdatamodel; sourceTree = "<group>"; };
 		58092AB623FD5E5500517C8C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		58092AB923FD67D200517C8C /* UIColorFromRGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorFromRGB.swift; sourceTree = "<group>"; };
-		58092ABC23FD6BBA00517C8C /* AppearanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceViewController.swift; sourceTree = "<group>"; };
 		58092ABE23FD6BC800517C8C /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		58092AC023FD6BDE00517C8C /* LanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewController.swift; sourceTree = "<group>"; };
-		58092AC223FD6C0100517C8C /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		58216FCB23F5993900FA945A /* StatisticsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsDataSource.swift; sourceTree = "<group>"; };
 		58355E362422768800B97DF5 /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
 		584ACB6C241FD9FD00B7ABA2 /* MagicCompRules_20200122.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MagicCompRules_20200122.txt; sourceTree = "<group>"; };
@@ -163,8 +159,6 @@
 			isa = PBXGroup;
 			children = (
 				58092AB623FD5E5500517C8C /* SettingsViewController.swift */,
-				58092AC223FD6C0100517C8C /* UserProfileViewController.swift */,
-				58092ABC23FD6BBA00517C8C /* AppearanceViewController.swift */,
 				58092AC023FD6BDE00517C8C /* LanguageViewController.swift */,
 				58092ABE23FD6BC800517C8C /* ContactsViewController.swift */,
 			);
@@ -189,7 +183,7 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		584ACB68241FD5D600B7ABA2 /* CardsSearch */ = {
+		584ACB68241FD5D600B7ABA2 /* Cards Search */ = {
 			isa = PBXGroup;
 			children = (
 				58C855F0240C1F69001694C2 /* CardDisplayable.swift */,
@@ -197,13 +191,21 @@
 				58C855F4240C1F91001694C2 /* Card.swift */,
 				58C855FD240C3D6D001694C2 /* CardsSearch.swift */,
 			);
-			path = CardsSearch;
+			path = "Cards Search";
+			sourceTree = "<group>";
+		};
+		5854586A2422E1F000267D48 /* Cards Rulings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Cards Rulings";
 			sourceTree = "<group>";
 		};
 		58C855EF240C1E69001694C2 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				584ACB68241FD5D600B7ABA2 /* CardsSearch */,
+				5854586A2422E1F000267D48 /* Cards Rulings */,
+				584ACB68241FD5D600B7ABA2 /* Cards Search */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -217,12 +219,12 @@
 			path = "Cards Search";
 			sourceTree = "<group>";
 		};
-		58D25DB32403288B00127487 /* PlayerHealth */ = {
+		58D25DB32403288B00127487 /* Players Health */ = {
 			isa = PBXGroup;
 			children = (
 				58DBA18D23E61C02002C3041 /* PlayersHealthViewController.swift */,
 			);
-			path = PlayerHealth;
+			path = "Players Health";
 			sourceTree = "<group>";
 		};
 		58DBA17D23E61C02002C3041 = {
@@ -250,7 +252,7 @@
 				58DDC7F623FA923D0000D6E7 /* Helpers */,
 				58DDC7EC23F979130000D6E7 /* Models */,
 				58216FC923F598F600FA945A /* Data Sources */,
-				58F2C37823E9DE4D00D75EEB /* ViewControllers */,
+				58F2C37823E9DE4D00D75EEB /* View Controllers */,
 				58216FCA23F5991300FA945A /* Storyboards */,
 				58F2C37723E9DE2A00D75EEB /* Resources */,
 				58DBA18923E61C02002C3041 /* AppDelegate.swift */,
@@ -292,16 +294,16 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		58F2C37823E9DE4D00D75EEB /* ViewControllers */ = {
+		58F2C37823E9DE4D00D75EEB /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				58C855F6240C24A9001694C2 /* Cards Search */,
-				58D25DB32403288B00127487 /* PlayerHealth */,
+				58D25DB32403288B00127487 /* Players Health */,
 				58092AB823FD5E5900517C8C /* Statistics */,
 				58092ABB23FD6A1500517C8C /* Settings */,
 				584ACB6E241FDDA200B7ABA2 /* RulesbookViewController.swift */,
 			);
-			path = ViewControllers;
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 		74BD99BB2A3F842ACF53C474 /* Frameworks */ = {
@@ -436,13 +438,11 @@
 				58092AAF23FBECD200517C8C /* MtG_Assistant.xcdatamodeld in Sources */,
 				58DDC7EE23F9792E0000D6E7 /* StatisticsHeadlines.swift in Sources */,
 				58092ABF23FD6BC800517C8C /* ContactsViewController.swift in Sources */,
-				58092AC323FD6C0100517C8C /* UserProfileViewController.swift in Sources */,
 				584ACB6F241FDDA200B7ABA2 /* RulesbookViewController.swift in Sources */,
 				58092ABA23FD67D200517C8C /* UIColorFromRGB.swift in Sources */,
 				58DDC7F223F97FD80000D6E7 /* StatisticsCell.swift in Sources */,
 				58C855FC240C2835001694C2 /* CardDetailViewController.swift in Sources */,
 				584C1AEF240D35200022C353 /* TableViewEmptyHelper.swift in Sources */,
-				58092ABD23FD6BBA00517C8C /* AppearanceViewController.swift in Sources */,
 				58DDC7F023F97D090000D6E7 /* BackgroundsDataSource.swift in Sources */,
 				58DBA18E23E61C02002C3041 /* PlayersHealthViewController.swift in Sources */,
 				58EE2AB1240DB0C1000F81FC /* CardImages.swift in Sources */,

@@ -16,6 +16,15 @@ class LanguageViewController: UITableViewController {
 
     }
     
+    override  func awakeFromNib() {
+        super.awakeFromNib()
+        self.title = NSLocalizedString("Language", comment: "")
+    }
+    
+    // -------------------------------------------------------------------
+    // MARK: - Table view data source
+    // -------------------------------------------------------------------
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -25,13 +34,10 @@ class LanguageViewController: UITableViewController {
         let selectedItem = indexPath.row.description
         
         if Int(selectedItem) == 0 {
-            print("EN")
             Language.language = Language.english
         } else if Int(selectedItem) == 1 {
-            print("RU")
             Language.language = Language.russian
         } else if Int(selectedItem) == 2 {
-            print("UK")
             Language.language = Language.ukrainian
         }
         

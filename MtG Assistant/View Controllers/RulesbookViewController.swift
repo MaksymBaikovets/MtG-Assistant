@@ -31,6 +31,11 @@ class RulesbookViewController: UIViewController {
         
     }
     
+    override  func awakeFromNib() {
+        super.awakeFromNib()
+        self.title = NSLocalizedString("Rules Book", comment: "")
+    }
+    
     func ruleSearch(_ searchQuery: String) -> [String.Index] {
         guard let content = rulings.text else { return [] }
         let query = searchQuery
@@ -65,6 +70,7 @@ extension RulesbookViewController: UISearchBarDelegate {
         guard let ruleName = rulesSearchBar.text else { return }
 
         ruleSearch(ruleName)
+        heightForLabel(text: rules)
         
         rulesSearchBar.showsCancelButton = false
         rulesSearchBar.resignFirstResponder()
@@ -87,6 +93,21 @@ extension RulesbookViewController: UISearchBarDelegate {
         
 //        self.tableView.restore()
 //        tableView.reloadData()
+    }
+    
+    func heightForLabel(text: String) -> CGFloat {
+        let screenSize = UIScreen.main.bounds
+        let screenWidth = screenSize.width
+        
+        let label: UITextView = UITextView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: CGFloat.greatestFiniteMagnitude))
+        
+        label.font = UIFont(name: "SFProDisplay", size: 12)
+        label.text = text
+        label.sizeToFit()
+
+        print(label.frame.height)
+        return label.frame.height
+
     }
     
 }

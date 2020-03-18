@@ -325,8 +325,8 @@ class PlayersHealthViewController: UIViewController {
 extension PlayersHealthViewController: UIGestureRecognizerDelegate {
     
     @objc func handleSingleTap(_ gesture: UITapGestureRecognizer){
-        firstPlayerStat.text = "30"
-        secondPlayerStat.text = "30"
+        firstPlayerStat.text = "40"
+        secondPlayerStat.text = "40"
         
         notification.notificationOccurred(.warning)
     }

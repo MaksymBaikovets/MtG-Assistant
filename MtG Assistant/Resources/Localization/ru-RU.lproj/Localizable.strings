@@ -7,17 +7,22 @@
 */
 
 // MARK: Tabs Titles
-"Players Health" = "Счетчик Здоровья";
+"Players Health" = "Счетчики";
+"Rules Book" = "Правила";
+"Cards Search" = "Поиск карт";
 "Statistics" = "Статистика";
 "Settings" = "Настройки";
 
+
 // MARK: General Strings
+"lang"="Русский";
 "Cancel" = "Отмена";
 "OK" = "OK";
 "Save" = "Сохранить";
 "Edit" = "Изменить";
 "Done" = "Готово";
 "Info" = "Информация";
+
 
 // MARK: Players Health strings
 "Table Color" = "Цвет стола";
@@ -28,19 +33,33 @@
 "Green (Forest)" = "Зеленый (Forest)";
 "Blue (Island)" = "Голубой (Island)";
 
+
+// MARK: Rules Book strings
+
+
+// MARK: Cards Search strings
+"Type a request to start a search" = "Введите запрос для начала поиска";
+"Nothing found by your request" = "По вашему запросу ничего \nне найдено";
+
+
 // MARK: Statistics strings
 "Add New Game" = "Добавить Запись";
 "Edit Game" = "Изменить Запись";
 "First Player Deck" = "Колода первого игрока";
 "Second Player Deck" = "Колода второго игрока";
 "Game Result" = "Результат игры";
+"No statistics yet" = "Статистика отсутствует";
 
 
 // MARK: Settings strings
 "Edit Profile" = "Изменить профиль";
 "Appearance" = "Оформление";
 "Language" = "Язык";
-"Contact Developer" = "Свзяться с разработчиком";
+"Contact Developer" = "Обратная связь";
 "About" = "О приложении";
 "Wizards Website" = "Веб-сайт Wizards";
 "App need to be reloaded" = "Чтобы изменения языка вступили в силу необходимо перезапустить приложение";
+
+
+// MARK: Settings -> Language strings
+"Ukraine" = "Украина";

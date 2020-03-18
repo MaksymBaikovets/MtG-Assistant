@@ -8,16 +8,21 @@
 
 // MARK: Tabs Titles
 "Players Health" = "Players Health";
+"Rules Book" = "Rules Book";
+"Cards Search" = "Cards Search";
 "Statistics" = "Statistics";
 "Settings" = "Settings";
 
+
 // MARK: General Strings
+"lang"="English";
 "Cancel" = "Cancel";
 "OK" = "OK";
 "Save" = "Save";
 "Edit" = "Edit";
 "Done" = "Done";
 "Info" = "Info";
+
 
 // MARK: Players Health strings
 "Table Color" = "Table Color";
@@ -28,12 +33,22 @@
 "Green (Forest)" = "Green (Forest)";
 "Blue (Island)" = "Blue (Island)";
 
+
+// MARK: Rules Book strings
+
+
+// MARK: Cards Search strings
+"Type a request to start a search" = "Type a request to start a search";
+"Nothing found by your request" = "Nothing found by your request";
+
+
 // MARK: Statistics strings
 "Add New Game" = "Add New Game";
 "Edit Game" = "Edit Game";
 "First Player Deck" = "First Player Deck";
 "Second Player Deck" = "Second Player Deck";
 "Game Results" = "Game Results";
+"No statistics yet" = "No statistics yet";
 
 
 // MARK: Settings strings
@@ -44,3 +59,7 @@
 "About" = "About";
 "Wizards Website" = "Wizards Website";
 "App need to be reloaded" = "Please, reload the app to set selected language";
+
+
+// MARK: Settings -> Language strings
+"Ukraine" = "Ukraine";

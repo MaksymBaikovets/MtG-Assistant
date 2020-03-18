@@ -24,6 +24,11 @@ class CardsSearchViewController: UITableViewController {
         tableView.tableFooterView = UIView()
 
     }
+    
+    override  func awakeFromNib() {
+        super.awakeFromNib()
+        self.title = NSLocalizedString("Cards Search", comment: "")
+    }
 
     // -------------------------------------------------------------------
     // MARK: - UITableViewController methods
@@ -32,7 +37,8 @@ class CardsSearchViewController: UITableViewController {
     // empty table placeholder if empty
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if items.count == 0 {
-            self.tableView.setEmptyMessage("Type a request to start a search")
+            self.tableView.setEmptyMessage(
+                NSLocalizedString("Type a request to start a search", comment: ""))
         } 
         
         // return rows count
@@ -154,7 +160,8 @@ extension CardsSearchViewController {
 
                     activityIndicator.stopAnimating()
                     activityIndicator.removeFromSuperview()
-                    self.tableView.setEmptyMessage("Nothing found by your request")
+                    self.tableView.setEmptyMessage(
+                        NSLocalizedString("Nothing found by your request", comment: ""))
                     
                     return
                 }

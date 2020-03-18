@@ -11,20 +11,30 @@ import SafariServices
 
 class SettingsViewController: UITableViewController {
 
-    @IBOutlet weak var aboutCell: UITableViewCell!
     @IBOutlet weak var editButton: UIBarButtonItem!
     
+    @IBOutlet weak var languageLabel: UILabel!
+    @IBOutlet weak var currentLanguageLabel: UILabel!
+    
+    @IBOutlet weak var contactsLabel: UILabel!
+    
+    @IBOutlet weak var aboutLabel: UILabel!
+    @IBOutlet weak var aboutCell: UITableViewCell!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        languageLabel.text = NSLocalizedString("Language", comment: "")
+        currentLanguageLabel.text = NSLocalizedString("lang", comment: "")
+        contactsLabel.text = NSLocalizedString("Contact Developer", comment: "")
+        aboutLabel.text = NSLocalizedString("About", comment: "")
         
         editButton?.isEnabled = false
         editButton?.tintColor = UIColor.clear
 
         if self.traitCollection.userInterfaceStyle == .dark {
             tableView.backgroundColor = RGBColor().UIColorFromRGB(rgbValue: 0x000000)
-        }
-
-        else {
+        } else {
             tableView.backgroundColor = RGBColor().UIColorFromRGB(rgbValue: 0xF3F3F3)
         }
     }

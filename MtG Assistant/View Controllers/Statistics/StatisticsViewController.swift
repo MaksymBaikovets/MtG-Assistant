@@ -62,7 +62,7 @@ extension StatisticsViewController {
     override func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         let itemsCount = statisticsDataSource.numberOfGames()
         if itemsCount == 0 {
-            self.tableView.setEmptyMessage("No statistics yet")
+            self.tableView.setEmptyMessage(NSLocalizedString("No statistics yet", comment: ""))
         } else {
             self.tableView.restore()
         }

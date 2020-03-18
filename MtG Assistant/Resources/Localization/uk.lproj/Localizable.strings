@@ -8,39 +8,58 @@
 
 // MARK: Tabs Titles
 "Players Health" = "Лічильник Здоров'я";
+"Rules Book" = "Правила";
+"Cards Search" = "Пошук карток";
 "Statistics" = "Статистика";
 "Settings" = "Налаштування";
 
+
 // MARK: General Strings
-"Cancel" = "Cancel";
+"lang"="Українська";
+"Cancel" = "Скасувати";
 "OK" = "OK";
-"Save" = "Save";
-"Edit" = "Edit";
-"Done" = "Done";
-"Info" = "Info";
+"Save" = "Зберегти";
+"Edit" = "Редагувати";
+"Done" = "Добре";
+"Info" = "Інформація";
+
 
 // MARK: Players Health strings
-"Table Color" = "Table Color";
-"Choose table color for the player" = "Choose table color for the player";
-"White (Plain)" = "White (Plain)";
-"Red (Mountain)" = "Red (Mountain)";
-"Black (Swamp)" = "Black (Swamp)";
-"Green (Forest)" = "Green (Forest)";
-"Blue (Island)" = "Blue (Island)";
+"Table Color" = "Колір стола";
+"Choose table color for the player" = "Оберіть колір стола для гравця";
+"White (Plain)" = "Білій (Plain)";
+"Red (Mountain)" = "Червоний (Mountain)";
+"Black (Swamp)" = "Чорний (Swamp)";
+"Green (Forest)" = "Зелений (Forest)";
+"Blue (Island)" = "Блакитний (Island)";
+
+
+// MARK: Rules Book strings
+
+
+// MARK: Cards Search strings
+"Type a request to start a search" = "Введіть запит для початку пошуку";
+"Nothing found by your request" = "За вашим запиитом нічого не знайдено";
+
 
 // MARK: Statistics strings
-"Add New Game" = "Add New Game";
-"Edit Game" = "Edit Game";
-"First Player Deck" = "First Player Deck";
-"Second Player Deck" = "Second Player Deck";
-"Game Results" = "Game Results";
+"Add New Game" = "Додати запис";
+"Edit Game" = "Редагувати гру";
+"First Player Deck" = "Колода першого гравця";
+"Second Player Deck" = "Колода другого гравця";
+"Game Results" = "Результат гри";
+"No statistics yet" = "Статистика відсутня";
 
 
 // MARK: Settings strings
 "Edit Profile" = "Edit Profile";
-"Appearance" = "Appearance";
-"Language" = "Language";
-"Contact Developer" = "Contact Developer";
+"Appearance" = "Зовнішній вигляд";
+"Language" = "Мова";
+"Contact Developer" = "Зворотній зв'язок";
 "About" = "Про додаток";
 "Wizards Website" = "Вебсайт Wizards";
-"App need to be reloaded" = "App need to be reloaded";
+"App need to be reloaded" = "Будьласка, перезавантажте додаток для того щоб зміни вступили в силу";
+
+
+// MARK: Settings -> Language strings
+"Ukraine" = "Україна";
