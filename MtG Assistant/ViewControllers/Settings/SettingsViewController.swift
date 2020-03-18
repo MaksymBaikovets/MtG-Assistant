@@ -12,9 +12,13 @@ import SafariServices
 class SettingsViewController: UITableViewController {
 
     @IBOutlet weak var aboutCell: UITableViewCell!
-
+    @IBOutlet weak var editButton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        editButton?.isEnabled = false
+        editButton?.tintColor = UIColor.clear
 
         if self.traitCollection.userInterfaceStyle == .dark {
             tableView.backgroundColor = RGBColor().UIColorFromRGB(rgbValue: 0x000000)

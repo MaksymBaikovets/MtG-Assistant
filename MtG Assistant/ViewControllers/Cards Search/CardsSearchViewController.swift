@@ -136,12 +136,12 @@ extension CardsSearchViewController {
         // Create the activity indicator
         let activityIndicator = UIActivityIndicatorView()
         
-        // add loader on request proceeding
         view.addSubview(activityIndicator)
         activityIndicator.center = CGPoint(x: view.frame.size.width * 0.5, y: view.frame.size.height * 0.5)
         
         activityIndicator.startAnimating()
         
+        // Proceed request
         let url = "https://api.scryfall.com/cards/search"
         let parameters: [String: String] = ["q": name, "unique": "cards", "order": "name"]
             
@@ -149,19 +149,20 @@ extension CardsSearchViewController {
             .validate()
             .responseDecodable(of: CardsSearch.self) {
                 (response) in guard let cards = response.value else {
-                    activityIndicator.stopAnimating() // On response stop animating
-                    activityIndicator.removeFromSuperview() // remove the view
-                    
                     self.items = []
                     self.tableView.reloadData()
 
+                    activityIndicator.stopAnimating()
+                    activityIndicator.removeFromSuperview()
                     self.tableView.setEmptyMessage("Nothing found by your request")
+                    
                     return
                 }
                 
+                // Restore tableView after request comlete
                 self.tableView.restore()
-                activityIndicator.stopAnimating() // On response stop animating
-                activityIndicator.removeFromSuperview() // remove the view
+                activityIndicator.stopAnimating()
+                activityIndicator.removeFromSuperview()
                 
                 self.cards = cards.data
                 self.items = cards.data

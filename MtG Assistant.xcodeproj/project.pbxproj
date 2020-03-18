@@ -16,6 +16,7 @@
 		58092AC123FD6BDE00517C8C /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58092AC023FD6BDE00517C8C /* LanguageViewController.swift */; };
 		58092AC323FD6C0100517C8C /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58092AC223FD6C0100517C8C /* UserProfileViewController.swift */; };
 		58216FCC23F5993900FA945A /* StatisticsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58216FCB23F5993900FA945A /* StatisticsDataSource.swift */; };
+		58355E372422768800B97DF5 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58355E362422768800B97DF5 /* Localizable.swift */; };
 		584ACB6D241FD9FE00B7ABA2 /* MagicCompRules_20200122.txt in Resources */ = {isa = PBXBuildFile; fileRef = 584ACB6C241FD9FD00B7ABA2 /* MagicCompRules_20200122.txt */; };
 		584ACB6F241FDDA200B7ABA2 /* RulesbookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584ACB6E241FDDA200B7ABA2 /* RulesbookViewController.swift */; };
 		584C1AEF240D35200022C353 /* TableViewEmptyHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584C1AEE240D35200022C353 /* TableViewEmptyHelper.swift */; };
@@ -56,6 +57,7 @@
 		58092AC023FD6BDE00517C8C /* LanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewController.swift; sourceTree = "<group>"; };
 		58092AC223FD6C0100517C8C /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		58216FCB23F5993900FA945A /* StatisticsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsDataSource.swift; sourceTree = "<group>"; };
+		58355E362422768800B97DF5 /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
 		584ACB6C241FD9FD00B7ABA2 /* MagicCompRules_20200122.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MagicCompRules_20200122.txt; sourceTree = "<group>"; };
 		584ACB6E241FDDA200B7ABA2 /* RulesbookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesbookViewController.swift; sourceTree = "<group>"; };
 		584C1AEE240D35200022C353 /* TableViewEmptyHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewEmptyHelper.swift; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 				58DDC7F723FA92570000D6E7 /* UITextFieldPaddings.swift */,
 				58092AB923FD67D200517C8C /* UIColorFromRGB.swift */,
 				584C1AEE240D35200022C353 /* TableViewEmptyHelper.swift */,
+				58355E362422768800B97DF5 /* Localizable.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -446,6 +449,7 @@
 				58DBA18A23E61C02002C3041 /* AppDelegate.swift in Sources */,
 				58DDC7F823FA92570000D6E7 /* UITextFieldPaddings.swift in Sources */,
 				58092AB723FD5E5500517C8C /* SettingsViewController.swift in Sources */,
+				58355E372422768800B97DF5 /* Localizable.swift in Sources */,
 				58DBA18C23E61C02002C3041 /* SceneDelegate.swift in Sources */,
 				58C855F1240C1F69001694C2 /* CardDisplayable.swift in Sources */,
 				58216FCC23F5993900FA945A /* StatisticsDataSource.swift in Sources */,

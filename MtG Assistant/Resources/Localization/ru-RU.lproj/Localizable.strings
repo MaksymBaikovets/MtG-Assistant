@@ -17,6 +17,7 @@
 "Save" = "Сохранить";
 "Edit" = "Изменить";
 "Done" = "Готово";
+"Info" = "Информация";
 
 // MARK: Players Health strings
 "Table Color" = "Цвет стола";
@@ -42,3 +43,4 @@
 "Contact Developer" = "Свзяться с разработчиком";
 "About" = "О приложении";
 "Wizards Website" = "Веб-сайт Wizards";
+"App need to be reloaded" = "Чтобы изменения языка вступили в силу необходимо перезапустить приложение";

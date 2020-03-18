@@ -17,6 +17,7 @@
 "Save" = "Save";
 "Edit" = "Edit";
 "Done" = "Done";
+"Info" = "Info";
 
 // MARK: Players Health strings
 "Table Color" = "Table Color";
@@ -42,3 +43,4 @@
 "Contact Developer" = "Contact Developer";
 "About" = "About";
 "Wizards Website" = "Wizards Website";
+"App need to be reloaded" = "Please, reload the app to set selected language";
