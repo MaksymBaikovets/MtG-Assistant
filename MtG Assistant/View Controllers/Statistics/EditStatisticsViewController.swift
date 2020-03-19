@@ -19,6 +19,9 @@ class EditStatisticsViewController: UITableViewController, UITextFieldDelegate {
     // MARK: Outlets
     // -------------------------------------------------------------------
     
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    
     @IBOutlet weak var firstPlayerName: TextField!
     @IBOutlet weak var secondPlayerName: TextField!
     
@@ -45,9 +48,27 @@ class EditStatisticsViewController: UITableViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         commonInit()
-        
-        print([data])
 
+        cancelButton.title = NSLocalizedString("Cancel", comment: "")
+        saveButton.title = NSLocalizedString("Save", comment: "")
+        
+        datePickerCreate()
+    }
+    
+    func datePickerCreate() {
+        let datePickerView:UIDatePicker = UIDatePicker()
+        datePickerView.datePickerMode = UIDatePicker.Mode.date
+        dateLabel.inputView = datePickerView
+        
+        datePickerView.addTarget(self, action: #selector(self.datePickerValueChanged),
+                                 for: UIControl.Event.valueChanged)
+    }
+    
+    @objc func datePickerValueChanged(sender: UIDatePicker) {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = DateFormatter.Style.medium
+            dateFormatter.timeStyle = DateFormatter.Style.none
+            dateLabel.text = dateFormatter.string(from: sender.date)
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String,

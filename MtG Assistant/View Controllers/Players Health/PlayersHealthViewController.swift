@@ -22,7 +22,9 @@ class PlayersHealthViewController: UIViewController {
     // -------------------------------------------------------------------
     // MARK: - Outlets
     // -------------------------------------------------------------------
-
+    
+    @IBOutlet weak var playersHealthTitle: UINavigationItem!
+    
     @IBOutlet weak var increaseFirstStatButton: UIButton!
     @IBOutlet weak var decreaseFirstStatButton: UIButton!
     @IBOutlet var firstPlayerStat: UILabel!
@@ -47,6 +49,8 @@ class PlayersHealthViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        playersHealthTitle!.title = NSLocalizedString("Players Health", comment: "")
         
         increaseFirstStatButton.layer.masksToBounds = true
         increaseFirstStatButton.layer.cornerRadius = increaseFirstStatButton.frame.size.width / 2.0

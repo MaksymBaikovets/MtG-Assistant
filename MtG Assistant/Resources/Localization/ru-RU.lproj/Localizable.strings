@@ -22,6 +22,7 @@
 "Edit" = "Изменить";
 "Done" = "Готово";
 "Info" = "Информация";
+"Field Missing" = "Пустое поле";
 
 
 // MARK: Players Health strings
@@ -38,6 +39,7 @@
 
 
 // MARK: Cards Search strings
+"Card name to search" = "Название карты для поиска";
 "Type a request to start a search" = "Введите запрос для начала поиска";
 "Nothing found by your request" = "По вашему запросу ничего \nне найдено";
 
@@ -45,10 +47,11 @@
 // MARK: Statistics strings
 "Add New Game" = "Добавить Запись";
 "Edit Game" = "Изменить Запись";
+"No statistics yet" = "Статистика отсутствует";
+
 "First Player Deck" = "Колода первого игрока";
 "Second Player Deck" = "Колода второго игрока";
 "Game Result" = "Результат игры";
-"No statistics yet" = "Статистика отсутствует";
 
 
 // MARK: Settings strings

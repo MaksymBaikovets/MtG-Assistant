@@ -20,7 +20,10 @@ class CardsSearchViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         searchBar.delegate = self
+        searchBar.placeholder = NSLocalizedString("Card name to search", comment: "")
+        
         tableView.tableFooterView = UIView()
 
     }

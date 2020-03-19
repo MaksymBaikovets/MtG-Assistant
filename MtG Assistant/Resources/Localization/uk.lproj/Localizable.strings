@@ -7,7 +7,7 @@
 */
 
 // MARK: Tabs Titles
-"Players Health" = "Лічильник Здоров'я";
+"Players Health" = "Лічильники";
 "Rules Book" = "Правила";
 "Cards Search" = "Пошук карток";
 "Statistics" = "Статистика";
@@ -22,6 +22,7 @@
 "Edit" = "Редагувати";
 "Done" = "Добре";
 "Info" = "Інформація";
+"Field Missing" = "Порожнє поле";
 
 
 // MARK: Players Health strings
@@ -38,6 +39,7 @@
 
 
 // MARK: Cards Search strings
+"Card name to search" = "Назва картки для пошуку";
 "Type a request to start a search" = "Введіть запит для початку пошуку";
 "Nothing found by your request" = "За вашим запиитом нічого не знайдено";
 
@@ -45,10 +47,11 @@
 // MARK: Statistics strings
 "Add New Game" = "Додати запис";
 "Edit Game" = "Редагувати гру";
+"No statistics yet" = "Статистика відсутня";
+
 "First Player Deck" = "Колода першого гравця";
 "Second Player Deck" = "Колода другого гравця";
 "Game Results" = "Результат гри";
-"No statistics yet" = "Статистика відсутня";
 
 
 // MARK: Settings strings
@@ -56,7 +59,7 @@
 "Appearance" = "Зовнішній вигляд";
 "Language" = "Мова";
 "Contact Developer" = "Зворотній зв'язок";
-"About" = "Про додаток";
+"About" = "Інформація";
 "Wizards Website" = "Вебсайт Wizards";
 "App need to be reloaded" = "Будьласка, перезавантажте додаток для того щоб зміни вступили в силу";
 

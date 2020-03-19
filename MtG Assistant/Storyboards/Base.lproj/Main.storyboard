@@ -571,6 +571,7 @@
                         <outlet property="firstPlayerTableChangeView" destination="htA-rT-kMI" id="mVI-el-qac"/>
                         <outlet property="increaseFirstStatButton" destination="xzY-W5-H5e" id="RYS-0Q-PFi"/>
                         <outlet property="increaseSecondStatButton" destination="qAi-hl-vOJ" id="t0K-ux-dpo"/>
+                        <outlet property="playersHealthTitle" destination="ugy-03-YPM" id="GcQ-j7-01D"/>
                         <outlet property="secondPlayerGradient" destination="lzL-Vu-S5l" id="QmE-EP-aGH"/>
                         <outlet property="secondPlayerStat" destination="DFM-D3-kYw" id="YDM-eC-IZi"/>
                         <outlet property="secondPlayerTable" destination="Wwa-Sg-fcm" id="UOP-Pf-iDg"/>
@@ -839,10 +840,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="cancelButton" destination="O4Z-dF-OsN" id="C39-lP-pLZ"/>
                         <outlet property="firstPlayerDeck" destination="AG7-wg-rd4" id="rY0-kd-WaS"/>
                         <outlet property="firstPlayerInput" destination="zYo-k3-1rp" id="cCt-2Z-GED"/>
                         <outlet property="gameDateInput" destination="f44-vQ-bDw" id="hUf-x4-rzP"/>
                         <outlet property="gameResultInput" destination="ee5-m6-B1Q" id="5Lj-Kh-ofl"/>
+                        <outlet property="saveButton" destination="WXD-O8-p5n" id="n90-hM-ujj"/>
                         <outlet property="secondPlayerDeck" destination="jBV-eB-ZhV" id="hd4-Za-dda"/>
                         <outlet property="secondPlayerInput" destination="Qdn-Sk-6wi" id="SPF-oc-MZr"/>
                     </connections>
@@ -1705,10 +1708,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="cancelButton" destination="w2c-7t-nrK" id="Z8D-VO-hbo"/>
                         <outlet property="dateLabel" destination="2tN-B9-MUi" id="HfX-15-eJB"/>
                         <outlet property="firstPlayerDeck" destination="QSy-nN-gkX" id="595-7z-XJt"/>
                         <outlet property="firstPlayerName" destination="Ylt-IQ-0mu" id="Sfc-nk-fFX"/>
                         <outlet property="resultLabel" destination="qeI-w6-ON0" id="Fvq-KQ-pIf"/>
+                        <outlet property="saveButton" destination="6X9-Jb-Y5N" id="Zoa-pw-anp"/>
                         <outlet property="secondPlayerDeck" destination="MvD-ey-BHe" id="fQ1-OL-TW8"/>
                         <outlet property="secondPlayerName" destination="R8W-H6-Rtp" id="7aK-VC-uWU"/>
                     </connections>

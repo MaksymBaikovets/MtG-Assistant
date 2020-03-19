@@ -8,7 +8,7 @@
 
 // MARK: Tabs Titles
 "Players Health" = "Players Health";
-"Rules Book" = "Rules Book";
+"Rules Book" = "Rules";
 "Cards Search" = "Cards Search";
 "Statistics" = "Statistics";
 "Settings" = "Settings";
@@ -22,6 +22,7 @@
 "Edit" = "Edit";
 "Done" = "Done";
 "Info" = "Info";
+"Field Missing" = "Field Missing";
 
 
 // MARK: Players Health strings
@@ -38,6 +39,7 @@
 
 
 // MARK: Cards Search strings
+"Card name to search" = "Card name to search";
 "Type a request to start a search" = "Type a request to start a search";
 "Nothing found by your request" = "Nothing found by your request";
 
@@ -45,10 +47,12 @@
 // MARK: Statistics strings
 "Add New Game" = "Add New Game";
 "Edit Game" = "Edit Game";
+"No statistics yet" = "No statistics yet";
+
 "First Player Deck" = "First Player Deck";
 "Second Player Deck" = "Second Player Deck";
 "Game Results" = "Game Results";
-"No statistics yet" = "No statistics yet";
+
 
 
 // MARK: Settings strings

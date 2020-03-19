@@ -19,6 +19,9 @@ class NewStatisticsViewController: UITableViewController, UITextFieldDelegate {
     // -------------------------------------------------------------------
     // MARK: Outlets
     // -------------------------------------------------------------------
+    
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
 
     @IBOutlet var firstPlayerInput: UITextField!
     @IBOutlet var secondPlayerInput: UITextField!
@@ -36,7 +39,33 @@ class NewStatisticsViewController: UITableViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        cancelButton.title = NSLocalizedString("Cancel", comment: "")
+        saveButton.title = NSLocalizedString("Save", comment: "")
+        
+        datePickerCreate()
         firstPlayerInput.becomeFirstResponder()
+        
+    }
+    
+    override  func awakeFromNib() {
+        super.awakeFromNib()
+        self.title = NSLocalizedString("Add New Game", comment: "")
+    }
+    
+    func datePickerCreate() {
+        let datePickerView:UIDatePicker = UIDatePicker()
+        datePickerView.datePickerMode = UIDatePicker.Mode.date
+        gameDateInput.inputView = datePickerView
+        
+        datePickerView.addTarget(self, action: #selector(self.datePickerValueChanged),
+                                 for: UIControl.Event.valueChanged)
+    }
+    
+    @objc func datePickerValueChanged(sender: UIDatePicker) {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = DateFormatter.Style.medium
+            dateFormatter.timeStyle = DateFormatter.Style.none
+            gameDateInput.text = dateFormatter.string(from: sender.date)
     }
     
     // -------------------------------------------------------------------
@@ -75,43 +104,37 @@ class NewStatisticsViewController: UITableViewController, UITextFieldDelegate {
             
             // TODO: Check fields for correctness and show errors on form
             while true {
-                var alertTitle = String()
+                let alertTitle = NSLocalizedString("Field Missing", comment: "")
                 var alertMessage = String()
                 
                 if firstPlayerName == "" {
-                    alertTitle = "Field Missing"
-                    alertMessage = "Enter First Player name!"
+                    alertMessage = "Enter First Player name"
                 }
                 
                 else if secondPlayerName == "" {
-                    alertTitle = "Field Missing"
-                    alertMessage = "Enter Second Player name!"
+                    alertMessage = "Enter Second Player name"
                 }
                     
                 else if firstDeck == "" {
-                    alertTitle = "Field Missing"
-                    alertMessage = "Enter First Deck name!"
+                    alertMessage = "Enter First Deck name"
                 }
                     
                 else if secondDeck == "" {
-                    alertTitle = "Field Missing"
-                    alertMessage = "Enter Second Deck name!"
+                    alertMessage = "Enter Second Deck name"
                 }
                     
                 else if result == "" {
-                    alertTitle = "Field Missing"
-                    alertMessage = "Enter Result of the game!"
+                    alertMessage = "Enter Result of the game"
                 }
                     
                 else if date == "" {
-                    alertTitle = "Field Missing"
-                    alertMessage = "Enter date of the game!"
+                    alertMessage = "Enter date of the game"
                 }
                     
                 else {
                     break
                 }
-                    
+                                    
                 let alertController = UIAlertController(
                     title: alertTitle,
                     message: alertMessage,
