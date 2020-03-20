@@ -14,6 +14,12 @@ class LanguageViewController: UITableViewController {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
 
+        if self.traitCollection.userInterfaceStyle == .dark {
+            tableView.backgroundColor = RGBColor().UIColorFromRGB(rgbValue: 0x000000)
+        } else {
+            tableView.backgroundColor = RGBColor().UIColorFromRGB(rgbValue: 0xF6F5FB)
+        }
+        
     }
     
     override  func awakeFromNib() {
@@ -30,7 +36,9 @@ class LanguageViewController: UITableViewController {
     }
     
     // define which row selected
-    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+    override func tableView(_ tableView: UITableView,
+                            willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        
         let selectedItem = indexPath.row.description
         
         if Int(selectedItem) == 0 {
@@ -54,6 +62,30 @@ class LanguageViewController: UITableViewController {
         self.present(alert, animated: true, completion: nil)
         
         return indexPath
+        
+    }
+    
+    // -------------------------------------------------------------------
+    // MARK: Trait Collection changes
+    // -------------------------------------------------------------------
+
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell,
+                            forRowAt indexPath: IndexPath) {
+        if self.traitCollection.userInterfaceStyle == .dark {
+            cell.backgroundColor = RGBColor().UIColorFromRGBAlpha(rgbValue: 0x211F25)
+        } else {
+            cell.backgroundColor = UIColor.white
+        }
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        if self.traitCollection.userInterfaceStyle == .dark {
+            tableView.backgroundColor = RGBColor().UIColorFromRGB(rgbValue: 0x000000)
+            tableView.reloadData()
+        } else {
+            tableView.backgroundColor = RGBColor().UIColorFromRGB(rgbValue: 0xF6F5FB)
+            tableView.reloadData()
+        }
     }
 
 }

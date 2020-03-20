@@ -132,6 +132,44 @@ class StatisticsDataSource: NSObject {
         }
     }
     
+     // -------------------------------------------------------------------
+     // TODO: Update rows in CORE data
+    
+     func updateRowInCoreData(firstPlayer: String,
+               secondPlayer: String,
+               firstDeck: String,
+               secondDeck: String,
+               result: String, date: String) {
+       
+         guard let appDelegate =
+             UIApplication.shared.delegate as? AppDelegate else { return }
+       
+         let managedContext =
+             appDelegate.persistentContainer.viewContext
+       
+         let entity =
+             NSEntityDescription.entity(forEntityName: "Headline",
+                                        in: managedContext)!
+       
+         let headlineData = NSManagedObject(entity: entity,
+                                            insertInto: managedContext)
+       
+         headlineData.setValuesForKeys(["firstPlayer": firstPlayer,
+                                        "secondPlayer": secondPlayer,
+                                        "date": date,
+                                        "result": result,
+                                        "firstPlayerDeck": firstDeck,
+                                        "secondPlayerDeck": secondDeck])
+         print(headlineData)
+         
+         do {
+             try managedContext.save()
+             coreHeadlines.append(headlineData)
+         } catch let error as NSError {
+             print("Could not save. \(error), \(error.userInfo)")
+         }
+     }
+    
     // -------------------------------------------------------------------
 
     func coreDataToStatisticsHeadline() {
@@ -172,6 +210,14 @@ class StatisticsDataSource: NSObject {
     // -------------------------------------------------------------------
 
     func append(haedline: StatisticsHeadline, to tableView: UITableView) {
+        headlines.append(haedline)
+        tableView.insertRows(at: [IndexPath(row: headlines.count - 1, section: 0)], with: .automatic)
+    }
+    
+    // -------------------------------------------------------------------
+    // TODO: Update row in datasource
+    
+    func update(haedline: StatisticsHeadline, to tableView: UITableView) {
         headlines.append(haedline)
         tableView.insertRows(at: [IndexPath(row: headlines.count - 1, section: 0)], with: .automatic)
     }

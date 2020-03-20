@@ -24,6 +24,12 @@
 "Info" = "Info";
 "Field Missing" = "Field Missing";
 
+"white" = "White";
+"red" = "Red";
+"black" = "Black";
+"green" = "Green";
+"blue" = "Blue";
+
 
 // MARK: Players Health strings
 "Table Color" = "Table Color";
@@ -58,6 +64,7 @@
 // MARK: Settings strings
 "Edit Profile" = "Edit Profile";
 "Appearance" = "Appearance";
+"Default Values" = "Default Values";
 "Language" = "Language";
 "Contact Developer" = "Contact Developer";
 "About" = "About";

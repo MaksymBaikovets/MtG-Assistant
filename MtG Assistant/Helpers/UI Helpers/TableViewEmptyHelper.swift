@@ -26,7 +26,7 @@ extension UITableView {
         
         messageLabel.numberOfLines = 0
         messageLabel.textAlignment = .center
-        messageLabel.font = UIFont(name: "SFProDisplay", size: 24)
+        messageLabel.font = UIFont(name: "SFProDisplay-Medium", size: 18)
         messageLabel.sizeToFit()
         
         // TODO: Need to show icon with text

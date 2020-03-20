@@ -10,8 +10,8 @@ import UIKit
 import SafariServices
 
 class SettingsViewController: UITableViewController {
-
-    @IBOutlet weak var editButton: UIBarButtonItem!
+    
+    @IBOutlet weak var defaultValuesLabel: UILabel!
     
     @IBOutlet weak var languageLabel: UILabel!
     @IBOutlet weak var currentLanguageLabel: UILabel!
@@ -24,18 +24,16 @@ class SettingsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        defaultValuesLabel.text = NSLocalizedString("Default Values", comment: "")
         languageLabel.text = NSLocalizedString("Language", comment: "")
         currentLanguageLabel.text = NSLocalizedString("lang", comment: "")
         contactsLabel.text = NSLocalizedString("Contact Developer", comment: "")
         aboutLabel.text = NSLocalizedString("About", comment: "")
-        
-        editButton?.isEnabled = false
-        editButton?.tintColor = UIColor.clear
 
         if self.traitCollection.userInterfaceStyle == .dark {
             tableView.backgroundColor = RGBColor().UIColorFromRGB(rgbValue: 0x000000)
         } else {
-            tableView.backgroundColor = RGBColor().UIColorFromRGB(rgbValue: 0xF3F3F3)
+            tableView.backgroundColor = RGBColor().UIColorFromRGB(rgbValue: 0xF6F5FB)
         }
     }
     
@@ -44,14 +42,16 @@ class SettingsViewController: UITableViewController {
         self.title = NSLocalizedString("Settings", comment: "")
     }
     
-    override func tableView(_ tableView: UITableView,
-                            didSelectRowAt indexPath: IndexPath) {
-        
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    override func tableView(_ tableView: UITableView,
+                            willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+                
+        guard let rowTag = tableView.cellForRow(at: indexPath)?.tag else { return indexPath }
         
-        guard let rowTag = tableView.cellForRow(at: indexPath)?.tag else { return }
-        
-        if rowTag == 5 {
+        if rowTag == 4 {
             
             let message =
             """
@@ -82,6 +82,8 @@ class SettingsViewController: UITableViewController {
             self.present(alert, animated: true, completion: nil)
         }
         
+        return indexPath
+        
     }
     
     // -------------------------------------------------------------------
@@ -98,24 +100,35 @@ class SettingsViewController: UITableViewController {
         
         let footerView = UIView(frame: CGRect(x: 0, y: 0,
                                               width: tableView.frame.size.width,
-                                              height: 44))
+                                              height: 30))
         return footerView
     }
 
     override func tableView(_ tableView: UITableView,
                             heightForFooterInSection section: Int) -> CGFloat {
-        return 44
+        return 30
     }
 
     // -------------------------------------------------------------------
     // MARK: Trait Collection changes
     // -------------------------------------------------------------------
 
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell,
+                            forRowAt indexPath: IndexPath) {
+        if self.traitCollection.userInterfaceStyle == .dark {
+            cell.backgroundColor = RGBColor().UIColorFromRGBAlpha(rgbValue: 0x211F25)
+        } else {
+            cell.backgroundColor = UIColor.white
+        }
+    }
+    
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         if self.traitCollection.userInterfaceStyle == .dark {
             tableView.backgroundColor = RGBColor().UIColorFromRGB(rgbValue: 0x000000)
+            tableView.reloadData()
         } else {
-            tableView.backgroundColor = RGBColor().UIColorFromRGB(rgbValue: 0xF3F3F3)
+            tableView.backgroundColor = RGBColor().UIColorFromRGB(rgbValue: 0xF6F5FB)
+            tableView.reloadData()
         }
     }
     

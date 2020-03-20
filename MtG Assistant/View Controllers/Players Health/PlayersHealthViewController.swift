@@ -76,10 +76,15 @@ class PlayersHealthViewController: UIViewController {
         firstPlayerTableChangeView.transform = CGAffineTransform(scaleX: -1, y: -1)
         
         // Set initaial backgrounds
-        firstPlayerTable.image = Backgrounds().greenTableBackground()
-        self.devotionToColorOfFirstPlayer = "green"
-        secondPlayerTable.image = Backgrounds().redTableBackground()
-        self.devotionToColorOfSecondPlayer = "red"
+
+        self.devotionToColorOfFirstPlayer =
+            Configuration.value(defaultValue: "white", forKey: "firstPlayerTableColor")
+        self.devotionToColorOfSecondPlayer =
+            Configuration.value(defaultValue: "blue", forKey: "secondPlayerTableColor")
+        
+        firstPlayerTable.image = selectBackground(playerDevotion: devotionToColorOfFirstPlayer)
+        secondPlayerTable.image = selectBackground(playerDevotion: devotionToColorOfSecondPlayer)
+
         
     // MARK: - Gesture Recognizers
         
@@ -256,7 +261,7 @@ class PlayersHealthViewController: UIViewController {
 
     // -------------------------------------------------------------------
 
-    func selectBackground(current: UIImage, playerDevotion: String) -> UIImage {
+    func selectBackground(current: UIImage = UIImage(), playerDevotion: String) -> UIImage {
         var newBackground: UIImage = current
 
         while newBackground == current {

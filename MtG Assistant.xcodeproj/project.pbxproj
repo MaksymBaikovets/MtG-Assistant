@@ -13,6 +13,9 @@
 		58092ABA23FD67D200517C8C /* UIColorFromRGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58092AB923FD67D200517C8C /* UIColorFromRGB.swift */; };
 		58092ABF23FD6BC800517C8C /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58092ABE23FD6BC800517C8C /* ContactsViewController.swift */; };
 		58092AC123FD6BDE00517C8C /* LanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58092AC023FD6BDE00517C8C /* LanguageViewController.swift */; };
+		5813DAD82423DF7B00636B71 /* DefaultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5813DAD72423DF7B00636B71 /* DefaultsViewController.swift */; };
+		5813DAE124241EF900636B71 /* SharedPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5813DAE024241EF900636B71 /* SharedPreferences.swift */; };
+		5813DAE724242AB000636B71 /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5813DAE624242AB000636B71 /* ColorPickerViewController.swift */; };
 		58216FCC23F5993900FA945A /* StatisticsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58216FCB23F5993900FA945A /* StatisticsDataSource.swift */; };
 		58355E372422768800B97DF5 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58355E362422768800B97DF5 /* Localizable.swift */; };
 		584ACB6D241FD9FE00B7ABA2 /* MagicCompRules_20200122.txt in Resources */ = {isa = PBXBuildFile; fileRef = 584ACB6C241FD9FD00B7ABA2 /* MagicCompRules_20200122.txt */; };
@@ -52,6 +55,9 @@
 		58092AB923FD67D200517C8C /* UIColorFromRGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorFromRGB.swift; sourceTree = "<group>"; };
 		58092ABE23FD6BC800517C8C /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		58092AC023FD6BDE00517C8C /* LanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageViewController.swift; sourceTree = "<group>"; };
+		5813DAD72423DF7B00636B71 /* DefaultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsViewController.swift; sourceTree = "<group>"; };
+		5813DAE024241EF900636B71 /* SharedPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedPreferences.swift; sourceTree = "<group>"; };
+		5813DAE624242AB000636B71 /* ColorPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
 		58216FCB23F5993900FA945A /* StatisticsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsDataSource.swift; sourceTree = "<group>"; };
 		58355E362422768800B97DF5 /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
 		584ACB6C241FD9FD00B7ABA2 /* MagicCompRules_20200122.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MagicCompRules_20200122.txt; sourceTree = "<group>"; };
@@ -159,10 +165,31 @@
 			isa = PBXGroup;
 			children = (
 				58092AB623FD5E5500517C8C /* SettingsViewController.swift */,
+				5813DAD72423DF7B00636B71 /* DefaultsViewController.swift */,
+				5813DAE22424232F00636B71 /* Defaults */,
 				58092AC023FD6BDE00517C8C /* LanguageViewController.swift */,
 				58092ABE23FD6BC800517C8C /* ContactsViewController.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		5813DAE22424232F00636B71 /* Defaults */ = {
+			isa = PBXGroup;
+			children = (
+				5813DAE624242AB000636B71 /* ColorPickerViewController.swift */,
+			);
+			path = Defaults;
+			sourceTree = "<group>";
+		};
+		5813DAE32424235C00636B71 /* UI Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				58DDC7F123F97FD80000D6E7 /* StatisticsCell.swift */,
+				58DDC7F723FA92570000D6E7 /* UITextFieldPaddings.swift */,
+				58092AB923FD67D200517C8C /* UIColorFromRGB.swift */,
+				584C1AEE240D35200022C353 /* TableViewEmptyHelper.swift */,
+			);
+			path = "UI Helpers";
 			sourceTree = "<group>";
 		};
 		58216FC923F598F600FA945A /* Data Sources */ = {
@@ -274,11 +301,9 @@
 		58DDC7F623FA923D0000D6E7 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				58DDC7F123F97FD80000D6E7 /* StatisticsCell.swift */,
-				58DDC7F723FA92570000D6E7 /* UITextFieldPaddings.swift */,
-				58092AB923FD67D200517C8C /* UIColorFromRGB.swift */,
-				584C1AEE240D35200022C353 /* TableViewEmptyHelper.swift */,
+				5813DAE32424235C00636B71 /* UI Helpers */,
 				58355E362422768800B97DF5 /* Localizable.swift */,
+				5813DAE024241EF900636B71 /* SharedPreferences.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -297,11 +322,11 @@
 		58F2C37823E9DE4D00D75EEB /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				58C855F6240C24A9001694C2 /* Cards Search */,
 				58D25DB32403288B00127487 /* Players Health */,
+				584ACB6E241FDDA200B7ABA2 /* RulesbookViewController.swift */,
+				58C855F6240C24A9001694C2 /* Cards Search */,
 				58092AB823FD5E5900517C8C /* Statistics */,
 				58092ABB23FD6A1500517C8C /* Settings */,
-				584ACB6E241FDDA200B7ABA2 /* RulesbookViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -432,10 +457,12 @@
 				58F2C38423EA0A9400D75EEB /* StatisticsDetailsViewController.swift in Sources */,
 				58C855F8240C24CD001694C2 /* CardsSearchViewController.swift in Sources */,
 				58F2C37623E9B6BB00D75EEB /* StatisticsViewController.swift in Sources */,
+				5813DAE724242AB000636B71 /* ColorPickerViewController.swift in Sources */,
 				5888BFF223EB70DE005367D9 /* NewStatisticsViewController.swift in Sources */,
 				588A25E124071E7B00A52E60 /* EditStatisticsViewController.swift in Sources */,
 				58092AC123FD6BDE00517C8C /* LanguageViewController.swift in Sources */,
 				58092AAF23FBECD200517C8C /* MtG_Assistant.xcdatamodeld in Sources */,
+				5813DAD82423DF7B00636B71 /* DefaultsViewController.swift in Sources */,
 				58DDC7EE23F9792E0000D6E7 /* StatisticsHeadlines.swift in Sources */,
 				58092ABF23FD6BC800517C8C /* ContactsViewController.swift in Sources */,
 				584ACB6F241FDDA200B7ABA2 /* RulesbookViewController.swift in Sources */,
@@ -443,6 +470,7 @@
 				58DDC7F223F97FD80000D6E7 /* StatisticsCell.swift in Sources */,
 				58C855FC240C2835001694C2 /* CardDetailViewController.swift in Sources */,
 				584C1AEF240D35200022C353 /* TableViewEmptyHelper.swift in Sources */,
+				5813DAE124241EF900636B71 /* SharedPreferences.swift in Sources */,
 				58DDC7F023F97D090000D6E7 /* BackgroundsDataSource.swift in Sources */,
 				58DBA18E23E61C02002C3041 /* PlayersHealthViewController.swift in Sources */,
 				58EE2AB1240DB0C1000F81FC /* CardImages.swift in Sources */,

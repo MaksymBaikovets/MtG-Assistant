@@ -24,6 +24,12 @@
 "Info" = "Информация";
 "Field Missing" = "Пустое поле";
 
+"white" = "Белый";
+"red" = "Красный";
+"black" = "Черный";
+"green" = "Зеленый";
+"blue" = "Голубой";
+
 
 // MARK: Players Health strings
 "Table Color" = "Цвет стола";
@@ -57,6 +63,7 @@
 // MARK: Settings strings
 "Edit Profile" = "Изменить профиль";
 "Appearance" = "Оформление";
+"Default Values" = "Стандартные значения";
 "Language" = "Язык";
 "Contact Developer" = "Обратная связь";
 "About" = "О приложении";
