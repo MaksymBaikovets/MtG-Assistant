@@ -1448,7 +1448,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="u21-aC-cjc" kind="show" id="63L-FS-tW4"/>
+                                            <segue destination="u21-aC-cjc" kind="show" identifier="colorPicker" id="63L-FS-tW4"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" tag="1" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Usm-HW-Mw7" detailTextLabel="pS8-si-zZO" style="IBUITableViewCellStyleValue1" id="8S9-c3-CAb">
@@ -1475,7 +1475,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="u21-aC-cjc" kind="show" id="G3E-Km-Dif"/>
+                                            <segue destination="u21-aC-cjc" kind="show" identifier="colorPicker" id="G3E-Km-Dif"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -1533,6 +1533,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="pFa-xb-Kn9" kind="show" identifier="gesturesChange" id="Lz1-dg-48v"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" tag="4" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="dIA-C0-bj5" detailTextLabel="jHR-s9-bd5" style="IBUITableViewCellStyleValue1" id="pZK-UV-wmE">
                                         <rect key="frame" x="0.0" y="258" width="414" height="43.5"/>
@@ -1557,6 +1560,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="pFa-xb-Kn9" kind="show" identifier="gesturesChange" id="zUs-oH-oXW"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -1579,10 +1585,10 @@
             </objects>
             <point key="canvasLocation" x="2378" y="-2178"/>
         </scene>
-        <!--Color Picker View Controller-->
+        <!--colorPicker-->
         <scene sceneID="aOF-Mi-QC4">
             <objects>
-                <tableViewController id="u21-aC-cjc" customClass="ColorPickerViewController" customModule="MtG_Assistant" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="colorPicker" useStoryboardIdentifierAsRestorationIdentifier="YES" id="u21-aC-cjc" userLabel="colorPicker" customClass="ColorPickerViewController" customModule="MtG_Assistant" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="gi6-Fq-GH9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1708,7 +1714,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oaA-8R-HIV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="RPK-6n-vrt" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3293" y="-2178"/>
+            <point key="canvasLocation" x="3293" y="-2895"/>
         </scene>
         <!--Language-->
         <scene sceneID="EL9-M7-Pft">
@@ -1937,7 +1943,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kdy-q9-cBR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3293" y="-1121"/>
+            <point key="canvasLocation" x="3293" y="-1033"/>
         </scene>
         <!--Edit Game-->
         <scene sceneID="zlQ-ka-8oR">
@@ -2120,6 +2126,137 @@
             </objects>
             <point key="canvasLocation" x="4287" y="58"/>
         </scene>
+        <!--gesturesChange-->
+        <scene sceneID="DM2-QC-4pY">
+            <objects>
+                <tableViewController storyboardIdentifier="gesturesChange" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pFa-xb-Kn9" userLabel="gesturesChange" customClass="GesturesChangeViewController" customModule="MtG_Assistant" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="L2P-Py-6bt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <sections>
+                            <tableViewSection id="gpj-25-nZa">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="zLd-9b-O1v" style="IBUITableViewCellStyleDefault" id="tES-L2-sxt" userLabel="counters20">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tES-L2-sxt" id="Iy9-Gi-0v5">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Set Counters to 20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zLd-9b-O1v">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" label="counters20"/>
+                                        <connections>
+                                            <segue destination="UYo-1P-jXV" kind="unwind" unwindAction="gestureTypeChanged:" id="52M-ei-0Hc"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" tag="1" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="DSX-pG-EF2" style="IBUITableViewCellStyleDefault" id="VjK-0a-kvX" userLabel="counters40">
+                                        <rect key="frame" x="0.0" y="71.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VjK-0a-kvX" id="3kN-5v-My5">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Set Counters to 40" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DSX-pG-EF2">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" label="counters40"/>
+                                        <connections>
+                                            <segue destination="UYo-1P-jXV" kind="unwind" unwindAction="gestureTypeChanged:" id="Rfd-IZ-4eU"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" tag="2" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="1rj-eV-7jl" style="IBUITableViewCellStyleDefault" id="fDZ-2s-O0y" userLabel="countersCustom">
+                                        <rect key="frame" x="0.0" y="115" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fDZ-2s-O0y" id="jGW-bD-pRr">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Enter custom value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1rj-eV-7jl">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" label="countersCustom"/>
+                                        <connections>
+                                            <segue destination="UYo-1P-jXV" kind="unwind" unwindAction="gestureTypeChanged:" id="70u-ne-YAW"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" tag="3" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="nBl-zp-368" style="IBUITableViewCellStyleDefault" id="g6w-7d-g14" userLabel="countersSave">
+                                        <rect key="frame" x="0.0" y="158.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="g6w-7d-g14" id="q9K-dV-Fxp">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Save current sttistics" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nBl-zp-368">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" label="countersSave"/>
+                                        <connections>
+                                            <segue destination="UYo-1P-jXV" kind="unwind" unwindAction="gestureTypeChanged:" id="Hps-2B-psK"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" tag="4" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="OP7-De-ilO" style="IBUITableViewCellStyleDefault" id="zbl-Ut-U5f" userLabel="countersNone">
+                                        <rect key="frame" x="0.0" y="202" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zbl-Ut-U5f" id="oj2-oW-bKI">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="No action" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OP7-De-ilO">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" label="countersNone"/>
+                                        <connections>
+                                            <segue destination="UYo-1P-jXV" kind="unwind" unwindAction="gestureTypeChanged:" id="s3G-9u-VCj"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="pFa-xb-Kn9" id="g7g-Qh-M5u"/>
+                            <outlet property="delegate" destination="pFa-xb-Kn9" id="6ff-ss-AuS"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="p0U-Aq-XWK"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NbZ-1g-WW4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="UYo-1P-jXV" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3291" y="-2178"/>
+        </scene>
     </scenes>
     <resources>
         <image name="a.square" catalog="system" width="64" height="56"/>
@@ -2143,6 +2280,7 @@
         <image name="waterDropIcon" width="156.5" height="157"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="63L-FS-tW4"/>
+        <segue reference="zUs-oH-oXW"/>
+        <segue reference="G3E-Km-Dif"/>
     </inferredMetricsTieBreakers>
 </document>

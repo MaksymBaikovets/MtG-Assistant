@@ -11,6 +11,7 @@ import UIKit
 class DefaultsViewController: UITableViewController {
     
     var playerSelected: Int?
+    var gestureSelected: Int?
     
     @IBOutlet weak var firstPlayerColorLabel: UILabel!
     @IBOutlet weak var secondPlayerColorLabel: UILabel!
@@ -30,6 +31,11 @@ class DefaultsViewController: UITableViewController {
         
         firstPlayerColorLabel.textColor = UIColor.systemGray
         secondPlayerColorLabel.textColor = UIColor.systemGray
+        
+        singleTapValue.text = NSLocalizedString(
+            Configuration.value(defaultValue: "counters20", forKey: "singleTapGesture"), comment: "")
+        doubleTapValue.text = NSLocalizedString(
+            Configuration.value(defaultValue: "counters40", forKey: "doubleTapGesture"), comment: "")
         
         singleTapValue.textColor = UIColor.systemGray
         doubleTapValue.textColor = UIColor.systemGray
@@ -95,6 +101,10 @@ class DefaultsViewController: UITableViewController {
             playerSelected = 0
         } else if cell.tag == 1 {
             playerSelected = 1
+        } else if cell.tag == 3 {
+            gestureSelected = 0
+        } else if cell.tag == 4 {
+            gestureSelected = 1
         }
             
         return indexPath
@@ -103,8 +113,14 @@ class DefaultsViewController: UITableViewController {
     
     // prepare ColorPickerVC to handle selection
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let ColorPickerVC = segue.destination as? ColorPickerViewController else { return }
-        ColorPickerVC.user = playerSelected
+        if segue.identifier == "colorPicker" {
+            guard let ColorPickerVC = segue.destination as? ColorPickerViewController else { return }
+            ColorPickerVC.user = playerSelected
+        } else if segue.identifier == "gesturesChange" {
+            guard let GesturesChangeVC = segue.destination as? GesturesChangeViewController else { return }
+            GesturesChangeVC.gestureType = gestureSelected
+        }
+
         
     }
     
@@ -200,6 +216,15 @@ extension DefaultsViewController {
             Configuration.value(defaultValue: "white", forKey: "firstPlayerTableColor"), comment: "")
         secondPlayerColorLabel.text = NSLocalizedString(
             Configuration.value(defaultValue: "blue", forKey: "secondPlayerTableColor"), comment: "")
+        
+        tableView.reloadData()
+    }
+    
+    @IBAction func gestureTypeChanged(_: UIStoryboardSegue) {
+        singleTapValue.text = NSLocalizedString(
+            Configuration.value(defaultValue: "counters20", forKey: "singleTapGesture"), comment: "")
+        doubleTapValue.text = NSLocalizedString(
+            Configuration.value(defaultValue: "counters40", forKey: "doubleTapGesture"), comment: "")
         
         tableView.reloadData()
     }

@@ -17,6 +17,7 @@
 		5813DAE124241EF900636B71 /* SharedPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5813DAE024241EF900636B71 /* SharedPreferences.swift */; };
 		5813DAE724242AB000636B71 /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5813DAE624242AB000636B71 /* ColorPickerViewController.swift */; };
 		58216FCC23F5993900FA945A /* StatisticsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58216FCB23F5993900FA945A /* StatisticsDataSource.swift */; };
+		58226BB52428227300B2DDE4 /* GesturesChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58226BB42428227300B2DDE4 /* GesturesChangeViewController.swift */; };
 		58355E372422768800B97DF5 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58355E362422768800B97DF5 /* Localizable.swift */; };
 		584ACB6D241FD9FE00B7ABA2 /* MagicCompRules_20200122.txt in Resources */ = {isa = PBXBuildFile; fileRef = 584ACB6C241FD9FD00B7ABA2 /* MagicCompRules_20200122.txt */; };
 		584ACB6F241FDDA200B7ABA2 /* RulesbookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584ACB6E241FDDA200B7ABA2 /* RulesbookViewController.swift */; };
@@ -59,6 +60,7 @@
 		5813DAE024241EF900636B71 /* SharedPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedPreferences.swift; sourceTree = "<group>"; };
 		5813DAE624242AB000636B71 /* ColorPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
 		58216FCB23F5993900FA945A /* StatisticsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsDataSource.swift; sourceTree = "<group>"; };
+		58226BB42428227300B2DDE4 /* GesturesChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GesturesChangeViewController.swift; sourceTree = "<group>"; };
 		58355E362422768800B97DF5 /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
 		584ACB6C241FD9FD00B7ABA2 /* MagicCompRules_20200122.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MagicCompRules_20200122.txt; sourceTree = "<group>"; };
 		584ACB6E241FDDA200B7ABA2 /* RulesbookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesbookViewController.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				5813DAE624242AB000636B71 /* ColorPickerViewController.swift */,
+				58226BB42428227300B2DDE4 /* GesturesChangeViewController.swift */,
 			);
 			path = Defaults;
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 				588A25E124071E7B00A52E60 /* EditStatisticsViewController.swift in Sources */,
 				58092AC123FD6BDE00517C8C /* LanguageViewController.swift in Sources */,
 				58092AAF23FBECD200517C8C /* MtG_Assistant.xcdatamodeld in Sources */,
+				58226BB52428227300B2DDE4 /* GesturesChangeViewController.swift in Sources */,
 				5813DAD82423DF7B00636B71 /* DefaultsViewController.swift in Sources */,
 				58DDC7EE23F9792E0000D6E7 /* StatisticsHeadlines.swift in Sources */,
 				58092ABF23FD6BC800517C8C /* ContactsViewController.swift in Sources */,

@@ -1,16 +1,16 @@
 //
-//  ColorPickerViewController.swift
+//  GesturesChangeViewController.swift
 //  MtG Assistant
 //
-//  Created by Maksym Baikovets on 20.03.2020.
+//  Created by Maksym Baikovets on 23.03.2020.
 //  Copyright © 2020 Maksym Baikovets. All rights reserved.
 //
 
 import UIKit
 
-class ColorPickerViewController: UITableViewController {
+class GesturesChangeViewController: UITableViewController {
 
-    var user: Int?
+    var gestureType: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,37 +18,37 @@ class ColorPickerViewController: UITableViewController {
         
         tableView.tableFooterView = UIView()
         
-        if user == 0 {
-            let color = Configuration.value(defaultValue: "white", forKey: "firstPlayerTableColor")
-            
+        if gestureType == 0 {
+            let color = Configuration.value(defaultValue: "counters20", forKey: "singleTapGesture")
+
             switch color {
-            case "white":
+            case "counters20":
                 tableView.cellForRow(at: [0, 0])?.accessoryType = UITableViewCell.AccessoryType.checkmark
-            case "red":
+            case "counters40":
                 tableView.cellForRow(at: [0, 1])?.accessoryType = UITableViewCell.AccessoryType.checkmark
-            case "black":
+            case "countersCustom":
                 tableView.cellForRow(at: [0, 2])?.accessoryType = UITableViewCell.AccessoryType.checkmark
-            case "green":
+            case "countersSave":
                 tableView.cellForRow(at: [0, 3])?.accessoryType = UITableViewCell.AccessoryType.checkmark
-            case "blue":
+            case "countersNone":
                 tableView.cellForRow(at: [0, 4])?.accessoryType = UITableViewCell.AccessoryType.checkmark
             default:
                 return
             }
-            
-        } else if user == 1 {
-            let color = Configuration.value(defaultValue: "blue", forKey: "secondPlayerTableColor")
-            
+
+        } else if gestureType == 1 {
+            let color = Configuration.value(defaultValue: "counters40", forKey: "doubleTapGesture")
+
             switch color {
-            case "white":
+            case "counters20":
                 tableView.cellForRow(at: [0, 0])?.accessoryType = UITableViewCell.AccessoryType.checkmark
-            case "red":
+            case "counters40":
                 tableView.cellForRow(at: [0, 1])?.accessoryType = UITableViewCell.AccessoryType.checkmark
-            case "black":
+            case "countersCustom":
                 tableView.cellForRow(at: [0, 2])?.accessoryType = UITableViewCell.AccessoryType.checkmark
-            case "green":
+            case "countersSave":
                 tableView.cellForRow(at: [0, 3])?.accessoryType = UITableViewCell.AccessoryType.checkmark
-            case "blue":
+            case "countersNone":
                 tableView.cellForRow(at: [0, 4])?.accessoryType = UITableViewCell.AccessoryType.checkmark
             default:
                 return
@@ -64,8 +64,8 @@ class ColorPickerViewController: UITableViewController {
     }
     
     private func commonInit() {
-        guard let user = user else { return }
-        self.user = user
+        guard let gestureType = gestureType else { return }
+        self.gestureType = gestureType
         
     }
     
@@ -76,7 +76,7 @@ class ColorPickerViewController: UITableViewController {
     
 //    override  func awakeFromNib() {
 //        super.awakeFromNib()
-//        self.title = NSLocalizedString("Default Values", comment: "")
+//        self.title = NSLocalizedString("Gesture Select", comment: "")
 //    }
     
     // -------------------------------------------------------------------
@@ -94,26 +94,26 @@ class ColorPickerViewController: UITableViewController {
         guard let cell = tableView.cellForRow(at: indexPath) else { return indexPath }
 
         var userSelection: String = ""
-        if user == 0 {
-            userSelection = "firstPlayerTableColor"
-        } else if user == 1 {
-            userSelection = "secondPlayerTableColor"
+        if gestureType == 0 {
+            userSelection = "singleTapGesture"
+        } else if gestureType == 1 {
+            userSelection = "doubleTapGesture"
         }
-        
+
         if cell.tag == 0 {
-            Configuration.value(value: "white", forKey: userSelection)
+            Configuration.value(value: "counters20", forKey: userSelection)
 
         } else if cell.tag == 1 {
-            Configuration.value(value: "red", forKey: userSelection)
+            Configuration.value(value: "counters40", forKey: userSelection)
 
         } else if cell.tag == 2 {
-            Configuration.value(value: "black", forKey: userSelection)
+            Configuration.value(value: "countersCustom", forKey: userSelection)
 
         } else if cell.tag == 3 {
-            Configuration.value(value: "green", forKey: userSelection)
+            Configuration.value(value: "countersSave", forKey: userSelection)
 
         } else if cell.tag == 4 {
-            Configuration.value(value: "blue", forKey: userSelection)
+            Configuration.value(value: "countersNone", forKey: userSelection)
 
         }
             
@@ -143,7 +143,7 @@ class ColorPickerViewController: UITableViewController {
         
         titleLabel.textColor = UIColor.lightGray
         titleLabel.font = UIFont(name: "SFProDisplay-Regular", size: 16)
-        titleLabel.text = "Selection changes goes to live on next app launch."
+        titleLabel.text = "Selection changes goes to live right after selection."
         
         footerView.addSubview(titleLabel)
         tableView.tableFooterView = footerView

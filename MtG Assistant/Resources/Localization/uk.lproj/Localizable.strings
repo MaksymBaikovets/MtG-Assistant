@@ -30,6 +30,12 @@
 "green" = "Зелений";
 "blue" = "Блакитний";
 
+"counters20" = "Set 20";
+"counters40" = "Set 40";
+"countersCustom" = "Custom";
+"countersSave" = "Save";
+"countersNone" = "No action";
+
 
 // MARK: Players Health strings
 "Table Color" = "Колір стола";

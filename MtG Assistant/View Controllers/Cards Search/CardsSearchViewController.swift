@@ -149,6 +149,7 @@ extension CardsSearchViewController {
         activityIndicator.center = CGPoint(x: view.frame.size.width * 0.5, y: view.frame.size.height * 0.5)
         
         activityIndicator.startAnimating()
+        activityIndicator.isHidden = false
         
         // Proceed request
         let url = "https://api.scryfall.com/cards/search"
@@ -162,7 +163,9 @@ extension CardsSearchViewController {
                     self.tableView.reloadData()
 
                     activityIndicator.stopAnimating()
-                    activityIndicator.removeFromSuperview()
+//                    activityIndicator.removeFromSuperview()
+                    activityIndicator.isHidden = true
+                    
                     self.tableView.setEmptyMessage(
                         NSLocalizedString("Nothing found by your request", comment: ""))
                     
@@ -172,7 +175,9 @@ extension CardsSearchViewController {
                 // Restore tableView after request comlete
                 self.tableView.restore()
                 activityIndicator.stopAnimating()
-                activityIndicator.removeFromSuperview()
+//                activityIndicator.removeFromSuperview()
+                activityIndicator.isHidden = true
+
                 
                 self.cards = cards.data
                 self.items = cards.data
