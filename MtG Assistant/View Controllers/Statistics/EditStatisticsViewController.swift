@@ -41,7 +41,10 @@ class EditStatisticsViewController: UITableViewController, UITextFieldDelegate {
         secondPlayerDeck.text = data.secondPlayerDeck
 
         resultLabel.text = data.result
+        resultLabel.textColor = UIColor.systemGray
+        
         dateLabel.text = data.date
+        dateLabel.textColor = UIColor.systemGray
 
     }
     
@@ -111,15 +114,15 @@ class EditStatisticsViewController: UITableViewController, UITextFieldDelegate {
                     alertMessage = "Enter Second Deck name!"
                 }
                     
-                else if result == "" {
-                    alertTitle = "Field Missing"
-                    alertMessage = "Enter Result of the game!"
-                }
-                    
-                else if date == "" {
-                    alertTitle = "Field Missing"
-                    alertMessage = "Enter date of the game!"
-                }
+//                else if result == "" {
+//                    alertTitle = "Field Missing"
+//                    alertMessage = "Enter Result of the game!"
+//                }
+//
+//                else if date == "" {
+//                    alertTitle = "Field Missing"
+//                    alertMessage = "Enter date of the game!"
+//                }
                     
                 else {
                     break
@@ -141,11 +144,11 @@ class EditStatisticsViewController: UITableViewController, UITextFieldDelegate {
                 
             }
             
-            statisticsDataSource.saveToCoreData(firstPlayer: firstPlayerLabel,
-                                                secondPlayer: secondPlayerLabel,
-                                                firstDeck: firstDeck,
-                                                secondDeck: secondDeck,
-                                                result: result, date: date)
+            statisticsDataSource.updateRowInCoreData(firstPlayer: firstPlayerLabel,
+                                                     secondPlayer: secondPlayerLabel,
+                                                     firstDeck: firstDeck,
+                                                     secondDeck: secondDeck,
+                                                     gameResult: result, date: date)
 
             data = StatisticsHeadline(firstPlayer: firstPlayerLabel,
                                       secondPlayer: secondPlayerLabel,

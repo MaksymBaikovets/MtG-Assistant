@@ -26,7 +26,10 @@ class SettingsViewController: UITableViewController {
         
         defaultValuesLabel.text = NSLocalizedString("Default Values", comment: "")
         languageLabel.text = NSLocalizedString("Language", comment: "")
+        
         currentLanguageLabel.text = NSLocalizedString("lang", comment: "")
+        currentLanguageLabel.textColor = UIColor.systemGray
+        
         contactsLabel.text = NSLocalizedString("Contact Developer", comment: "")
         aboutLabel.text = NSLocalizedString("About", comment: "")
 

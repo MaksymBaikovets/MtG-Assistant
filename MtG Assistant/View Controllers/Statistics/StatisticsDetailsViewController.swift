@@ -12,6 +12,8 @@ class StatisticsDetailsViewController: UIViewController {
     
     var statisticsDataSource = StatisticsDataSource()
     var data: StatisticsHeadline?
+    var indexPathOfCell: IndexPath?
+    var destinationTable: UITableView?
     
     // -------------------------------------------------------------------
     // MARK: Outlets
@@ -66,7 +68,6 @@ class StatisticsDetailsViewController: UIViewController {
         
         firstDeckLabel.text = data.firstPlayerDeck
         secondDeckLabel.text = data.secondPlayerDeck
-
     }
     
     override func viewDidLoad() {
@@ -93,7 +94,23 @@ extension StatisticsDetailsViewController {
 
     @IBAction func saveUpdatedStatistics(_ segue: UIStoryboardSegue) {
         // TODO: Perform Updating of data inside detials view
+        guard
+            let editStatisticsDetailsViewController = segue.source as? EditStatisticsViewController,
+            let data = editStatisticsDetailsViewController.data
+        else {
+            return
+        }
         
+        guard let destinationTable = destinationTable else { return }
+        self.destinationTable = destinationTable
+        
+        guard let indexPathOfCell = indexPathOfCell else { return }
+        self.indexPathOfCell = indexPathOfCell
+        
+        statisticsDataSource.update(haedline: data, to: destinationTable, at: indexPathOfCell)
+        
+        self.data = data
+        commonInit()
     }
     
 }

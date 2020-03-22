@@ -139,35 +139,55 @@ class StatisticsDataSource: NSObject {
                secondPlayer: String,
                firstDeck: String,
                secondDeck: String,
-               result: String, date: String) {
+               gameResult: String, date: String) {
+        
+
        
          guard let appDelegate =
              UIApplication.shared.delegate as? AppDelegate else { return }
        
          let managedContext =
              appDelegate.persistentContainer.viewContext
-       
-         let entity =
-             NSEntityDescription.entity(forEntityName: "Headline",
-                                        in: managedContext)!
-       
-         let headlineData = NSManagedObject(entity: entity,
-                                            insertInto: managedContext)
-       
-         headlineData.setValuesForKeys(["firstPlayer": firstPlayer,
-                                        "secondPlayer": secondPlayer,
-                                        "date": date,
-                                        "result": result,
-                                        "firstPlayerDeck": firstDeck,
-                                        "secondPlayerDeck": secondDeck])
-         print(headlineData)
-         
-         do {
-             try managedContext.save()
-             coreHeadlines.append(headlineData)
-         } catch let error as NSError {
-             print("Could not save. \(error), \(error.userInfo)")
-         }
+        
+        let fetchRequest =
+            NSFetchRequest<NSManagedObject>(entityName: "Headline")
+        
+        // 3
+        print(gameResult)
+        let predicate = NSPredicate(format: "result = %@ AND date = %@", argumentArray: [gameResult, date])
+        fetchRequest.predicate = predicate
+
+        //3
+
+        do {
+            let  rs = try managedContext.fetch(fetchRequest)
+
+            for _ in rs as [NSManagedObject] {
+
+                // update
+                do {
+                    let managedObject = rs[0]
+                    managedObject.setValuesForKeys(["firstPlayer": firstPlayer,
+                                                    "secondPlayer": secondPlayer,
+                                                    "date": date,
+                                                    "result": gameResult,
+                                                    "firstPlayerDeck": firstDeck,
+                                                    "secondPlayerDeck": secondDeck])
+
+                    try managedContext.save()
+                    print("Update successfull")
+
+                } catch let error as NSError {
+                    print("Could not Update. \(error), \(error.userInfo)")
+                }
+                //end update
+
+            }
+
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+        }
+        
      }
     
     // -------------------------------------------------------------------
@@ -217,9 +237,8 @@ class StatisticsDataSource: NSObject {
     // -------------------------------------------------------------------
     // TODO: Update row in datasource
     
-    func update(haedline: StatisticsHeadline, to tableView: UITableView) {
-        headlines.append(haedline)
-        tableView.insertRows(at: [IndexPath(row: headlines.count - 1, section: 0)], with: .automatic)
+    func update(haedline: StatisticsHeadline, to tableView: UITableView, at indexPath: IndexPath) {
+        headlines[indexPath.row] = haedline
     }
     
     // -------------------------------------------------------------------

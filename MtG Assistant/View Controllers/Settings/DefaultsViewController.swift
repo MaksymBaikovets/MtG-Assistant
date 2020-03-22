@@ -15,6 +15,10 @@ class DefaultsViewController: UITableViewController {
     @IBOutlet weak var firstPlayerColorLabel: UILabel!
     @IBOutlet weak var secondPlayerColorLabel: UILabel!
 
+    @IBOutlet weak var gesturesSwitch: UISwitch!
+    @IBOutlet weak var singleTapValue: UILabel!
+    @IBOutlet weak var doubleTapValue: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
@@ -24,9 +28,18 @@ class DefaultsViewController: UITableViewController {
         secondPlayerColorLabel.text = NSLocalizedString(
             Configuration.value(defaultValue: "blue", forKey: "secondPlayerTableColor"), comment: "")
         
+        firstPlayerColorLabel.textColor = UIColor.systemGray
+        secondPlayerColorLabel.textColor = UIColor.systemGray
+        
+        singleTapValue.textColor = UIColor.systemGray
+        doubleTapValue.textColor = UIColor.systemGray
+
         let isGesturesEnabled = Configuration.value(defaultValue: true, forKey: "isGesturesEnabled")
         if isGesturesEnabled == false {
-            tableView.cellForRow(at: [1, 0])?.accessoryType = UITableViewCell.AccessoryType.none
+//            singleTapValue.isHidden = true
+//            doubleTapValue.isHidden = true
+
+            gesturesSwitch.setOn(false, animated: true)
             
             tableView.cellForRow(at: [1, 1])!.isUserInteractionEnabled = false
             tableView.cellForRow(at: [1, 1])!.contentView.alpha = 0.5
@@ -35,8 +48,11 @@ class DefaultsViewController: UITableViewController {
             tableView.cellForRow(at: [1, 2])!.contentView.alpha = 0.5
             
         } else {
-            tableView.cellForRow(at: [1, 0])?.accessoryType = UITableViewCell.AccessoryType.checkmark
+//            singleTapValue.isHidden = false
+//            doubleTapValue.isHidden = false
             
+            gesturesSwitch.setOn(true, animated: true)
+
             tableView.cellForRow(at: [1, 1])!.isUserInteractionEnabled = true
             tableView.cellForRow(at: [1, 1])!.contentView.alpha = 1
             
@@ -49,6 +65,9 @@ class DefaultsViewController: UITableViewController {
         } else {
             tableView.backgroundColor = RGBColor().UIColorFromRGB(rgbValue: 0xF6F5FB)
         }
+        
+        gesturesSwitch.addTarget(self, action: #selector(self.switchValueDidChange), for: .valueChanged)
+
 
     }
     
@@ -71,33 +90,11 @@ class DefaultsViewController: UITableViewController {
                             willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         
         guard let cell = tableView.cellForRow(at: indexPath) else { return indexPath }
-    
+        
         if cell.tag == 0 {
             playerSelected = 0
         } else if cell.tag == 1 {
             playerSelected = 1
-        } else if cell.tag == 2 {
-            
-            if cell.accessoryType == UITableViewCell.AccessoryType.checkmark {
-                Configuration.value(value: false, forKey: "isGesturesEnabled")
-                cell.accessoryType = UITableViewCell.AccessoryType.none
-                
-                tableView.cellForRow(at: [1, 1])!.isUserInteractionEnabled = false
-                tableView.cellForRow(at: [1, 1])!.contentView.alpha = 0.5
-                
-                tableView.cellForRow(at: [1, 2])!.isUserInteractionEnabled = false
-                tableView.cellForRow(at: [1, 2])!.contentView.alpha = 0.5
-                
-            } else {
-                Configuration.value(value: true, forKey: "isGesturesEnabled")
-                cell.accessoryType = UITableViewCell.AccessoryType.checkmark
-                
-                tableView.cellForRow(at: [1, 1])!.isUserInteractionEnabled = true
-                tableView.cellForRow(at: [1, 1])!.contentView.alpha = 1
-                
-                tableView.cellForRow(at: [1, 2])!.isUserInteractionEnabled = true
-                tableView.cellForRow(at: [1, 2])!.contentView.alpha = 1
-            }
         }
             
         return indexPath
@@ -156,6 +153,40 @@ class DefaultsViewController: UITableViewController {
             tableView.reloadData()
         }
     }
+    
+    @objc func switchValueDidChange(sender: UISwitch!) {
+
+        let isGesturesEnabled = Configuration.value(defaultValue: true, forKey: "isGesturesEnabled")
+        if isGesturesEnabled == true {
+            Configuration.value(value: false, forKey: "isGesturesEnabled")
+            
+    //                singleTapValue.isHidden = true
+    //                doubleTapValue.isHidden = true
+            
+            sender.setOn(false, animated: true)
+
+            tableView.cellForRow(at: [1, 1])!.isUserInteractionEnabled = false
+            tableView.cellForRow(at: [1, 1])!.contentView.alpha = 0.5
+            
+            tableView.cellForRow(at: [1, 2])!.isUserInteractionEnabled = false
+            tableView.cellForRow(at: [1, 2])!.contentView.alpha = 0.5
+            
+        } else {
+            Configuration.value(value: true, forKey: "isGesturesEnabled")
+            
+    //                singleTapValue.isHidden = false
+    //                doubleTapValue.isHidden = false
+            
+            sender.setOn(true, animated: true)
+
+            tableView.cellForRow(at: [1, 1])!.isUserInteractionEnabled = true
+            tableView.cellForRow(at: [1, 1])!.contentView.alpha = 1
+            
+            tableView.cellForRow(at: [1, 2])!.isUserInteractionEnabled = true
+            tableView.cellForRow(at: [1, 2])!.contentView.alpha = 1
+        }
+        
+    }
 
 }
 
@@ -173,4 +204,3 @@ extension DefaultsViewController {
         tableView.reloadData()
     }
 }
-

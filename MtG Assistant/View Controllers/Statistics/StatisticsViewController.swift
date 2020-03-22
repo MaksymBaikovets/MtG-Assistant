@@ -12,6 +12,7 @@ class StatisticsViewController: UITableViewController {
     
     var statisticsDataSource = StatisticsDataSource()
     var selectedItem: StatisticsHeadline?
+    var indexPathOfCell: IndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,12 +37,15 @@ class StatisticsViewController: UITableViewController {
                             willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         
         selectedItem = statisticsDataSource.game(at: indexPath)
+        indexPathOfCell = indexPath
         return indexPath
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let destinationVC = segue.destination as? StatisticsDetailsViewController else { return }
         destinationVC.data = selectedItem
+        destinationVC.destinationTable = self.tableView
+        destinationVC.self.indexPathOfCell = indexPathOfCell
     }
     
     override func tableView(_ tableView: UITableView,
@@ -51,6 +55,11 @@ class StatisticsViewController: UITableViewController {
             statisticsDataSource.delete(to: tableView, at: indexPath)
         }
      }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        statisticsDataSource = StatisticsDataSource()
+        UIView.transition(with: tableView, duration: 0.3, options: .transitionCrossDissolve, animations: {self.tableView.reloadData()}, completion: nil)
+    }
     
 }
 
@@ -96,4 +105,9 @@ extension StatisticsViewController {
         }
         statisticsDataSource.append(haedline: statistics, to: tableView)
     }
+    
+//    guard let cell = tableView.cellForRow(at: indexPath) as! StatisticsCell? else { return }
+//    cell.statistics = game(at: indexPath)
+//    
+//    tableView.reloadRows(at: [indexPath], with: UITableView.RowAnimation.none)
 }

@@ -53,9 +53,16 @@ class NewStatisticsViewController: UITableViewController, UITextFieldDelegate {
     }
     
     func datePickerCreate() {
-        let datePickerView:UIDatePicker = UIDatePicker()
+        let datePickerView: UIDatePicker = UIDatePicker()
         datePickerView.datePickerMode = UIDatePicker.Mode.date
         gameDateInput.inputView = datePickerView
+        
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateStyle = DateFormatter.Style.medium
+        dateFormatter.timeStyle = DateFormatter.Style.none
+        gameDateInput.text = dateFormatter.string(from: date)
         
         datePickerView.addTarget(self, action: #selector(self.datePickerValueChanged),
                                  for: UIControl.Event.valueChanged)
