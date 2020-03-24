@@ -54,6 +54,7 @@ class NewStatisticsViewController: UITableViewController, UITextFieldDelegate {
     
     func datePickerCreate() {
         let datePickerView: UIDatePicker = UIDatePicker()
+        datePickerView.backgroundColor = UIColor.systemBackground
         datePickerView.datePickerMode = UIDatePicker.Mode.date
         gameDateInput.inputView = datePickerView
         

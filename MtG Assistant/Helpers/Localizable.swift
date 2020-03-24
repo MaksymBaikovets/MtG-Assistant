@@ -38,7 +38,7 @@ enum Language: String {
                     offsetBy: 2
                 )
                 guard let localization = Language(
-                    rawValue: preferredLanguage.substring(to: index)
+                    rawValue: String(preferredLanguage[..<index])
                     ) else {
                         return Language.english
                 }

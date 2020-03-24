@@ -24,6 +24,8 @@
 		584C1AEF240D35200022C353 /* TableViewEmptyHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584C1AEE240D35200022C353 /* TableViewEmptyHelper.swift */; };
 		5888BFF223EB70DE005367D9 /* NewStatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5888BFF123EB70DE005367D9 /* NewStatisticsViewController.swift */; };
 		588A25E124071E7B00A52E60 /* EditStatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588A25E024071E7B00A52E60 /* EditStatisticsViewController.swift */; };
+		588A88C3242930F200AFF934 /* CardRulings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588A88C2242930F200AFF934 /* CardRulings.swift */; };
+		588A88C52429318800AFF934 /* Rule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588A88C42429318800AFF934 /* Rule.swift */; };
 		58C855F1240C1F69001694C2 /* CardDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C855F0240C1F69001694C2 /* CardDisplayable.swift */; };
 		58C855F5240C1F91001694C2 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C855F4240C1F91001694C2 /* Card.swift */; };
 		58C855F8240C24CD001694C2 /* CardsSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C855F7240C24CD001694C2 /* CardsSearchViewController.swift */; };
@@ -67,6 +69,8 @@
 		584C1AEE240D35200022C353 /* TableViewEmptyHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewEmptyHelper.swift; sourceTree = "<group>"; };
 		5888BFF123EB70DE005367D9 /* NewStatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewStatisticsViewController.swift; sourceTree = "<group>"; };
 		588A25E024071E7B00A52E60 /* EditStatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditStatisticsViewController.swift; sourceTree = "<group>"; };
+		588A88C2242930F200AFF934 /* CardRulings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRulings.swift; sourceTree = "<group>"; };
+		588A88C42429318800AFF934 /* Rule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rule.swift; sourceTree = "<group>"; };
 		58C855F0240C1F69001694C2 /* CardDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDisplayable.swift; sourceTree = "<group>"; };
 		58C855F4240C1F91001694C2 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		58C855F7240C24CD001694C2 /* CardsSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsSearchViewController.swift; sourceTree = "<group>"; };
@@ -217,24 +221,18 @@
 			isa = PBXGroup;
 			children = (
 				58C855F0240C1F69001694C2 /* CardDisplayable.swift */,
-				58EE2AB0240DB0C1000F81FC /* CardImages.swift */,
-				58C855F4240C1F91001694C2 /* Card.swift */,
 				58C855FD240C3D6D001694C2 /* CardsSearch.swift */,
+				58C855F4240C1F91001694C2 /* Card.swift */,
+				58EE2AB0240DB0C1000F81FC /* CardImages.swift */,
+				588A88C2242930F200AFF934 /* CardRulings.swift */,
+				588A88C42429318800AFF934 /* Rule.swift */,
 			);
 			path = "Cards Search";
-			sourceTree = "<group>";
-		};
-		5854586A2422E1F000267D48 /* Cards Rulings */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Cards Rulings";
 			sourceTree = "<group>";
 		};
 		58C855EF240C1E69001694C2 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				5854586A2422E1F000267D48 /* Cards Rulings */,
 				584ACB68241FD5D600B7ABA2 /* Cards Search */,
 			);
 			path = Networking;
@@ -471,6 +469,7 @@
 				58092ABF23FD6BC800517C8C /* ContactsViewController.swift in Sources */,
 				584ACB6F241FDDA200B7ABA2 /* RulesbookViewController.swift in Sources */,
 				58092ABA23FD67D200517C8C /* UIColorFromRGB.swift in Sources */,
+				588A88C3242930F200AFF934 /* CardRulings.swift in Sources */,
 				58DDC7F223F97FD80000D6E7 /* StatisticsCell.swift in Sources */,
 				58C855FC240C2835001694C2 /* CardDetailViewController.swift in Sources */,
 				584C1AEF240D35200022C353 /* TableViewEmptyHelper.swift in Sources */,
@@ -485,6 +484,7 @@
 				58DBA18C23E61C02002C3041 /* SceneDelegate.swift in Sources */,
 				58C855F1240C1F69001694C2 /* CardDisplayable.swift in Sources */,
 				58216FCC23F5993900FA945A /* StatisticsDataSource.swift in Sources */,
+				588A88C52429318800AFF934 /* Rule.swift in Sources */,
 				58C855F5240C1F91001694C2 /* Card.swift in Sources */,
 				58C855FE240C3D6D001694C2 /* CardsSearch.swift in Sources */,
 			);

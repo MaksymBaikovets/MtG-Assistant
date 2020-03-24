@@ -54,24 +54,6 @@ class EditStatisticsViewController: UITableViewController, UITextFieldDelegate {
 
         cancelButton.title = NSLocalizedString("Cancel", comment: "")
         saveButton.title = NSLocalizedString("Save", comment: "")
-        
-        datePickerCreate()
-    }
-    
-    func datePickerCreate() {
-        let datePickerView:UIDatePicker = UIDatePicker()
-        datePickerView.datePickerMode = UIDatePicker.Mode.date
-        dateLabel.inputView = datePickerView
-        
-        datePickerView.addTarget(self, action: #selector(self.datePickerValueChanged),
-                                 for: UIControl.Event.valueChanged)
-    }
-    
-    @objc func datePickerValueChanged(sender: UIDatePicker) {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateStyle = DateFormatter.Style.medium
-            dateFormatter.timeStyle = DateFormatter.Style.none
-            dateLabel.text = dateFormatter.string(from: sender.date)
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String,
@@ -113,16 +95,6 @@ class EditStatisticsViewController: UITableViewController, UITextFieldDelegate {
                     alertTitle = "Field Missing"
                     alertMessage = "Enter Second Deck name!"
                 }
-                    
-//                else if result == "" {
-//                    alertTitle = "Field Missing"
-//                    alertMessage = "Enter Result of the game!"
-//                }
-//
-//                else if date == "" {
-//                    alertTitle = "Field Missing"
-//                    alertMessage = "Enter date of the game!"
-//                }
                     
                 else {
                     break

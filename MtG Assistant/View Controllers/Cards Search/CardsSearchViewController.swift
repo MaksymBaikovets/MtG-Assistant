@@ -25,7 +25,6 @@ class CardsSearchViewController: UITableViewController {
         searchBar.placeholder = NSLocalizedString("Card name to search", comment: "")
         
         tableView.tableFooterView = UIView()
-
     }
     
     override  func awakeFromNib() {

@@ -66,11 +66,11 @@ extension RulesbookViewController: UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ rulesSearchBar: UISearchBar) {
-        let rules = rulings.text!
-        guard let ruleName = rulesSearchBar.text else { return }
+//        let rules = rulings.text!
+//        guard let ruleName = rulesSearchBar.text else { return }
 
-        ruleSearch(ruleName)
-        heightForLabel(text: rules)
+//        ruleSearch(ruleName)
+//        heightForLabel(text: rules)
         
         rulesSearchBar.showsCancelButton = false
         rulesSearchBar.resignFirstResponder()

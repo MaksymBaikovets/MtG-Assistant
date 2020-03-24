@@ -9,6 +9,7 @@
 struct Card: Decodable {
     
     let name: String
+    let id: String
     let typeLine: String
     let setName: String?
     let oracleText: String?
@@ -17,6 +18,7 @@ struct Card: Decodable {
   
     enum CodingKeys: String, CodingKey {
         case name
+        case id
         case typeLine = "type_line"
         case setName = "set_name"
         case oracleText = "oracle_text"

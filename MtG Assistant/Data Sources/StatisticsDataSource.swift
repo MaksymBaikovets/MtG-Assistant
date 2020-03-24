@@ -20,10 +20,6 @@ class StatisticsDataSource: NSObject {
 
     static func generateStatisticsData() -> [StatisticsHeadline] {
         return []
-            
-            // TODO: Change struct to core data using
-            //        cell.textLabel?.text =
-            //            coreSingleHeadline.value(forKeyPath: "competitors") as? String
     }
     
     // -------------------------------------------------------------------
@@ -56,7 +52,6 @@ class StatisticsDataSource: NSObject {
       
         do {
             coreHeadlines = try managedContext.fetch(fetchRequest)
-//            print("Fetched Rows: \(coreHeadlines.count)\n")
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
@@ -76,7 +71,6 @@ class StatisticsDataSource: NSObject {
       
         let fetchRequest =
             NSFetchRequest<NSManagedObject>(entityName: "Headline")
-           
         
         do {
             coreHeadlines = try managedContext.fetch(fetchRequest)
@@ -143,21 +137,18 @@ class StatisticsDataSource: NSObject {
         
 
        
-         guard let appDelegate =
-             UIApplication.shared.delegate as? AppDelegate else { return }
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else { return }
        
-         let managedContext =
-             appDelegate.persistentContainer.viewContext
+        let managedContext =
+            appDelegate.persistentContainer.viewContext
         
         let fetchRequest =
             NSFetchRequest<NSManagedObject>(entityName: "Headline")
         
-        // 3
         print(gameResult)
         let predicate = NSPredicate(format: "result = %@ AND date = %@", argumentArray: [gameResult, date])
         fetchRequest.predicate = predicate
-
-        //3
 
         do {
             let  rs = try managedContext.fetch(fetchRequest)
@@ -223,7 +214,6 @@ class StatisticsDataSource: NSObject {
     // -------------------------------------------------------------------
 
     func numberOfGames() -> Int {
-        //        return coreHeadlines.count
         headlines.count
     }
 
@@ -258,13 +248,6 @@ class StatisticsDataSource: NSObject {
     // -------------------------------------------------------------------
 
     func game(at indexPath: IndexPath) -> StatisticsHeadline {
-        
-        //        let coreSingleHeadline = coreHeadlines[indexPath.row]
-        //        let cell = tableView.dequeueReusableCell(withIdentifier: "StatisticsCell",
-        //                                                 for: indexPath) as! StatisticsCell
-        //        cell.textLabel?.text =
-        //            coreSingleHeadline.value(forKeyPath: "competitors") as? String
-
         headlines[indexPath.row]
     }
 

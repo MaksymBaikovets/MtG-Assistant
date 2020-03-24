@@ -8,6 +8,7 @@
 
 protocol CardDisplayable {
     var name: String { get }
+    var id: String { get }
     var typeLine: String { get }
     var setName: String? { get }
     var oracleText: String? { get }

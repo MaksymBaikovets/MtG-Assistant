@@ -105,9 +105,4 @@ extension StatisticsViewController {
         }
         statisticsDataSource.append(haedline: statistics, to: tableView)
     }
-    
-//    guard let cell = tableView.cellForRow(at: indexPath) as! StatisticsCell? else { return }
-//    cell.statistics = game(at: indexPath)
-//    
-//    tableView.reloadRows(at: [indexPath], with: UITableView.RowAnimation.none)
 }
