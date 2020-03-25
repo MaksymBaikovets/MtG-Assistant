@@ -42,6 +42,7 @@ class SettingsViewController: UITableViewController {
         } else {
             tableView.backgroundColor = RGBColor().UIColorFromRGB(rgbValue: 0xF6F5FB)
         }
+        
     }
     
     override  func awakeFromNib() {
@@ -90,7 +91,6 @@ class SettingsViewController: UITableViewController {
         }
         
         return indexPath
-        
     }
     
     // -------------------------------------------------------------------
@@ -127,6 +127,7 @@ class SettingsViewController: UITableViewController {
         } else {
             cell.backgroundColor = UIColor.white
         }
+        
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -137,6 +138,7 @@ class SettingsViewController: UITableViewController {
             tableView.backgroundColor = RGBColor().UIColorFromRGB(rgbValue: 0xF6F5FB)
             tableView.reloadData()
         }
+        
     }
     
 }

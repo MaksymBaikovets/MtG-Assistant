@@ -53,6 +53,7 @@ class GesturesChangeViewController: UITableViewController {
             default:
                 return
             }
+            
         }
         
         if self.traitCollection.userInterfaceStyle == .dark {
@@ -118,7 +119,6 @@ class GesturesChangeViewController: UITableViewController {
         }
             
         return indexPath
-        
     }
     
     // -------------------------------------------------------------------
@@ -167,6 +167,7 @@ class GesturesChangeViewController: UITableViewController {
         } else {
             cell.backgroundColor = UIColor.white
         }
+        
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -177,6 +178,7 @@ class GesturesChangeViewController: UITableViewController {
             tableView.backgroundColor = RGBColor().UIColorFromRGB(rgbValue: 0xF6F5FB)
             tableView.reloadData()
         }
+        
     }
 
 }

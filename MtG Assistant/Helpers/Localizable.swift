@@ -23,6 +23,7 @@ enum Language: String {
 //        case .arabic:
 //            return .forceRightToLeft
         }
+        
     }
     
     
@@ -45,6 +46,7 @@ enum Language: String {
                 
                 return localization
             }
+            
         }
         set {
             guard language != newValue else {
@@ -72,7 +74,9 @@ enum Language: String {
 //                bundle: nil
 //                ).instantiateInitialViewController()
         }
+        
     }
+    
 }
 
 
@@ -96,6 +100,7 @@ extension String {
         }
         return UIImage(contentsOfFile: imagePath)
     }
+    
 }
 
 extension Bundle {
@@ -110,4 +115,5 @@ extension Bundle {
         }
         return Bundle(path: path)!
     }
+    
 }

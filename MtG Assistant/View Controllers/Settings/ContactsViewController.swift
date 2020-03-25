@@ -50,7 +50,7 @@ class ContactsViewController: UITableViewController {
         let selectedItem = indexPath.row.description
         
         if Int(selectedItem) == 0 {
-            let botURL = URL.init(string: "https://t.me/\("Maksym_Baikovets")")
+            let botURL = URL.init(string: "https://t.me/\("MtGAssistantBot")")
 
             if UIApplication.shared.canOpenURL(botURL!) {
                 UIApplication.shared.open(botURL!)
@@ -63,11 +63,13 @@ class ContactsViewController: UITableViewController {
                     } else {
                         UIApplication.shared.openURL(urlAppStore!)
                     }
+                    
                 }
+                
             }
             
         } else if Int(selectedItem) == 1 {
-            let email = "support.mtg-a@gmail.com"
+            let email = "mtgassistant.help@gmail.com"
             let url = URL(string: "mailto:\(email)")
             UIApplication.shared.open(url!)
             
@@ -78,7 +80,6 @@ class ContactsViewController: UITableViewController {
         }
         
         return indexPath
-        
     }
     
     // -------------------------------------------------------------------
@@ -92,6 +93,7 @@ class ContactsViewController: UITableViewController {
         } else {
             cell.backgroundColor = UIColor.white
         }
+        
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -102,6 +104,7 @@ class ContactsViewController: UITableViewController {
             tableView.backgroundColor = RGBColor().UIColorFromRGB(rgbValue: 0xF6F5FB)
             tableView.reloadData()
         }
+        
     }
     
 }

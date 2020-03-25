@@ -93,13 +93,10 @@ extension StatisticsDetailsViewController {
     @IBAction func cancelUpdatingStatistics(_: UIStoryboardSegue) { }
 
     @IBAction func saveUpdatedStatistics(_ segue: UIStoryboardSegue) {
-        // TODO: Perform Updating of data inside detials view
         guard
             let editStatisticsDetailsViewController = segue.source as? EditStatisticsViewController,
             let data = editStatisticsDetailsViewController.data
-        else {
-            return
-        }
+        else { return }
         
         guard let destinationTable = destinationTable else { return }
         self.destinationTable = destinationTable

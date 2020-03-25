@@ -44,7 +44,6 @@ class NewStatisticsViewController: UITableViewController, UITextFieldDelegate {
         
         datePickerCreate()
         firstPlayerInput.becomeFirstResponder()
-        
     }
     
     override  func awakeFromNib() {
@@ -156,7 +155,6 @@ class NewStatisticsViewController: UITableViewController, UITextFieldDelegate {
 
                 present(alertController, animated: true, completion: nil)
                 return false
-                
             }
             
             statisticsDataSource.saveToCoreData(firstPlayer: firstPlayerName,
@@ -174,12 +172,8 @@ class NewStatisticsViewController: UITableViewController, UITextFieldDelegate {
             )
             
             return true
-            
         }
-        
         return true
-        
     }
-    
 
 }

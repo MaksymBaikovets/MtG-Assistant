@@ -80,7 +80,6 @@ class LanguageViewController: UITableViewController {
         self.present(alert, animated: true, completion: nil)
         
         return indexPath
-        
     }
 
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell,
@@ -91,6 +90,7 @@ class LanguageViewController: UITableViewController {
         } else {
             cell.backgroundColor = UIColor.white
         }
+        
     }
     
     // -------------------------------------------------------------------
@@ -105,6 +105,7 @@ class LanguageViewController: UITableViewController {
             tableView.backgroundColor = RGBColor().UIColorFromRGB(rgbValue: 0xF6F5FB)
             tableView.reloadData()
         }
+        
     }
 
 }

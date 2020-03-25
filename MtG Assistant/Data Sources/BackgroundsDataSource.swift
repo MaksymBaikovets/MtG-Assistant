@@ -37,4 +37,5 @@ class Backgrounds {
         let blueBackgrounds = [#imageLiteral(resourceName: "1stBlue"), #imageLiteral(resourceName: "2ndBlue"), #imageLiteral(resourceName: "3rdBlue"), #imageLiteral(resourceName: "4thBlue"), #imageLiteral(resourceName: "5thBlue"), #imageLiteral(resourceName: "6thBlue"), #imageLiteral(resourceName: "7thBlue"), #imageLiteral(resourceName: "8thBlue"), #imageLiteral(resourceName: "9thBlue")]
         return blueBackgrounds[Int(arc4random_uniform(UInt32(blueBackgrounds.count)))]
     }
+    
 }

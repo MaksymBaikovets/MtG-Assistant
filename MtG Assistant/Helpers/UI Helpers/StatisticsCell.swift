@@ -30,5 +30,7 @@ class StatisticsCell: UITableViewCell {
             dateLabel.text = statistics.date
             resultLabel.text = statistics.result
         }
+        
     }
+    
 }

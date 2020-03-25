@@ -53,6 +53,7 @@ class ColorPickerViewController: UITableViewController {
             default:
                 return
             }
+            
         }
         
         if self.traitCollection.userInterfaceStyle == .dark {
@@ -66,7 +67,6 @@ class ColorPickerViewController: UITableViewController {
     private func commonInit() {
         guard let user = user else { return }
         self.user = user
-        
     }
     
     override func viewWillLayoutSubviews() {
@@ -118,7 +118,6 @@ class ColorPickerViewController: UITableViewController {
         }
             
         return indexPath
-        
     }
     
     // -------------------------------------------------------------------
@@ -167,6 +166,7 @@ class ColorPickerViewController: UITableViewController {
         } else {
             cell.backgroundColor = UIColor.white
         }
+        
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -177,6 +177,7 @@ class ColorPickerViewController: UITableViewController {
             tableView.backgroundColor = RGBColor().UIColorFromRGB(rgbValue: 0xF6F5FB)
             tableView.reloadData()
         }
+        
     }
 
 }

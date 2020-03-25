@@ -50,6 +50,7 @@ class CardDetailViewController: UIViewController {
             oracleText.textColor = UIColor.black
             flavorText.textColor = UIColor.black
         }
+        
     }
     
     private func commonInit() {
@@ -139,8 +140,8 @@ class CardDetailViewController: UIViewController {
                 
                 let rulesAttributed = NSMutableAttributedString(string: allRules)
                 self.cardRulingsText.attributedText = rulesAttributed
-                                
         }
+        
     }
     
     
@@ -156,6 +157,7 @@ class CardDetailViewController: UIViewController {
             oracleText.textColor = UIColor.black
             flavorText.textColor = UIColor.black
         }
+        
     }
 
 }

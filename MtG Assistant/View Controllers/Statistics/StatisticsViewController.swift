@@ -54,6 +54,7 @@ class StatisticsViewController: UITableViewController {
         if editingStyle == .delete {
             statisticsDataSource.delete(to: tableView, at: indexPath)
         }
+        
      }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -75,7 +76,6 @@ extension StatisticsViewController {
         } else {
             self.tableView.restore()
         }
-        
         return itemsCount
     }
 
@@ -87,6 +87,7 @@ extension StatisticsViewController {
         cell.statistics = statisticsDataSource.game(at: indexPath)
         return cell
     }
+    
 }
 
     // -------------------------------------------------------------------
@@ -100,9 +101,9 @@ extension StatisticsViewController {
         guard
             let newStatisticsDetailsViewController = segue.source as? NewStatisticsViewController,
             let statistics = newStatisticsDetailsViewController.statistics
-        else {
-            return
-        }
+        else { return }
+        
         statisticsDataSource.append(haedline: statistics, to: tableView)
     }
+    
 }

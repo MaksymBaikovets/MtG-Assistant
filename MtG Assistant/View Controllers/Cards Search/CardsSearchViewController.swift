@@ -45,8 +45,7 @@ class CardsSearchViewController: UITableViewController {
         if items.count == 0 {
             self.tableView.setEmptyMessage(
                 NSLocalizedString("Type a request to start a search", comment: ""))
-        } 
-        
+        }
         return items.count
     }
 
@@ -75,6 +74,7 @@ class CardsSearchViewController: UITableViewController {
         } else {
             self.tableView.scrollRectToVisible(CGRect(x: 0, y: 0, width: 1, height: 1), animated: true)
         }
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -182,5 +182,7 @@ extension CardsSearchViewController {
                 
                 self.tableView.reloadData()
         }
+        
     }
+    
 }

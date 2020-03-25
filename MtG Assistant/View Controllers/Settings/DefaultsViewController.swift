@@ -45,6 +45,7 @@ class DefaultsViewController: UITableViewController {
         doubleTapValue.textColor = UIColor.systemGray
 
         let isGesturesEnabled = Configuration.value(defaultValue: true, forKey: "isGesturesEnabled")
+        
         if isGesturesEnabled == false {
 //            singleTapValue.isHidden = true
 //            doubleTapValue.isHidden = true
@@ -78,7 +79,6 @@ class DefaultsViewController: UITableViewController {
         
         gesturesSwitch.addTarget(self, action: #selector(self.switchValueDidChange), for: .valueChanged)
 
-
     }
     
     override  func awakeFromNib() {
@@ -92,7 +92,6 @@ class DefaultsViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-
     }
     
     // define which row selected
@@ -112,7 +111,6 @@ class DefaultsViewController: UITableViewController {
         }
             
         return indexPath
-        
     }
     
     // prepare ColorPickerVC to handle selection
@@ -124,7 +122,6 @@ class DefaultsViewController: UITableViewController {
             guard let GesturesChangeVC = segue.destination as? GesturesChangeViewController else { return }
             GesturesChangeVC.gestureType = gestureSelected
         }
-
         
     }
     
@@ -162,6 +159,7 @@ class DefaultsViewController: UITableViewController {
         } else {
             cell.backgroundColor = UIColor.white
         }
+        
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -172,6 +170,7 @@ class DefaultsViewController: UITableViewController {
             tableView.backgroundColor = RGBColor().UIColorFromRGB(rgbValue: 0xF6F5FB)
             tableView.reloadData()
         }
+        
     }
     
     @objc func switchValueDidChange(sender: UISwitch!) {
@@ -190,7 +189,6 @@ class DefaultsViewController: UITableViewController {
             
             tableView.cellForRow(at: [1, 2])!.isUserInteractionEnabled = false
             tableView.cellForRow(at: [1, 2])!.contentView.alpha = 0.5
-            
         } else {
             Configuration.value(value: true, forKey: "isGesturesEnabled")
             
@@ -232,4 +230,5 @@ extension DefaultsViewController {
         
         tableView.reloadData()
     }
+    
 }

@@ -88,7 +88,6 @@ class PlayersHealthViewController: UIViewController {
         
         // add gesture recognizers
         gestureRecognizer()
-            
     } // end of viewDidLoad()
     
     // -------------------------------------------------------------------
@@ -108,6 +107,7 @@ class PlayersHealthViewController: UIViewController {
             self.showAlert = true
             chooseTableColor(player: "firstPlayer")
         }
+        
     }
 
     @IBAction func secondPlayerSetting(_ sender: UIButton) {
@@ -116,6 +116,7 @@ class PlayersHealthViewController: UIViewController {
             self.showAlert = true
             chooseTableColor(player: "secondPlayer")
         }
+        
     }
 
     // -------------------------------------------------------------------
@@ -182,6 +183,7 @@ class PlayersHealthViewController: UIViewController {
         if self.showAlert == true {
             present(optionMenu, animated: true, completion: nil)
         }
+        
     }
 
     // -------------------------------------------------------------------
@@ -194,6 +196,7 @@ class PlayersHealthViewController: UIViewController {
             self.showAlert = false
             backgroundChange(player: "firstPlayer")
         }
+        
     }
 
     @IBAction func secondPlayerTableChange(_ sender: UIButton) {
@@ -202,6 +205,7 @@ class PlayersHealthViewController: UIViewController {
             self.showAlert = false
             backgroundChange(player: "secondPlayer")
         }
+        
     }
 
     // -------------------------------------------------------------------
@@ -218,7 +222,6 @@ class PlayersHealthViewController: UIViewController {
                 current: img,
                 playerDevotion: self.devotionToColorOfFirstPlayer
             )
-            
         }
         
         else if player == "secondPlayer" {
@@ -232,8 +235,8 @@ class PlayersHealthViewController: UIViewController {
                 current: img,
                 playerDevotion: self.devotionToColorOfSecondPlayer
             )
-            
         }
+        
     }
 
     // -------------------------------------------------------------------
@@ -256,6 +259,7 @@ class PlayersHealthViewController: UIViewController {
             default:
                 newBackground = current
             }
+            
         }
         return newBackground
     }
@@ -304,7 +308,6 @@ class PlayersHealthViewController: UIViewController {
     
     func gestureRecognizer() {
     // MARK: - Gesture Recognizers
-        
         for views in [firstPlayerStat, secondPlayerStat] {
             
             guard let gestureTarget = views else {
@@ -328,6 +331,7 @@ class PlayersHealthViewController: UIViewController {
             
             singleTapGesture.require(toFail: doubleTapGesture)
         }
+        
     }
     
     func gestureSelection(gesture: String) {
@@ -338,7 +342,6 @@ class PlayersHealthViewController: UIViewController {
         } else {
             currentValue = Configuration.value(defaultValue: "counters20", forKey: gesture)
         }
-        
         
         switch currentValue {
         case "counters20":
@@ -377,7 +380,6 @@ class PlayersHealthViewController: UIViewController {
         }
         
         buttonsFeedback.selectionChanged()
-
     }
     
 }

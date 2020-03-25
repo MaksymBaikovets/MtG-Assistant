@@ -55,6 +55,7 @@ class StatisticsDataSource: NSObject {
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
+        
     }
     
     // -------------------------------------------------------------------
@@ -124,6 +125,7 @@ class StatisticsDataSource: NSObject {
         } catch let error as NSError {
             print("Could not save. \(error), \(error.userInfo)")
         }
+        
     }
     
      // -------------------------------------------------------------------
@@ -207,6 +209,7 @@ class StatisticsDataSource: NSObject {
             
             headlines.append(result)
         }
+        
     }
 
     // -------------------------------------------------------------------
