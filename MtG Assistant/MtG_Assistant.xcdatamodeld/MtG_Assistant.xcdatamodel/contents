@@ -9,6 +9,6 @@
         <attribute name="secondPlayerDeck" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Headline" positionX="-63" positionY="-18" width="128" height="133"/>
+        <element name="Headline" positionX="-7729.34765625" positionY="1570.5625" width="128" height="133"/>
     </elements>
 </model>

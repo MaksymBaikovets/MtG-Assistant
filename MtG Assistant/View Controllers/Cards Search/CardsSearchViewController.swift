@@ -16,6 +16,10 @@ class CardsSearchViewController: UITableViewController {
     var items: [CardDisplayable] = []
     var selectedItem: CardDisplayable?
     
+    // -------------------------------------------------------------------
+    // MARK: - Outlets
+    // -------------------------------------------------------------------
+    
     @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
@@ -43,7 +47,6 @@ class CardsSearchViewController: UITableViewController {
                 NSLocalizedString("Type a request to start a search", comment: ""))
         } 
         
-        // return rows count
         return items.count
     }
 
@@ -88,7 +91,6 @@ class CardsSearchViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let CardDetailsVC = segue.destination as? CardDetailViewController else { return }
         CardDetailsVC.data = selectedItem
-        
     }
 
 }
@@ -141,7 +143,7 @@ extension CardsSearchViewController {
     
     func cardsSerch(for name: String = "") {
         
-        // Create the activity indicator
+        // create the activity indicator
         let activityIndicator = UIActivityIndicatorView()
         
         view.addSubview(activityIndicator)
@@ -150,7 +152,7 @@ extension CardsSearchViewController {
         activityIndicator.startAnimating()
         activityIndicator.isHidden = false
         
-        // Proceed request
+        // proceed request
         let url = "https://api.scryfall.com/cards/search"
         let parameters: [String: String] = ["q": name, "unique": "cards", "order": "name"]
             
@@ -162,7 +164,6 @@ extension CardsSearchViewController {
                     self.tableView.reloadData()
 
                     activityIndicator.stopAnimating()
-//                    activityIndicator.removeFromSuperview()
                     activityIndicator.isHidden = true
                     
                     self.tableView.setEmptyMessage(
@@ -174,9 +175,7 @@ extension CardsSearchViewController {
                 // Restore tableView after request comlete
                 self.tableView.restore()
                 activityIndicator.stopAnimating()
-//                activityIndicator.removeFromSuperview()
                 activityIndicator.isHidden = true
-
                 
                 self.cards = cards.data
                 self.items = cards.data

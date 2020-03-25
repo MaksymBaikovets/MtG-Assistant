@@ -10,6 +10,10 @@ import UIKit
 
 class ContactsViewController: UITableViewController {
 
+    // -------------------------------------------------------------------
+    // MARK: - Outlets
+    // -------------------------------------------------------------------
+    
     @IBOutlet weak var ukraineLabel: UILabel!
     
     override func viewDidLoad() {

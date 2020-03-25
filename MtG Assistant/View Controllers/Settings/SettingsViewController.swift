@@ -11,6 +11,10 @@ import SafariServices
 
 class SettingsViewController: UITableViewController {
     
+    // -------------------------------------------------------------------
+    // MARK: - Outlets
+    // -------------------------------------------------------------------
+    
     @IBOutlet weak var defaultValuesLabel: UILabel!
     
     @IBOutlet weak var languageLabel: UILabel!

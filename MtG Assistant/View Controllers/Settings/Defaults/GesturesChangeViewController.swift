@@ -19,9 +19,9 @@ class GesturesChangeViewController: UITableViewController {
         tableView.tableFooterView = UIView()
         
         if gestureType == 0 {
-            let color = Configuration.value(defaultValue: "counters20", forKey: "singleTapGesture")
+            let gesture = Configuration.value(defaultValue: "counters20", forKey: "singleTapGesture")
 
-            switch color {
+            switch gesture {
             case "counters20":
                 tableView.cellForRow(at: [0, 0])?.accessoryType = UITableViewCell.AccessoryType.checkmark
             case "counters40":
@@ -37,9 +37,9 @@ class GesturesChangeViewController: UITableViewController {
             }
 
         } else if gestureType == 1 {
-            let color = Configuration.value(defaultValue: "counters40", forKey: "doubleTapGesture")
+            let gesture = Configuration.value(defaultValue: "counters40", forKey: "doubleTapGesture")
 
-            switch color {
+            switch gesture {
             case "counters20":
                 tableView.cellForRow(at: [0, 0])?.accessoryType = UITableViewCell.AccessoryType.checkmark
             case "counters40":

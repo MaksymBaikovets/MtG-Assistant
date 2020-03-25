@@ -13,6 +13,10 @@ class DefaultsViewController: UITableViewController {
     var playerSelected: Int?
     var gestureSelected: Int?
     
+    // -------------------------------------------------------------------
+    // MARK: - Outlets
+    // -------------------------------------------------------------------
+    
     @IBOutlet weak var firstPlayerColorLabel: UILabel!
     @IBOutlet weak var secondPlayerColorLabel: UILabel!
 

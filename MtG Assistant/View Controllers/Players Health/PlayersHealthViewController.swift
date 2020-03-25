@@ -16,7 +16,6 @@ class PlayersHealthViewController: UIViewController {
     var showAlert = false
     var index: Int = 0
     
-    let notification = UINotificationFeedbackGenerator()
     let buttonsFeedback = UISelectionFeedbackGenerator()
     
     // -------------------------------------------------------------------
@@ -52,6 +51,7 @@ class PlayersHealthViewController: UIViewController {
         
         playersHealthTitle!.title = NSLocalizedString("Players Health", comment: "")
         
+        // round things for first player
         increaseFirstStatButton.layer.masksToBounds = true
         increaseFirstStatButton.layer.cornerRadius = increaseFirstStatButton.frame.size.width / 2.0
         decreaseFirstStatButton.layer.masksToBounds = true
@@ -60,6 +60,7 @@ class PlayersHealthViewController: UIViewController {
         firstPlayerStat.layer.masksToBounds = true
         firstPlayerStat.layer.cornerRadius = firstPlayerStat.frame.size.width / 2.0
         
+        // round things for second player
         increaseSecondStatButton.layer.masksToBounds = true
         increaseSecondStatButton.layer.cornerRadius = increaseSecondStatButton.frame.size.width / 2.0
         decreaseSecondStatButton.layer.masksToBounds = true
@@ -84,33 +85,9 @@ class PlayersHealthViewController: UIViewController {
         
         firstPlayerTable.image = selectBackground(playerDevotion: devotionToColorOfFirstPlayer)
         secondPlayerTable.image = selectBackground(playerDevotion: devotionToColorOfSecondPlayer)
-
         
-    // MARK: - Gesture Recognizers
-        
-        for views in [firstPlayerStat, secondPlayerStat] {
-            
-            guard let gestureTarget = views else {
-                return
-            }
-            
-            let singleTapGesture = UITapGestureRecognizer(
-                target: self,
-                action: #selector(PlayersHealthViewController.handleSingleTap(_:))
-            )
-            singleTapGesture.numberOfTapsRequired = 1
-            
-            let doubleTapGesture = UITapGestureRecognizer(
-                target: self,
-                action: #selector(PlayersHealthViewController.handleDoubleTap(_:))
-            )
-            doubleTapGesture.numberOfTapsRequired = 2
-            
-            gestureTarget.addGestureRecognizer(singleTapGesture)
-            gestureTarget.addGestureRecognizer(doubleTapGesture)
-            
-            singleTapGesture.require(toFail: doubleTapGesture)
-        }
+        // add gesture recognizers
+        gestureRecognizer()
             
     } // end of viewDidLoad()
     
@@ -325,6 +302,84 @@ class PlayersHealthViewController: UIViewController {
         buttonsFeedback.selectionChanged()
     }
     
+    func gestureRecognizer() {
+    // MARK: - Gesture Recognizers
+        
+        for views in [firstPlayerStat, secondPlayerStat] {
+            
+            guard let gestureTarget = views else {
+                return
+            }
+            
+            let singleTapGesture = UITapGestureRecognizer(
+                target: self,
+                action: #selector(PlayersHealthViewController.handleSingleTap(_:))
+            )
+            singleTapGesture.numberOfTapsRequired = 1
+            
+            let doubleTapGesture = UITapGestureRecognizer(
+                target: self,
+                action: #selector(PlayersHealthViewController.handleDoubleTap(_:))
+            )
+            doubleTapGesture.numberOfTapsRequired = 2
+            
+            gestureTarget.addGestureRecognizer(singleTapGesture)
+            gestureTarget.addGestureRecognizer(doubleTapGesture)
+            
+            singleTapGesture.require(toFail: doubleTapGesture)
+        }
+    }
+    
+    func gestureSelection(gesture: String) {
+        var currentValue: String
+        
+        if gesture == "singleTapGesture" {
+            currentValue = Configuration.value(defaultValue: "counters40", forKey: gesture)
+        } else {
+            currentValue = Configuration.value(defaultValue: "counters20", forKey: gesture)
+        }
+        
+        
+        switch currentValue {
+        case "counters20":
+            firstPlayerStat.text = "20"
+            secondPlayerStat.text = "20"
+        case "counters40":
+            firstPlayerStat.text = "40"
+            secondPlayerStat.text = "40"
+        case "countersCustom":
+            // create the alert controller
+            let alert = UIAlertController(title: "Set your value", message: "Enter a value for counters", preferredStyle: .alert)
+
+            // add the text field. You can configure it however you need
+            alert.addTextField { (textField) in
+                textField.text = "20"
+            }
+
+            // grab the value from the text field, and print it when the user clicks OK
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+                let textField = alert?.textFields![0] // Force unwrapping because we know it exists.
+                print("Text field: \(String(describing: textField!.text))")
+                self.firstPlayerStat.text = textField!.text
+                self.secondPlayerStat.text = textField!.text
+            }))
+
+            // present the alert
+            self.present(alert, animated: true, completion: nil)
+            
+        case "countersSave":
+            firstPlayerStat.text = "4"
+            secondPlayerStat.text = "4"
+        case "countersNone":
+            return
+        default:
+            return
+        }
+        
+        buttonsFeedback.selectionChanged()
+
+    }
+    
 }
 
     // -------------------------------------------------------------------
@@ -334,17 +389,11 @@ class PlayersHealthViewController: UIViewController {
 extension PlayersHealthViewController: UIGestureRecognizerDelegate {
     
     @objc func handleSingleTap(_ gesture: UITapGestureRecognizer){
-        firstPlayerStat.text = "40"
-        secondPlayerStat.text = "40"
-        
-        notification.notificationOccurred(.warning)
+        gestureSelection(gesture: "singleTapGesture")
     }
     
     @objc func handleDoubleTap(_ gesture: UITapGestureRecognizer){
-        firstPlayerStat.text = "20"
-        secondPlayerStat.text = "20"
-        
-        notification.notificationOccurred(.success)
+        gestureSelection(gesture: "doubleTapGesture")
     }
     
 }

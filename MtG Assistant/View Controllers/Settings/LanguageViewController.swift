@@ -13,11 +13,29 @@ class LanguageViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
-
+        
+        commonInit()
+        
         if self.traitCollection.userInterfaceStyle == .dark {
             tableView.backgroundColor = RGBColor().UIColorFromRGB(rgbValue: 0x000000)
         } else {
             tableView.backgroundColor = RGBColor().UIColorFromRGB(rgbValue: 0xF6F5FB)
+        }
+        
+    }
+    
+    func commonInit() {
+        let lang = Configuration.value(defaultValue: "", forKey: "appLanguage")
+
+        switch lang {
+        case "en":
+            tableView.cellForRow(at: [0, 0])?.accessoryType = UITableViewCell.AccessoryType.checkmark
+        case "ru":
+            tableView.cellForRow(at: [0, 1])?.accessoryType = UITableViewCell.AccessoryType.checkmark
+        case "uk":
+            tableView.cellForRow(at: [0, 2])?.accessoryType = UITableViewCell.AccessoryType.checkmark
+        default:
+            break
         }
         
     }
@@ -64,19 +82,20 @@ class LanguageViewController: UITableViewController {
         return indexPath
         
     }
-    
-    // -------------------------------------------------------------------
-    // MARK: Trait Collection changes
-    // -------------------------------------------------------------------
 
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell,
                             forRowAt indexPath: IndexPath) {
+        
         if self.traitCollection.userInterfaceStyle == .dark {
             cell.backgroundColor = RGBColor().UIColorFromRGBAlpha(rgbValue: 0x211F25)
         } else {
             cell.backgroundColor = UIColor.white
         }
     }
+    
+    // -------------------------------------------------------------------
+    // MARK: Trait Collection changes
+    // -------------------------------------------------------------------
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         if self.traitCollection.userInterfaceStyle == .dark {

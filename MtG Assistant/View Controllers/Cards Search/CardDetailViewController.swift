@@ -56,12 +56,6 @@ class CardDetailViewController: UIViewController {
         guard let data = data else { return }
         self.cardId = data.id
         
-        // custom attributed font settings
-//        let font = UIFont(name: "Avenir", size: 14.0)!
-//        let boldItalicsFont = UIFont(name: "Avenir-HeavyOblique", size: 14.0)!
-//        let italicsFont = UIFont(name: "Avenir-BookOblique", size: 14.0)!
-//        let boldFont = UIFont(name: "Avenir-Heavy", size: 14.0)!
-        
         cardRulingsLoad()
         cardImageLoad()
         
@@ -106,9 +100,7 @@ class CardDetailViewController: UIViewController {
 //        guard let urlPng = data.imageUris?.png else
 //        guard let urlLarge = data.imageUris?.large else
         
-        guard let urlBorderCropped = data.imageUris?.borderCrop else
-
-        {
+        guard let urlBorderCropped = data.imageUris?.borderCrop else {
             self.cardImage.image = #imageLiteral(resourceName: "cardBack")
             return
         }
@@ -129,17 +121,12 @@ class CardDetailViewController: UIViewController {
         AF.request(url)
             .validate()
             .responseDecodable(of: CardRulings.self) {
-                (response) in guard let rulings = response.value else {
-                    self.cardRulingsText.isHidden = true
-                    self.cardRulingsTitle.isHidden = true
-                    return
-                }
+                (response) in guard let rulings = response.value else { return }
                                 
-                if rulings.data.count == 0 {
-                    self.cardRulingsText.isHidden = true
-                    self.cardRulingsTitle.isHidden = true
-                    return
-                } else {
+                if rulings.data.count == 0 { return }
+                else {
+                    self.cardRulingsText.isHidden = false
+                    self.cardRulingsTitle.isHidden = false
                     self.rules = rulings.data
                 }
                 
@@ -147,7 +134,6 @@ class CardDetailViewController: UIViewController {
                 
                 for rule in 0...self.rules.endIndex {
                     if rule == self.rules.endIndex { break }
-                    
                     allRules += String(rule + 1) + ". " + self.rules[rule].comment + "\n\n"
                 }
                 
